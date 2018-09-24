@@ -1,16 +1,12 @@
 // ----------------------------------------------------------------------------
 // File Developer: Peter Pak
-// Description: Main script for server startup
+// Description: Script for accounts UI to use usernames instead of emails
 // ----------------------------------------------------------------------------
 
 // Package Imports ------------------------------------------------------------
-import { Meteor } from 'meteor/meteor';
+import { Accounts } from 'meteor/accounts-base';
 // ----------------------------------------------------------------------------
 
-// File Imports ---------------------------------------------------------------
-import '../imports/api/tasks.js';
-// ----------------------------------------------------------------------------
-
-Meteor.startup(() => {
-  // code to run on server at startup
+Accounts.ui.config({
+  passwordSignupFields: 'USERNAME_ONLY',
 });
