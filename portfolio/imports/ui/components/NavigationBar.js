@@ -12,13 +12,13 @@ import { NavLink } from 'react-router-dom';
 export default class NavigationBar extends Component {
   render() {
     return (
-      <nav className="col navbar navbar-default">
-        <div className="navbar-header">
-          <NavLink  className="col navItem" to={'/'}>Home</NavLink>
-          <NavLink  className="col navItem" to={'/portfolio'}>Portfolio</NavLink>
-          <NavLink  className="col navItem" to={'/analysis'}>Analysis</NavLink>
-          <NavLink  className="col navItem" to={'/about'}>About</NavLink>
-        </div>
+      <nav className="navbar navbar-light bg-light">
+
+        <NavLink to="/" className="navbar-brand">Name</NavLink>
+        <NavLink to="/home" className="nav-link">Home</NavLink>
+        <NavLink to="/projects" className="nav-link">Projects</NavLink>
+        <NavLink to="/about" className="nav-link">About</NavLink>
+
       </nav>
     );
   }

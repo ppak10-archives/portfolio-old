@@ -71,9 +71,9 @@ class App extends Component {
   // Render Component ---------------------------------------------------------
   render() {
     return (
-      <div className="container">
+      <div className="col">
         <NavigationBar />
-        <header>
+        { /* <header>
           <h1>Todo List ({this.props.incompleteCount})</h1>
 
           <label className="hide-completed m-2">
@@ -102,7 +102,7 @@ class App extends Component {
 
         <ul>
           {this.renderTasks()}
-        </ul>
+        </ul> */ }
       </div>
     );
   }
