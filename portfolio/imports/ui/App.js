@@ -4,16 +4,17 @@
 // ----------------------------------------------------------------------------
 
 // Package Imports ------------------------------------------------------------
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 // ----------------------------------------------------------------------------
 
 // File Imports ---------------------------------------------------------------
 import { Tasks } from '../api/tasks.js';
 import Task from './Task.js';
 import AccountsUIWrapper from './AccountsUIWrapper.js';
+import NavigationBar from './components/NavigationBar.js';
 // ----------------------------------------------------------------------------
 
 // React App Component --------------------------------------------------------
@@ -71,6 +72,7 @@ class App extends Component {
   render() {
     return (
       <div className="container">
+        <NavigationBar />
         <header>
           <h1>Todo List ({this.props.incompleteCount})</h1>
 
