@@ -15,7 +15,6 @@ export default class NavigationBar extends Component {
       <nav className="navbar navbar-light bg-light">
 
         <NavLink to="/" className="navbar-brand">Name</NavLink>
-        <NavLink to="/home" className="nav-link">Home</NavLink>
         <NavLink to="/projects" className="nav-link">Projects</NavLink>
         <NavLink to="/about" className="nav-link">About</NavLink>
 

@@ -8,6 +8,7 @@ import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import { Route } from 'react-router-dom';
 // ----------------------------------------------------------------------------
 
 // File Imports ---------------------------------------------------------------
@@ -15,6 +16,12 @@ import { Tasks } from '../api/tasks.js';
 import Task from './Task.js';
 import AccountsUIWrapper from './AccountsUIWrapper.js';
 import NavigationBar from './components/NavigationBar.js';
+// ----------------------------------------------------------------------------
+
+// Layouts Imports ------------------------------------------------------------
+import Dashboard from './components/layouts/Dashboard.js';
+import Projects from './components/layouts/Projects.js';
+import About from './components/layouts/About.js';
 // ----------------------------------------------------------------------------
 
 // React App Component --------------------------------------------------------
@@ -73,6 +80,11 @@ class App extends Component {
     return (
       <div className="col">
         <NavigationBar />
+        <div>
+          <Route exact path='/' component={ Dashboard }/>
+          <Route path='/projects' component={ Projects }/>
+          <Route path='/about' component={ About }/>
+        </div>
         { /* <header>
           <h1>Todo List ({this.props.incompleteCount})</h1>
 
