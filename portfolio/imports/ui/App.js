@@ -15,7 +15,7 @@ import { Route } from 'react-router-dom';
 import { Tasks } from '../api/tasks.js';
 import Task from './Task.js';
 import AccountsUIWrapper from './AccountsUIWrapper.js';
-import NavigationBar from './components/NavigationBar.js';
+import NavigationBar from './components/NavigationBar/NavigationBar.js';
 // ----------------------------------------------------------------------------
 
 // Page Imports ---------------------------------------------------------------
@@ -79,7 +79,7 @@ class App extends Component {
   // Render Component ---------------------------------------------------------
   render() {
     return (
-      <div className="col">
+      <div>
         <NavigationBar />
         <div>
           <Route exact path='/' component={ Dashboard }/>

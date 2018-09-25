@@ -1,0 +1,10 @@
+// ----------------------------------------------------------------------------
+// File Developer: Peter Pak
+// Description: Script to import styles, called by main.scss
+// ----------------------------------------------------------------------------
+
+// Style Imports --------------------------------------------------------------
+@import "./general.scss";                 // imports general styles
+@import "./media.scss";                   // imports media styles
+@import "../components/components.scss";  // imports components styles
+// ----------------------------------------------------------------------------

@@ -1,6 +1,6 @@
 // ----------------------------------------------------------------------------
 // File Developer: Peter Pak
-// Description: Main script React Navigation Bar component
+// Description: Script for React navigation bar component
 // ----------------------------------------------------------------------------
 
 // Package Imports ------------------------------------------------------------

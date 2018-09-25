@@ -1,22 +1,18 @@
 // ----------------------------------------------------------------------------
 // File Developer: Peter Pak
-// Description: Layout script for About page component
+// Description: Script for biography component
 // ----------------------------------------------------------------------------
 
 // Package Imports ------------------------------------------------------------
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 // ----------------------------------------------------------------------------
 
-// Component Imports ------------------------------------------------------------
-import Biography from '../components/Biography/Biography.js';
-// ----------------------------------------------------------------------------
-
-export default class About extends Component {
+export default class Biography extends Component {
   render() {
     return (
-      <div className="container">
-        <h1>About</h1>
-        <Biography />
+      <div className="container biography">
+        <h1>bio</h1>
       </div>
     );
   }
