@@ -16,6 +16,7 @@ import { Tasks } from '../api/tasks.js';
 import Task from './Task.js';
 import AccountsUIWrapper from './AccountsUIWrapper.js';
 import NavigationBar from './components/NavigationBar/NavigationBar.js';
+import Footer from './components/Footer/Footer.js';
 // ----------------------------------------------------------------------------
 
 // Page Imports ---------------------------------------------------------------
@@ -87,6 +88,7 @@ class App extends Component {
           <Route path='/projects' component={ Projects }/>
           <Route path='/about' component={ About }/>
         </div>
+        <Footer />
         { /* <header>
           <h1>Todo List ({this.props.incompleteCount})</h1>
 
