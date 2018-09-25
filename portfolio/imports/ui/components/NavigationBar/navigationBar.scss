@@ -2,3 +2,23 @@
 // File Developer: Peter Pak
 // Description: Script for navigation bar styles
 // ----------------------------------------------------------------------------
+
+.navbar-brand{
+  font-family: cursive;
+  font-size: 20px;
+  margin: 5px;
+  max-height: $navbar-height;
+  border-radius: 5px 15px;
+}
+
+.navbar-link .navbar-item{
+  font-size: 20px;
+  max-height: 40px;
+  border-radius: 5px 5px;
+}
+
+.navbar{
+  //position: fixed;
+  max-height: $navbar-height;
+  //min-width: $page-min-width;
+}
