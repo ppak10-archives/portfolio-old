@@ -18,10 +18,11 @@ import AccountsUIWrapper from './AccountsUIWrapper.js';
 import NavigationBar from './components/NavigationBar.js';
 // ----------------------------------------------------------------------------
 
-// Layouts Imports ------------------------------------------------------------
-import Dashboard from './components/layouts/Dashboard.js';
-import Projects from './components/layouts/Projects.js';
-import About from './components/layouts/About.js';
+// Page Imports ---------------------------------------------------------------
+import Dashboard from './pages/Dashboard.js';
+import Skills from './pages/Skills.js';
+import Projects from './pages/Projects.js';
+import About from './pages/About.js';
 // ----------------------------------------------------------------------------
 
 // React App Component --------------------------------------------------------
@@ -82,6 +83,7 @@ class App extends Component {
         <NavigationBar />
         <div>
           <Route exact path='/' component={ Dashboard }/>
+          <Route path='/skills' component={ Skills }/>
           <Route path='/projects' component={ Projects }/>
           <Route path='/about' component={ About }/>
         </div>
