@@ -5,9 +5,6 @@
 
 // Package Imports ------------------------------------------------------------
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import { NavLink } from 'react-router-dom';
-import simpleIcons from 'simple-icons';
 // ----------------------------------------------------------------------------
 
 export default class Footer extends Component {
@@ -18,7 +15,7 @@ export default class Footer extends Component {
         <label>
           Peter Pak -
           <span>
-            <a href = "mailto: ppak10@gmail.com">ppak10@gmail.com</a>
+            <a href = "mailto: ppak10@gmail.com"> ppak10@gmail.com</a>
           </span>
         </label>
         <ul className="list-inline">

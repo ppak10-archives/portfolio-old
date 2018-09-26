@@ -5,7 +5,8 @@
 
 // Style Imports --------------------------------------------------------------
 @import "./constants.scss";               // imports constants style values
-@import "./general.scss";                 // imports general styles
+@import "./elements.scss";                // imports element stylings
+@import "./classes.scss";                 // imports class stylings
 @import "./media.scss";                   // imports media styles
 @import "../components/components.scss";  // imports components styles
 // ----------------------------------------------------------------------------

@@ -82,12 +82,10 @@ class App extends Component {
     return (
       <div>
         <NavigationBar />
-        <div>
-          <Route exact path='/' component={ Dashboard }/>
-          <Route path='/skills' component={ Skills }/>
-          <Route path='/projects' component={ Projects }/>
-          <Route path='/about' component={ About }/>
-        </div>
+        <Route exact path='/' component={ Dashboard }/>
+        <Route path='/skills' component={ Skills }/>
+        <Route path='/projects' component={ Projects }/>
+        <Route path='/about' component={ About }/>
         <Footer />
         { /* <header>
           <h1>Todo List ({this.props.incompleteCount})</h1>
