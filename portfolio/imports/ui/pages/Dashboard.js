@@ -8,6 +8,7 @@ import React, { Component } from 'react';
 // ----------------------------------------------------------------------------
 
 // Component Imports ----------------------------------------------------------
+import Projects from '../components/Projects/Projects.js';
 import Skills from '../components/Skills/Skills.js';
 // ----------------------------------------------------------------------------
 
@@ -37,6 +38,11 @@ export default class Dashboard extends Component {
               group on Gallium Oxide research focusing on epitaxial growth.
             </p>
           </div>
+        </div>
+
+        {/* Projects */}
+        <div className="jumbotron jumbotron-fluid">
+          <Projects />
         </div>
 
         {/* Skills */}
