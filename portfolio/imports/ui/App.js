@@ -81,12 +81,10 @@ class App extends Component {
   render() {
     return (
       <div>
-        <NavigationBar />
         <Route exact path='/' component={ Dashboard }/>
         <Route path='/skills' component={ Skills }/>
         <Route path='/projects' component={ Projects }/>
         <Route path='/about' component={ About }/>
-        <Footer />
         { /* <header>
           <h1>Todo List ({this.props.incompleteCount})</h1>
 

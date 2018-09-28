@@ -13,6 +13,7 @@ import { BrowserRouter, Switch } from 'react-router-dom';
 // File Imports ---------------------------------------------------------------
 import '../accounts-config.js';
 import App from '../../ui/App.js';
+import 'bootstrap/dist/js/bootstrap.bundle';  // Loads Popper.js components
 // ----------------------------------------------------------------------------
 
 Meteor.startup(() => {

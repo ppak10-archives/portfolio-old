@@ -11,6 +11,7 @@ import { NavLink } from 'react-router-dom';
 export default class NavigationBar extends Component {
   render() {
     return (
+
       <nav className="navbar navbar-light bg-light">
 
         <NavLink to="/" className="navbar-brand">Peter</NavLink>
@@ -20,7 +21,7 @@ export default class NavigationBar extends Component {
           <NavLink to="/projects" className="nav-link">Projects</NavLink>
           <NavLink to="/about" className="nav-link">About</NavLink>
           */}
-        
+
       </nav>
     );
   }

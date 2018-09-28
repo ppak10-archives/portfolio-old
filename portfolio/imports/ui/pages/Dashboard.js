@@ -12,10 +12,12 @@ import Projects from '../components/Projects/Projects.js';
 import Skills from '../components/Skills/Skills.js';
 // ----------------------------------------------------------------------------
 
+// Dashboard Component --------------------------------------------------------
 export default class Dashboard extends Component {
   render() {
     return (
       <div>
+
         {/* Portfolio Description */}
         <div className="jumbotron jumbotron-fluid">
           <div className="container">
@@ -41,15 +43,13 @@ export default class Dashboard extends Component {
         </div>
 
         {/* Projects */}
-        <div className="jumbotron jumbotron-fluid">
-          <Projects />
-        </div>
+        <Projects />
 
         {/* Skills */}
-        <div className="jumbotron jumbotron-fluid">
-          <Skills />
-        </div>
+        <Skills />
+
       </div>
     );
   }
 }
+// ----------------------------------------------------------------------------

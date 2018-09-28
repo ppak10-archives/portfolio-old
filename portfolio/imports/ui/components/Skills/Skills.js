@@ -7,11 +7,11 @@
 import React, { Component } from 'react';
 // ----------------------------------------------------------------------------
 
+// Skills Component -----------------------------------------------------------
 export default class Skills extends Component {
   render() {
     return (
-      <div className="container">
-        <h1>Skills</h1>
+      <div>
 
         {/* Materials Science and Engineering */}
         <div className="card">
@@ -74,3 +74,4 @@ export default class Skills extends Component {
     );
   }
 }
+// ----------------------------------------------------------------------------
