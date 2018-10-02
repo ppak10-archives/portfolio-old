@@ -1,10 +1,11 @@
-var test = React.createClass({
-  render: function() {
-    return (<h2>Hello from JSX React script</h2>);
-  }
-});
+import React from 'react';
+import { render } from 'react-dom';
 
-ReactDOM.render(
-  React.createElement(test, null),
+render((
+  <div>
+    <h1>Hello World</h1>
+    <p>Built with webpack</p>
+  </div>
+),
   document.getElementById('content')
-)
+);

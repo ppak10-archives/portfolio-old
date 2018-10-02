@@ -7,8 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "copy-react": "babel node_modules/react --out-dir server/static/node_modules/react --copy-files",
     "copy-react-dom": "babel node_modules/react-dom --out-dir server/static/node_modules/react-dom --copy-files",
-    "watch-jsx":"npx babel --watch src --out-dir server/static/js/components --presets=@babel/preset-react",
-    "dev":"npm run watch-jsx"
+    "watch-jsx": "npx babel --watch src --out-dir server/static/js/components --presets=@babel/preset-react",
+    "build": "webpack",
+    "dev": "npm run watch-jsx"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,7 @@
     "@babel/cli": "^7.1.2",
     "@babel/core": "^7.1.2",
     "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.4",
     "react": "^16.5.2",
     "react-dom": "^16.5.2"
   },
