@@ -6,5 +6,21 @@
   </head>
   <body>
     <h1>test</h1>
+    <div id="content"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react-dom.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+    <script type="text/jsx">
+      var test = React.createClass({
+        render: function() {
+          return (<h2>Hello from JSX React script</h2>);
+        }
+      });
+
+      ReactDOM.render(
+        React.createElement(test, null),
+        document.getElementById('content')
+      )
+    </script>
   </body>
 </html>
