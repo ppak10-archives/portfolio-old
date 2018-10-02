@@ -1,6 +1,6 @@
 # -----------------------------------------------------------------------------
 # File Developer: Peter Pak
-# Description: Script to initialize package for server
+# Description: Initialization script for server package
 # -----------------------------------------------------------------------------
 
 # Package Imports -------------------------------------------------------------
@@ -17,8 +17,8 @@ def create_app( config_class = Config ):
     app = Flask(__name__)
     app.config.from_object(Config)
 
-    # Route Imports -----------------------------------------------------------
-    from server.main.routes import main
+    # Package Imports ---------------------------------------------------------
+    from server.main import main
 
     # Register Routes ---------------------------------------------------------
     app.register_blueprint(main)
