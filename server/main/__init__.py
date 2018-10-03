@@ -12,11 +12,8 @@ main = Blueprint('main', __name__)
 # -----------------------------------------------------------------------------
 
 # Main Routes -----------------------------------------------------------------
-@main.route('/')
-def index_path():
-    return render_template('index.html')
-    
+@main.route('/', defaults={'path': ''})
 @main.route('/<path:path>')
 def root_path(path):
-    return render_template('index.html')
+    return render_template('layout.html')
 # -----------------------------------------------------------------------------
