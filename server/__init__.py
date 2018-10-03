@@ -18,10 +18,10 @@ def create_app( config_class = Config ):
     app.config.from_object(Config)
 
     # Package Imports ---------------------------------------------------------
-    from server.main import main
+    from server.base import base
 
     # Register Routes ---------------------------------------------------------
-    app.register_blueprint(main)
+    app.register_blueprint(base)
 
     return app
 

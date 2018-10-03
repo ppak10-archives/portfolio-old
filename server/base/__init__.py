@@ -1,6 +1,6 @@
 # -----------------------------------------------------------------------------
 # File Developer: Peter Pak
-# Description: Initialization script for main package
+# Description: Initialization script for base package
 # -----------------------------------------------------------------------------
 
 # Package Imports -------------------------------------------------------------
@@ -8,12 +8,12 @@ from flask import render_template, request, Blueprint
 # -----------------------------------------------------------------------------
 
 # Blueprint -------------------------------------------------------------------
-main = Blueprint('main', __name__)
+base = Blueprint('base', __name__)
 # -----------------------------------------------------------------------------
 
-# Main Routes -----------------------------------------------------------------
-@main.route('/', defaults={'path': ''})
-@main.route('/<path:path>')
+# Base Routes -----------------------------------------------------------------
+@base.route('/', defaults={'path': ''})
+@base.route('/<path:path>')
 def root_path(path):
     return render_template('layout.html')
 # -----------------------------------------------------------------------------

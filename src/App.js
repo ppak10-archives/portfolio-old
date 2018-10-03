@@ -7,6 +7,10 @@
 import React, { Component } from 'react';
 // ----------------------------------------------------------------------------
 
+// Component Imports ----------------------------------------------------------
+import Welcome from './pages/Welcome.js';
+// ----------------------------------------------------------------------------
+
 // App Component --------------------------------------------------------------
 class App extends Component {
 
@@ -14,6 +18,7 @@ class App extends Component {
     return (
       <div>
         <h1>App: Hello World</h1>
+        <Welcome />
       </div>
     );
   }
