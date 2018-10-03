@@ -6,6 +6,7 @@
 // Module Imports -------------------------------------------------------------
 import React from 'react';
 import { render } from 'react-dom';
+import { BrowserRouter, Switch } from 'react-router-dom';
 // ----------------------------------------------------------------------------
 
 // Style Imports --------------------------------------------------------------
@@ -17,5 +18,11 @@ import App from './App.js';
 // ----------------------------------------------------------------------------
 
 // Render Method --------------------------------------------------------------
-render((<App />), document.getElementById('root'));
+render(
+  <BrowserRouter>
+    <Switch>
+      <App />
+    </Switch>
+  </BrowserRouter>,
+  document.getElementById('root'));                                             // Renders to document element with id of 'root'
 // ----------------------------------------------------------------------------
