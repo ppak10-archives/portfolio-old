@@ -1,4 +1,9 @@
 module.exports = {
+  mode: 'production',
+  devServer:{
+    historyApiFallback: true,
+    port: 9000
+  },
   entry: './src',
   output: {
     path: __dirname + '/server/static/js',

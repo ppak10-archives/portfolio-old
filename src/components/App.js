@@ -10,14 +10,14 @@ import { connect } from 'react-redux'
 // ----------------------------------------------------------------------------
 
 // Page Imports ---------------------------------------------------------------
-import Welcome from './pages/Welcome.js';
-import Home from './pages/Home.js';
-import About from './pages/About.js';
-import ReduxTodo from './pages/ReduxTodo.js';
+import Welcome from '../pages/Welcome.js';
+import Home from '../pages/Home.js';
+import About from '../pages/About.js';
+import ReduxTodo from '../pages/ReduxTodo.js';
 // ----------------------------------------------------------------------------
 
 // Component Imports ----------------------------------------------------------
-import NavigationBar from './components/NavigationBar';
+import NavigationBar from './NavigationBar';
 // ----------------------------------------------------------------------------
 
 // App Component --------------------------------------------------------------
