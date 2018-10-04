@@ -14,6 +14,7 @@ const NavigationBar = () => (
     <NavLink to = "/" className = "navbar-brand">Welcome</NavLink>
     <NavLink to = "/home">Home</NavLink>
     <NavLink to = "/about">About</NavLink>
+    <NavLink to = "/todo">Todo</NavLink>
   </nav>
 )
 // ----------------------------------------------------------------------------

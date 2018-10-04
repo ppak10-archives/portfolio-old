@@ -1,6 +1,6 @@
 // ----------------------------------------------------------------------------
 // File Developer: Peter Pak
-// Description: Script to hold test2 reducers
+// Description: Script to hold Redux test reducer
 // ----------------------------------------------------------------------------
 
 // Initial State --------------------------------------------------------------
@@ -10,7 +10,7 @@ let initialState = {}
 // Reducer Exports ------------------------------------------------------------
 export default (state = initialState, {type, ...payload }) => {
   switch (type) {
-    case 'ON_TEST2':
+    case 'ON_TEST':
       return { ...state, ...payload };
     default:
       return state;

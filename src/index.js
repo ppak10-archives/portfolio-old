@@ -27,7 +27,7 @@ import store from './store.js';
 render(
   <BrowserRouter>
     <Switch>
-      <Provider store = { store }>
+      <Provider store = { store } >
         <App />
       </Provider>
     </Switch>
