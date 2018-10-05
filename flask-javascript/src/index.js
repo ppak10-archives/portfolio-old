@@ -1,36 +1,22 @@
 // ----------------------------------------------------------------------------
 // File Developer: Peter Pak
-// Description: Entry point for client javascript front-end
+// Description: Entry point for client JavaScript front-end
 // ----------------------------------------------------------------------------
 
 // Module Imports -------------------------------------------------------------
 import React from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter, Switch } from 'react-router-dom';
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
 // ----------------------------------------------------------------------------
 
 // Style Import ---------------------------------------------------------------
 import './style/index.scss';
 // ----------------------------------------------------------------------------
 
-// React App Component Import -------------------------------------------------
-import App from './components/App.js';
-// ----------------------------------------------------------------------------
-
-// Redux Imports --------------------------------------------------------------
-import store from './store.js';
+// Container Import -----------------------------------------------------------
+import Root from './containers/Root.js';
 // ----------------------------------------------------------------------------
 
 // Render Method --------------------------------------------------------------
-render(
-  <BrowserRouter>
-    <Switch>
-      <Provider store = { store } >
-        <App />
-      </Provider>
-    </Switch>
-  </BrowserRouter>,
-  document.getElementById('root'));                                             // Renders to document element with id of 'root'
+render(<Root />, document.getElementById('root'));                              // Renders to document element with id of 'root'
 // ----------------------------------------------------------------------------

@@ -4,7 +4,7 @@ module.exports = {
     historyApiFallback: true,
     port: 9000
   },
-  entry: './src',
+  entry: ['@babel/polyfill','./src'],
   output: {
     path: __dirname + '/server/static/js',
     filename: 'bundle.js',

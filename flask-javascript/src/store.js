@@ -1,24 +1,26 @@
 // ----------------------------------------------------------------------------
 // File Developer: Peter Pak
-// Description: Script containing Redux store
+// Description: Script containing function to configure store
 // ----------------------------------------------------------------------------
 
 // Module Import --------------------------------------------------------------
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 // ----------------------------------------------------------------------------
 
 // Reducer Import -------------------------------------------------------------
 import rootReducer from './reducers';
 // ----------------------------------------------------------------------------
 
-// Redux Store ----------------------------------------------------------------
-const store = createStore(
-  rootReducer,
-  {},
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-)
+// Configure Store Function ---------------------------------------------------
+function configureStore(preloadedState) {
+  return createStore(
+    rootReducer,
+    preloadedState,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  )
+}
 // ----------------------------------------------------------------------------
 
 // Store Export ---------------------------------------------------------------
-export default store;
+export default configureStore;
 // ----------------------------------------------------------------------------
