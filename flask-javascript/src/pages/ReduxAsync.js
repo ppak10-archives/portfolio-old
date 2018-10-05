@@ -1,22 +1,24 @@
 // ----------------------------------------------------------------------------
 // File Developer: Peter Pak
-// Description: Entry point for JavaScript front-end
+// Description: Component layout for Redux async page
 // ----------------------------------------------------------------------------
 
 // Module Imports -------------------------------------------------------------
 import React from 'react';
-import { render } from 'react-dom';
-import { BrowserRouter, Switch } from 'react-router-dom';
 // ----------------------------------------------------------------------------
 
-// Style Import ---------------------------------------------------------------
-import './style/index.scss';
+// Container Imports ----------------------------------------------------------
+import AsyncApp from '../containers/AsyncApp.js'
 // ----------------------------------------------------------------------------
 
-// Container Import -----------------------------------------------------------
-import Root from './containers/Root.js';
+// Redux Todo Page ------------------------------------------------------------
+const ReduxAsync = () => (
+  <div>
+    <AsyncApp />
+  </div>
+)
 // ----------------------------------------------------------------------------
 
-// Render Method --------------------------------------------------------------
-render(<Root />, document.getElementById('root'));                              // Renders to document element with id of 'root'
+// Component Export -----------------------------------------------------------
+export default ReduxAsync
 // ----------------------------------------------------------------------------

@@ -14,6 +14,7 @@ import Welcome from '../pages/Welcome.js';
 import Home from '../pages/Home.js';
 import About from '../pages/About.js';
 import ReduxTodo from '../pages/ReduxTodo.js';
+import ReduxAsync from '../pages/ReduxAsync.js';
 // ----------------------------------------------------------------------------
 
 // Component Imports ----------------------------------------------------------
@@ -28,6 +29,7 @@ const App = () => (
     <Route path = "/home" component = { Home } />
     <Route path = "/about" component = { About } />
     <Route path = "/todo" component = { ReduxTodo } />
+    <Route path = "/reddit" component = { ReduxAsync } />
   </div>
 )
 // ----------------------------------------------------------------------------

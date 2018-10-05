@@ -14,8 +14,8 @@ import App from '../components/App.js';
 // ----------------------------------------------------------------------------
 
 // Store Import ---------------------------------------------------------------
-import configureStore from '../store.js';                                                // Imports configure store function
-const store = configureStore()
+import configureStore from '../store.js';                                       // Imports configure store function
+const store = configureStore()                                                  // Reference for configure store function
 // ----------------------------------------------------------------------------
 
 // Root Container -------------------------------------------------------------
