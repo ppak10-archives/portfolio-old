@@ -11,12 +11,9 @@ import PropTypes from 'prop-types'
 
 // Link Component -------------------------------------------------------------
 const Link = ({ active, children, onClick }) => (
-  <button className = "btn btn-secondary"
+  <button className = "btn btn-secondary btn-lg"
      onClick = { onClick }
      disabled = { active }
-     style={{
-         marginLeft: '4px',
-     }}
   >
     { children }
   </button>

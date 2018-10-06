@@ -18,7 +18,6 @@ import { VisibilityFilters } from '../../actions';
 // Footer Component -----------------------------------------------------------
 const SubredditFilter = () => (
   <div>
-    <span>Show: </span>
     <FilterLink filter = { VisibilityFilters.SHOW_ALL }>
       All
     </FilterLink>
