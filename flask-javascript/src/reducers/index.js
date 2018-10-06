@@ -16,6 +16,15 @@ import selectedSubreddit from './selectedSubreddit.js';
 // ----------------------------------------------------------------------------
 
 // Root Reducer ---------------------------------------------------------------
+// Reducers here provide the list of keys that are kept in the state
+// i.e. raw state data would look something like this:
+// {
+//  test: {},
+//  subreddits: [],
+//  visibilityFilter: 'SHOW_ALL',
+//  etc...
+// }
+
 const rootReducer = combineReducers({
   test,
   subreddits,

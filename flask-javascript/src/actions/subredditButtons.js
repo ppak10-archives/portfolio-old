@@ -5,7 +5,7 @@
 // ----------------------------------------------------------------------------
 
 // Subreddit Button Actions ---------------------------------------------------
-let nextSubredditId = 0
+let nextSubredditId = 3                                                         // Magic number considering 3 present subreddits
 
 export const addSubredditButton = subredditName => ({
   type: 'ADD_SUBREDDIT_BUTTON',

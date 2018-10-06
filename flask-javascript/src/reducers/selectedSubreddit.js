@@ -8,7 +8,7 @@ import { SELECT_SUBREDDIT } from '../actions'
 // ----------------------------------------------------------------------------
 
 // Export Reducer -------------------------------------------------------------
-export default function selectedSubreddit(state = 'reactjs', action) {
+export default function selectedSubreddit(state = '', action) {
   switch (action.type) {
     case SELECT_SUBREDDIT:
       return action.subreddit

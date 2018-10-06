@@ -5,9 +5,9 @@
 // ----------------------------------------------------------------------------
 
 // Package Imports ------------------------------------------------------------
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux'
+import React, { Component } from 'react';                                       // Imports component for class to extend
+import PropTypes from 'prop-types';                                             // Imports proptypes to verify props
+import { connect } from 'react-redux'                                           // Imports connect to access store
 // ----------------------------------------------------------------------------
 
 // Actions Import -------------------------------------------------------------
@@ -57,25 +57,38 @@ class SubredditScraper extends Component {
   }
 
   render() {
-    const { selectedSubreddit, posts, isFetching, lastUpdated } = this.props
+
+    const {
+      subreddits,
+      selectedSubreddit,
+      posts,
+      isFetching,
+      lastUpdated
+    } = this.props
+
     return (
       <div>
+
+        { /* Subreddit Picker */ }
         <Picker
-          value={selectedSubreddit}
-          onChange={this.handleChange}
-          options={['reactjs','pics','gaming','sbubby','simulated']}
+          value = { selectedSubreddit }
+          onChange = { this.handleChange }
+          options = { subreddits }
         />
+
+        { /* Fetch Status */ }
         <p>
           {lastUpdated &&
             <span>
-              Last updated at {new Date(lastUpdated).toLocaleTimeString()}.
+              Last updated at { new Date(lastUpdated).toLocaleTimeString() }.
               {' '}
             </span>}
           {!isFetching &&
-            <button onClick={this.handleRefreshClick}>
+            <button onClick = { this.handleRefreshClick }>
               Refresh
             </button>}
         </p>
+
         {isFetching && posts.length === 0 && <h2>Loading...</h2>}
         {!isFetching && posts.length === 0 && <h2>Empty.</h2>}
         {posts.length > 0 &&
@@ -100,23 +113,28 @@ SubredditScraper.propTypes = {
 
 // Map Props ------------------------------------------------------------------
 function mapStateToProps(state) {
-  const { selectedSubreddit, postsBySubreddit } = state
-  const {
-    isFetching,
-    lastUpdated,
-    items: posts
-  } = postsBySubreddit[selectedSubreddit] || {
-    isFetching: true,
-    items: []
-  }
+  let { selectedSubreddit } = state                                             // Let variable to allow for reassignment
+  const { subreddits, postsBySubreddit } = state
+  selectedSubreddit = selectedSubredditCheck(subreddits, selectedSubreddit)     // Function call to check selected subreddit
+  const { isFetching, lastUpdated, items: posts } =
+    postsBySubreddit[selectedSubreddit] || { isFetching: true, items: [] }
 
   return {
+    subreddits,
     selectedSubreddit,
     posts,
     isFetching,
     lastUpdated
   }
 }
+
+function selectedSubredditCheck(subreddits, selectedSubreddit){                 // Function to check selected subreddit state
+  if (selectedSubreddit === "") {                                               // If selected subreddit state is empty string
+    return subreddits[0].name                                                   // Return first subreddit preset
+  } else {                                                                      // If not empty string
+    return selectedSubreddit                                                    // Return selected subreddit prop value
+  }                                                                             // Note: Selected subreddit is still empty
+}                                                                               // until dispatch fired
 // ----------------------------------------------------------------------------
 
 // Component Export -----------------------------------------------------------
