@@ -1,25 +1,26 @@
 // ----------------------------------------------------------------------------
+// Original Creator: Redux
 // File Developer: Peter Pak
-// Description: Script to hold Redux todos reducer
+// Description: Script for subreddit button reducer
 // ----------------------------------------------------------------------------
 
 // Todos Reducer --------------------------------------------------------------
-const todos = (state = [], action) => {
+const subreddits = (state = [], action) => {
   switch (action.type) {
-    case 'ADD_TODO':
+    case 'ADD_SUBREDDIT_BUTTON':
       return [
         ...state,
         {
           id: action.id,
-          text: action.text,
-          completed: false
+          name: action.subredditName,
+          viewing: true
         }
       ]
-    case 'TOGGLE_TODO':
-      return state.map(todo =>
-        (todo.id === action.id)
-          ? {...todo, completed: !todo.completed}
-          : todo
+    case 'TOGGLE_SUBREDDIT':
+      return state.map(subreddit =>
+        (subreddit.id === action.id)
+          ? {...subreddit, viewing: !subreddit.viewing}
+          : subreddit
       )
     default:
       return state
@@ -28,5 +29,5 @@ const todos = (state = [], action) => {
 // ----------------------------------------------------------------------------
 
 // Reducer Exports ------------------------------------------------------------
-export default todos
+export default subreddits
 // ----------------------------------------------------------------------------

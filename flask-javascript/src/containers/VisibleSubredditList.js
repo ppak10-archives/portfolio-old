@@ -9,8 +9,8 @@ import { connect } from 'react-redux'
 // ----------------------------------------------------------------------------
 
 // Actions Import -------------------------------------------------------------
-import { toggleTodo }  from '../actions/index.js'
-import { VisibilityFilters } from '../actions/index.js'
+import { toggleSubreddit }  from '../actions'
+import { VisibilityFilters } from '../actions'
 // ----------------------------------------------------------------------------
 
 // Component Imports ----------------------------------------------------------
@@ -18,14 +18,14 @@ import SubredditList from '../components/SubredditList'
 // ----------------------------------------------------------------------------
 
 // Visible Subreddit List Container -------------------------------------------
-const getVisibleSubreddits = (todos, filter) => {
+const getVisibleSubreddits = (subreddits, filter) => {
   switch (filter) {
     case VisibilityFilters.SHOW_ALL:
-      return todos
-    case VisibilityFilters.SHOW_COMPLETED:
-      return todos.filter(t => t.completed)
-    case VisibilityFilters.SHOW_ACTIVE:
-      return todos.filter(t => !t.completed)
+      return subreddits
+    case VisibilityFilters.SHOW_VIEWING:
+      return subreddits.filter(t => t.viewing)
+    case VisibilityFilters.SHOW_HIDING:
+      return subreddits.filter(t => !t.viewing)
     default:
       throw new Error('Unknown filter: ' + filter)
   }
@@ -34,11 +34,11 @@ const getVisibleSubreddits = (todos, filter) => {
 
 // Map to Props ---------------------------------------------------------------
 const mapStateToProps = state => ({
-  todos: getVisibleSubreddits(state.todos, state.visibilityFilter)
+  subreddits: getVisibleSubreddits(state.subreddits, state.visibilityFilter)
 })
 
 const mapDispatchToProps = dispatch => ({
-  toggleTodo: id => dispatch(toggleTodo(id))
+  toggleSubreddit: id => dispatch(toggleSubreddit(id))
 })
 // ----------------------------------------------------------------------------
 

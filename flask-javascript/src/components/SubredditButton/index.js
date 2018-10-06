@@ -10,24 +10,24 @@ import PropTypes from 'prop-types';
 // ----------------------------------------------------------------------------
 
 // Todo Component -------------------------------------------------------------
-const Subreddit = ({ onClick, completed, text }) => (
+const SubredditButton = ({ onClick, viewing, name }) => (
   <li className = "list-inline-item">
     <button className = "btn btn-success" onClick = { onClick }
-      disabled = { completed }>
-      { text }
+      disabled = { viewing }>
+      { name }
     </button>
   </li>
 )
 // ----------------------------------------------------------------------------
 
 // PropTypes ------------------------------------------------------------------
-Subreddit.propTypes = {
+SubredditButton.propTypes = {
   onClick: PropTypes.func.isRequired,
-  completed: PropTypes.bool.isRequired,
-  text: PropTypes.string.isRequired
+  viewing: PropTypes.bool.isRequired,
+  name: PropTypes.string.isRequired
 }
 // ----------------------------------------------------------------------------
 
 // Component Export -----------------------------------------------------------
-export default Subreddit;
+export default SubredditButton;
 // ----------------------------------------------------------------------------

@@ -9,7 +9,7 @@ import { connect } from 'react-redux'
 // ----------------------------------------------------------------------------
 
 // Action Import --------------------------------------------------------------
-import { setVisibilityFilter } from '../actions/index.js'
+import { setVisibilityFilter } from '../actions/index'
 // ----------------------------------------------------------------------------
 
 // Component Imports ----------------------------------------------------------

@@ -10,17 +10,17 @@ import PropTypes from 'prop-types'
 // ----------------------------------------------------------------------------
 
 // Component Import -----------------------------------------------------------
-import Subreddit from '../Subreddit'
+import SubredditButton from '../SubredditButton'
 // ----------------------------------------------------------------------------
 
 // Todo List Component --------------------------------------------------------
-const SubredditList = ({ todos, toggleTodo }) => (
+const SubredditList = ({ subreddits, toggleSubreddit }) => (
   <ul className = "list-inline">
-    {todos.map(todo =>
-      <Subreddit
-        key={todo.id}
-        {...todo}
-        onClick={() => toggleTodo(todo.id)}
+    {subreddits.map(subreddit =>
+      <SubredditButton
+        key={subreddit.id}
+        {...subreddit}
+        onClick={() => toggleTodo(subreddit.id)}
       />
     )}
   </ul>
@@ -29,14 +29,14 @@ const SubredditList = ({ todos, toggleTodo }) => (
 
 // PropTypes ------------------------------------------------------------------
 SubredditList.propTypes = {
-  todos: PropTypes.arrayOf(
+  subreddits: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
-      completed: PropTypes.bool.isRequired,
-      text: PropTypes.string.isRequired
+      viewing: PropTypes.bool.isRequired,
+      name: PropTypes.string.isRequired
     }).isRequired
   ).isRequired,
-  toggleTodo: PropTypes.func.isRequired
+  toggleSubreddit: PropTypes.func.isRequired
 }
 // ----------------------------------------------------------------------------
 

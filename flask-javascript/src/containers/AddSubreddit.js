@@ -10,7 +10,7 @@ import { connect } from 'react-redux'
 // ----------------------------------------------------------------------------
 
 // Action Import --------------------------------------------------------------
-import { addTodo } from '../actions/index.js'
+import { addSubredditButton } from '../actions/index.js'
 // ----------------------------------------------------------------------------
 
 // Add Todo Container ---------------------------------------------------------
@@ -23,11 +23,11 @@ const AddSubreddit = ({ dispatch }) => {
       { /* Subreddit Input Form */ }
       <form className = "form-inline" onSubmit = { e => {
           e.preventDefault()
-          if (!input.value.trim()) {
-            return
+          if (!input.value.trim()) {                                            // If input is white space
+            return                                                              // Return null and do not dispatch action
           }
-          dispatch(addTodo(input.value))
-          input.value = ''
+          dispatch(addSubredditButton(input.value))                             // Dispatch action to add subreddit name
+          input.value = ''                                                      // Reset input value to empty string
         }}
       >
 

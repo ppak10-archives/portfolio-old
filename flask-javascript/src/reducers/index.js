@@ -9,7 +9,7 @@ import { combineReducers } from 'redux';
 
 // Reducer Imports ------------------------------------------------------------
 import test from './test.js';
-import todos from './todos.js';
+import subreddits from './subreddits';
 import visibilityFilter from './visibilityFilter.js';
 import postsBySubreddit from './postsBySubreddit.js';
 import selectedSubreddit from './selectedSubreddit.js';
@@ -18,7 +18,7 @@ import selectedSubreddit from './selectedSubreddit.js';
 // Root Reducer ---------------------------------------------------------------
 const rootReducer = combineReducers({
   test,
-  todos,
+  subreddits,
   visibilityFilter,
   postsBySubreddit,
   selectedSubreddit

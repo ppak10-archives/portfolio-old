@@ -1,6 +1,7 @@
 // ----------------------------------------------------------------------------
+// Original Creator: Redux
 // File Developer: Peter Pak
-// Description: Script containing Redux visibility filter reducer
+// Description: Script for subreddit visibility filter reducer
 // ----------------------------------------------------------------------------
 
 // Action Import --------------------------------------------------------------
