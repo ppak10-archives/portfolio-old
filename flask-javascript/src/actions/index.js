@@ -1,35 +1,10 @@
 // ----------------------------------------------------------------------------
 // File Developer: Peter Pak
-// Description: Script to hold Redux actions
+// Description: Script to hold Redux action exports
 // ----------------------------------------------------------------------------
 
 // Action Imports -------------------------------------------------------------
 export * from "./redditPosts.js"
 export * from "./subreddit.js"
-// ----------------------------------------------------------------------------
-
-// Redux Todo -----------------------------------------------------------------
-let nextTodoId = 0
-
-export const addTodo = text => ({
-  type: 'ADD_TODO',
-  id: nextTodoId++,
-  text
-})
-
-export const setVisibilityFilter = filter => ({
-  type: 'SET_VISIBILITY_FILTER',
-  filter
-})
-
-export const toggleTodo = id => ({
-  type: 'TOGGLE_TODO',
-  id
-})
-
-export const VisibilityFilters = {
-  SHOW_ALL: 'SHOW_ALL',
-  SHOW_COMPLETED: 'SHOW_COMPLETED',
-  SHOW_ACTIVE: 'SHOW_ACTIVE'
-}
+export * from "./todo.js"
 // ----------------------------------------------------------------------------

@@ -1,6 +1,7 @@
 // ----------------------------------------------------------------------------
+// Original Creator: Redux
 // File Developer: Peter Pak
-// Description: Container for Redux visible todo list
+// Description: Container for Redux visible subreddit list
 // ----------------------------------------------------------------------------
 
 // Package Imports ------------------------------------------------------------
@@ -13,11 +14,11 @@ import { VisibilityFilters } from '../actions/index.js'
 // ----------------------------------------------------------------------------
 
 // Component Imports ----------------------------------------------------------
-import TodoList from '../components/TodoList'
+import SubredditList from '../components/SubredditList'
 // ----------------------------------------------------------------------------
 
-// Visible Todo List Container ------------------------------------------------
-const getVisibleTodos = (todos, filter) => {
+// Visible Subreddit List Container -------------------------------------------
+const getVisibleSubreddits = (todos, filter) => {
   switch (filter) {
     case VisibilityFilters.SHOW_ALL:
       return todos
@@ -33,7 +34,7 @@ const getVisibleTodos = (todos, filter) => {
 
 // Map to Props ---------------------------------------------------------------
 const mapStateToProps = state => ({
-  todos: getVisibleTodos(state.todos, state.visibilityFilter)
+  todos: getVisibleSubreddits(state.todos, state.visibilityFilter)
 })
 
 const mapDispatchToProps = dispatch => ({
@@ -45,5 +46,5 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(TodoList)
+)(SubredditList)
 // ----------------------------------------------------------------------------

@@ -1,6 +1,7 @@
 // ----------------------------------------------------------------------------
+// Original Creator: Redux
 // File Developer: Peter Pak
-// Description: Container for Redux add todo
+// Description: Container for adding subreddit for subreddit scraper
 // ----------------------------------------------------------------------------
 
 // Package Imports ------------------------------------------------------------
@@ -13,13 +14,14 @@ import { addTodo } from '../actions/index.js'
 // ----------------------------------------------------------------------------
 
 // Add Todo Container ---------------------------------------------------------
-const AddTodo = ({ dispatch }) => {
+const AddSubreddit = ({ dispatch }) => {
   let input
 
   return (
     <div>
-      <form
-        onSubmit={e => {
+
+      { /* Subreddit Input Form */ }
+      <form className = "form-inline" onSubmit = { e => {
           e.preventDefault()
           if (!input.value.trim()) {
             return
@@ -28,9 +30,15 @@ const AddTodo = ({ dispatch }) => {
           input.value = ''
         }}
       >
-        <input ref={node => input = node} />
-        <button type="submit">
-          Add Todo
+
+        { /* Input Field */ }
+        <input className = "form-control" placeholder = "/r/" ref = { node =>
+          input = node}
+        />
+
+        { /* Submit Button */ }
+        <button className = "btn btn-outline-primary" type="submit">
+          Add Subreddit
         </button>
       </form>
     </div>
@@ -39,5 +47,5 @@ const AddTodo = ({ dispatch }) => {
 // ----------------------------------------------------------------------------
 
 // Container Export -----------------------------------------------------------
-export default connect()(AddTodo)
+export default connect()(AddSubreddit)
 // ----------------------------------------------------------------------------

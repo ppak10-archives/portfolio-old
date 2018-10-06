@@ -9,9 +9,9 @@ import React from 'react';
 
 // Welcome Page ---------------------------------------------------------------
 const Welcome = () => (
-  <div>
-    <h1>Welcome!</h1>
-    <p>Page uses React</p>
+  <div className = "col">
+    <h1>Welcome</h1>
+    <p>Congratulations on successfully running the server!</p>
   </div>
 )
 // ----------------------------------------------------------------------------

@@ -6,15 +6,14 @@
 // Package Imports ------------------------------------------------------------
 import React from 'react';
 import { Route } from 'react-router-dom';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 // ----------------------------------------------------------------------------
 
 // Page Imports ---------------------------------------------------------------
-import Welcome from '../pages/Welcome.js';
-import Home from '../pages/Home.js';
-import About from '../pages/About.js';
-import ReduxTodo from '../pages/ReduxTodo.js';
-import ReduxAsync from '../pages/ReduxAsync.js';
+import Welcome from '../pages/Welcome';
+import Home from '../pages/Home';
+import Reddit from '../pages/Reddit';
+import About from '../pages/About';
 // ----------------------------------------------------------------------------
 
 // Component Imports ----------------------------------------------------------
@@ -27,9 +26,8 @@ const App = () => (
     <NavigationBar />
     <Route exact path = "/" component = { Welcome } />
     <Route path = "/home" component = { Home } />
+    <Route path = "/reddit" component = { Reddit } />    
     <Route path = "/about" component = { About } />
-    <Route path = "/todo" component = { ReduxTodo } />
-    <Route path = "/reddit" component = { ReduxAsync } />
   </div>
 )
 // ----------------------------------------------------------------------------

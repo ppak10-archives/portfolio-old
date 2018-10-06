@@ -1,6 +1,7 @@
 // ----------------------------------------------------------------------------
+// Original Creator: Redux
 // File Developer: Peter Pak
-// Description: Component for Redux todo list
+// Description: Component for subreddit list
 // ----------------------------------------------------------------------------
 
 // Module Imports -------------------------------------------------------------
@@ -9,14 +10,14 @@ import PropTypes from 'prop-types'
 // ----------------------------------------------------------------------------
 
 // Component Import -----------------------------------------------------------
-import Todo from '../Todo'
+import Subreddit from '../Subreddit'
 // ----------------------------------------------------------------------------
 
 // Todo List Component --------------------------------------------------------
-const TodoList = ({ todos, toggleTodo }) => (
-  <ul>
+const SubredditList = ({ todos, toggleTodo }) => (
+  <ul className = "list-inline">
     {todos.map(todo =>
-      <Todo
+      <Subreddit
         key={todo.id}
         {...todo}
         onClick={() => toggleTodo(todo.id)}
@@ -27,7 +28,7 @@ const TodoList = ({ todos, toggleTodo }) => (
 // ----------------------------------------------------------------------------
 
 // PropTypes ------------------------------------------------------------------
-TodoList.propTypes = {
+SubredditList.propTypes = {
   todos: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
@@ -40,5 +41,5 @@ TodoList.propTypes = {
 // ----------------------------------------------------------------------------
 
 // Component Export -----------------------------------------------------------
-export default TodoList
+export default SubredditList
 // ----------------------------------------------------------------------------

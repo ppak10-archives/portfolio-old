@@ -9,7 +9,7 @@ import React from 'react';
 
 // Welcome Page ---------------------------------------------------------------
 const Home = () => (
-  <div>
+  <div className = "col">
     <h1>Home</h1>
     <p>Home page uses React</p>
   </div>

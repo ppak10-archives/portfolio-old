@@ -10,7 +10,7 @@ import PropTypes from 'prop-types'
 
 // Link Component -------------------------------------------------------------
 const Link = ({ active, children, onClick }) => (
-  <button
+  <button className = "btn btn-secondary"
      onClick={onClick}
      disabled={active}
      style={{

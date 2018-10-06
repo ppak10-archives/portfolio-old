@@ -9,7 +9,7 @@ import React from 'react';
 
 // About Page ---------------------------------------------------------------
 const About = () => (
-  <div>
+  <div className = "col">
     <h1>About</h1>
     <p>This page also uses React</p>
     <p>Dev Server works</p>

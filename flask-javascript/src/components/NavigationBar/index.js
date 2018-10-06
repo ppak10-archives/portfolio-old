@@ -13,9 +13,8 @@ const NavigationBar = () => (
   <nav className = "navbar navbar-light bg-light">
     <NavLink to = "/" className = "navbar-brand">Welcome</NavLink>
     <NavLink to = "/home">Home</NavLink>
-    <NavLink to = "/about">About</NavLink>
-    <NavLink to = "/todo">Todo</NavLink>
     <NavLink to = "/reddit">Reddit</NavLink>
+    <NavLink to = "/about">About</NavLink>
   </nav>
 )
 // ----------------------------------------------------------------------------

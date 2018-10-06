@@ -1,6 +1,7 @@
 // ----------------------------------------------------------------------------
+// Original Creator: Redux
 // File Developer: Peter Pak
-// Description: Container for Redux async reddit app
+// Description: Container for asynchronous subreddit scraper
 // ----------------------------------------------------------------------------
 
 // Package Imports ------------------------------------------------------------
@@ -22,8 +23,8 @@ import Picker from '../components/Picker'
 import Posts from '../components/Posts'
 // ----------------------------------------------------------------------------
 
-// Async App Container --------------------------------------------------------
-class AsyncApp extends Component {
+// Subreddit Scraper Container ------------------------------------------------
+class SubredditScraper extends Component {
   constructor(props) {
     super(props)
     this.handleChange = this.handleChange.bind(this)
@@ -88,7 +89,7 @@ class AsyncApp extends Component {
 // ----------------------------------------------------------------------------
 
 // PropTypes ------------------------------------------------------------------
-AsyncApp.propTypes = {
+SubredditScraper.propTypes = {
   selectedSubreddit: PropTypes.string.isRequired,
   posts: PropTypes.array.isRequired,
   isFetching: PropTypes.bool.isRequired,
@@ -119,5 +120,5 @@ function mapStateToProps(state) {
 // ----------------------------------------------------------------------------
 
 // Component Export -----------------------------------------------------------
-export default connect(mapStateToProps) (AsyncApp)
+export default connect(mapStateToProps) (SubredditScraper)
 // ----------------------------------------------------------------------------

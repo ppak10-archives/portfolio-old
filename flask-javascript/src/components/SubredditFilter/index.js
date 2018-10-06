@@ -1,6 +1,6 @@
 // ----------------------------------------------------------------------------
 // File Developer: Peter Pak
-// Description: Component for Redux todo footer
+// Description: Component for subreddit filter
 // ----------------------------------------------------------------------------
 
 // Module Imports -------------------------------------------------------------
@@ -16,7 +16,7 @@ import { VisibilityFilters } from '../../actions/index.js'
 // ----------------------------------------------------------------------------
 
 // Footer Component -----------------------------------------------------------
-const Footer = () => (
+const SubredditFilter = () => (
   <div>
     <span>Show: </span>
     <FilterLink filter={VisibilityFilters.SHOW_ALL}>
@@ -33,5 +33,5 @@ const Footer = () => (
 // ----------------------------------------------------------------------------
 
 // Component Export -----------------------------------------------------------
-export default Footer
+export default SubredditFilter
 // ----------------------------------------------------------------------------
