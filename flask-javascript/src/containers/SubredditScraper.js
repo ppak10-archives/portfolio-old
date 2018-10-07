@@ -76,7 +76,7 @@ class SubredditScraper extends Component {
           options = { subreddits }
         />
 
-        { /* Fetch Status */ }
+        { /* Fetch Success */ }
         <p>
           {lastUpdated &&
             <span>
@@ -103,6 +103,7 @@ class SubredditScraper extends Component {
 
 // PropTypes ------------------------------------------------------------------
 SubredditScraper.propTypes = {
+  subreddits: PropTypes.array.isRequired,
   selectedSubreddit: PropTypes.string.isRequired,
   posts: PropTypes.array.isRequired,
   isFetching: PropTypes.bool.isRequired,
@@ -114,8 +115,10 @@ SubredditScraper.propTypes = {
 // Map Props ------------------------------------------------------------------
 function mapStateToProps(state) {
   let { selectedSubreddit } = state                                             // Let variable to allow for reassignment
-  const { subreddits, postsBySubreddit } = state
-  selectedSubreddit = selectedSubredditCheck(subreddits, selectedSubreddit)     // Function call to check selected subreddit
+  const { subreddits, postsBySubreddit } = state                                // Declares state variables to const for props
+  if (selectedSubreddit === ""){                                                // If selected subreddit is empty string
+    selectedSubreddit=subreddits[0].name                                        // Set selected subreddit to default state
+  }                                                                             // Note: does not change the state variable
   const { isFetching, lastUpdated, items: posts } =
     postsBySubreddit[selectedSubreddit] || { isFetching: true, items: [] }
 
@@ -127,14 +130,6 @@ function mapStateToProps(state) {
     lastUpdated
   }
 }
-
-function selectedSubredditCheck(subreddits, selectedSubreddit){                 // Function to check selected subreddit state
-  if (selectedSubreddit === "") {                                               // If selected subreddit state is empty string
-    return subreddits[0].name                                                   // Return first subreddit preset
-  } else {                                                                      // If not empty string
-    return selectedSubreddit                                                    // Return selected subreddit prop value
-  }                                                                             // Note: Selected subreddit is still empty
-}                                                                               // until dispatch fired
 // ----------------------------------------------------------------------------
 
 // Component Export -----------------------------------------------------------
