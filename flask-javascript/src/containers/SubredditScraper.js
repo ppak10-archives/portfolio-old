@@ -67,34 +67,37 @@ class SubredditScraper extends Component {
     } = this.props
 
     return (
-      <div>
+      <div className = "row">
+        { subreddits.map(subreddit =>
+          <div className = "col">
+            { /* Subreddit Picker */ }
+            <Picker
+              value = { selectedSubreddit }
+              onChange = { this.handleChange }
+              options = { subreddits }
+            />
 
-        { /* Subreddit Picker */ }
-        <Picker
-          value = { selectedSubreddit }
-          onChange = { this.handleChange }
-          options = { subreddits }
-        />
+            { /* Fetch Success */ }
+            <p>
+              {lastUpdated &&
+                <span>
+                  Last updated at { new Date(lastUpdated).toLocaleTimeString() }.
+                  {' '}
+                </span>}
+              {!isFetching &&
+                <button onClick = { this.handleRefreshClick }>
+                  Refresh
+                </button>}
+            </p>
 
-        { /* Fetch Success */ }
-        <p>
-          {lastUpdated &&
-            <span>
-              Last updated at { new Date(lastUpdated).toLocaleTimeString() }.
-              {' '}
-            </span>}
-          {!isFetching &&
-            <button onClick = { this.handleRefreshClick }>
-              Refresh
-            </button>}
-        </p>
-
-        {isFetching && posts.length === 0 && <h2>Loading...</h2>}
-        {!isFetching && posts.length === 0 && <h2>Empty.</h2>}
-        {posts.length > 0 &&
-          <div style={{ opacity: isFetching ? 0.5 : 1 }}>
-            <Posts posts={posts} />
-          </div>}
+            {isFetching && posts.length === 0 && <h2>Loading...</h2>}
+            {!isFetching && posts.length === 0 && <h2>Empty.</h2>}
+            {posts.length > 0 &&
+              <div style={{ opacity: isFetching ? 0.5 : 1 }}>
+                <Posts posts={posts} />
+              </div>}
+          </div>
+        ) }
       </div>
     )
   }
