@@ -139,7 +139,7 @@ SubredditScraper.propTypes = {
 
 // Map Props ------------------------------------------------------------------
 function mapStateToProps(state, ownProps) {
-  const { subreddits, postsBySubreddit } = state                                // Declares state variables to const for props
+  const { subreddits, postsBySubreddit } = state                                // Declares const state variables for props
   const { isFetching, lastUpdated, items: posts } =
     postsBySubreddit[ownProps.subreddit.name] ||
       { isFetching: true, items: [] }
