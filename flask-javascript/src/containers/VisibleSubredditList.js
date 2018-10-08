@@ -9,8 +9,7 @@ import { connect } from 'react-redux'
 // ----------------------------------------------------------------------------
 
 // Actions Import -------------------------------------------------------------
-import { toggleSubreddit }  from '../actions'
-import { VisibilityFilters } from '../actions'
+import { toggleSubreddit , VisibilityFilters } from '../actions'                // Imports actions to dispatch later
 // ----------------------------------------------------------------------------
 
 // Component Imports ----------------------------------------------------------
@@ -38,7 +37,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  toggleSubreddit: id => dispatch(toggleSubreddit(id))
+  toggleSubreddit: id => dispatch(toggleSubreddit(id))                          // Creates function to dispatch toggle subreddit action
 })
 // ----------------------------------------------------------------------------
 

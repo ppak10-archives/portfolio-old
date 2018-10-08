@@ -20,7 +20,7 @@ const SubredditList = ({ subreddits, toggleSubreddit }) => (
       <SubredditButton
         key={subreddit.id}
         {...subreddit}
-        onClick={() => toggleTodo(subreddit.id)}
+        onClick={() => toggleSubreddit(subreddit.id)}                           // Reference to toggle subreddit action
       />
     )}
   </ul>
@@ -36,7 +36,7 @@ SubredditList.propTypes = {
       name: PropTypes.string.isRequired
     }).isRequired
   ).isRequired,
-  toggleSubreddit: PropTypes.func.isRequired
+  toggleSubreddit: PropTypes.func.isRequired                                    // Requires prop type for toggle subreddit action
 }
 // ----------------------------------------------------------------------------
 

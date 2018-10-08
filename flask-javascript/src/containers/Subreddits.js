@@ -23,11 +23,18 @@ class Subreddits extends Component {
 
     return (
       <div className = "row">
-        { subreddits.map(subreddit =>
-          <div className = "col">
-            <SubredditScraper subredditName = { subreddit.name }/>
-          </div>
-        ) }
+        { subreddits.map(subreddit =>                                           // Maps through list of subreddits in state
+          {
+            if (subreddit.viewing == true )                                     // If subreddit viewing stat is true
+            {
+              return(                                                           // Return subreddit scraper container
+                <div className = "col">
+                  <SubredditScraper subreddit = { subreddit }/>
+                </div>
+              )
+            }
+          }
+        )}
       </div>
     )
   }
@@ -36,13 +43,13 @@ class Subreddits extends Component {
 
 // PropTypes ------------------------------------------------------------------
 SubredditScraper.propTypes = {
-  subreddits: PropTypes.array.isRequired
+  subreddits: PropTypes.array.isRequired                                        // Require subreddits state in prop type
 }
 // ----------------------------------------------------------------------------
 
 // Map Props ------------------------------------------------------------------
-function mapStateToProps(state) {
-  const { subreddits } = state                                                  // Declares state variables to const for props
+function mapStateToProps(state) {                                               // Map state to props for use in class
+  const { subreddits } = state                                                  // Declare subreddits state to props
   return { subreddits }
 }
 // ----------------------------------------------------------------------------

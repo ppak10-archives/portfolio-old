@@ -11,4 +11,23 @@
 .form-control {
   margin: 0.5em;
 }
+
+.scroll-container {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  height: 60vh;
+  width: 100%;
+  backface-visibility: hidden;
+  will-change: overflow;
+}
+
+.scroll {
+  overflow: auto;
+  height: auto;
+}
+
+.scroll::-webkit-scrollbar {
+  display: none;
+}
 // ----------------------------------------------------------------------------
