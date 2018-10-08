@@ -28,9 +28,9 @@ import Posts from '../components/Posts'
 class SubredditScraper extends Component {
   constructor(props) {
     super(props)
-    this.handleChange = this.handleChange.bind(this)                            // Binds handle change function to class
-    this.handleRefreshClick = this.handleRefreshClick.bind(this)                // Binds handle refresh click function to class
-    this.handleHideClick = this.handleHideClick.bind(this)                      // Binds handle hide click function to class
+    this.handleChange = this.handleChange.bind(this)                            // Bind handle change function to this
+    this.handleRefreshClick = this.handleRefreshClick.bind(this)                // Bind handle refresh click function to this
+    this.handleHideClick = this.handleHideClick.bind(this)                      // Bind handle hide click function to this
   }
 
   componentDidMount() {
@@ -78,6 +78,8 @@ class SubredditScraper extends Component {
     return (
 
       <div>
+
+        { /* Subreddit Title */ }
         <h2>
           <button className = "btn btn-warning" onClick = {
             this.handleHideClick
@@ -99,17 +101,25 @@ class SubredditScraper extends Component {
               this.handleRefreshClick
             }>
               Refresh
-            </button> }
+            </button>
+          }
         </p>
 
+        { /* Fetching */ }
         { isFetching && posts.length === 0 && <h2>Loading...</h2> }
+
+        { /* Empty Fetch */ }
         { !isFetching && posts.length === 0 && <h2>Empty.</h2> }
+
+        { /* Fetched Posts */ }
         { posts.length > 0 &&
           <div className = "scroll-container" style = {
             { opacity: isFetching ? 0.5 : 1 }
           }>
             <Posts posts={ posts } />
-          </div> }
+          </div>
+        }
+
       </div>
     )
   }
