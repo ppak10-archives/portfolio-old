@@ -32,14 +32,14 @@ class SubredditScraper extends Component {
   }
 
   componentDidMount() {
-    const { dispatch, selectedSubreddit } = this.props
-    dispatch(fetchPostsIfNeeded(selectedSubreddit))
+    const { dispatch, subredditName } = this.props
+    dispatch(fetchPostsIfNeeded(subredditName))
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.selectedSubreddit !== prevProps.selectedSubreddit) {
-      const { dispatch, selectedSubreddit } = this.props
-      dispatch(fetchPostsIfNeeded(selectedSubreddit))
+    if (this.props.subredditName !== prevProps.subredditName) {
+      const { dispatch, subredditName } = this.props
+      dispatch(fetchPostsIfNeeded(subredditName))
     }
   }
 
@@ -51,53 +51,47 @@ class SubredditScraper extends Component {
   handleRefreshClick(e) {
     e.preventDefault()
 
-    const { dispatch, selectedSubreddit } = this.props
-    dispatch(invalidateSubreddit(selectedSubreddit))
-    dispatch(fetchPostsIfNeeded(selectedSubreddit))
+    const { dispatch, subredditName } = this.props
+    dispatch(invalidateSubreddit(subredditName))
+    dispatch(fetchPostsIfNeeded(subredditName))
   }
 
   render() {
 
     const {
+      subredditName,
       subreddits,
-      selectedSubreddit,
       posts,
       isFetching,
       lastUpdated
     } = this.props
 
     return (
-      <div className = "row">
-        { subreddits.map(subreddit =>
-          <div className = "col">
-            { /* Subreddit Picker */ }
-            <Picker
-              value = { selectedSubreddit }
-              onChange = { this.handleChange }
-              options = { subreddits }
-            />
 
-            { /* Fetch Success */ }
-            <p>
-              {lastUpdated &&
-                <span>
-                  Last updated at { new Date(lastUpdated).toLocaleTimeString() }.
-                  {' '}
-                </span>}
-              {!isFetching &&
-                <button onClick = { this.handleRefreshClick }>
-                  Refresh
-                </button>}
-            </p>
+      <div>
+        <h1>/r/{ subredditName }</h1>
 
-            {isFetching && posts.length === 0 && <h2>Loading...</h2>}
-            {!isFetching && posts.length === 0 && <h2>Empty.</h2>}
-            {posts.length > 0 &&
-              <div style={{ opacity: isFetching ? 0.5 : 1 }}>
-                <Posts posts={posts} />
-              </div>}
-          </div>
-        ) }
+        { /* Fetch Success */ }
+        <p>
+          { lastUpdated &&
+            <span>
+              Last updated at { new Date(lastUpdated).toLocaleTimeString() }.
+              {' '}
+            </span> }
+          { !isFetching &&
+            <button className = "btn btn-info" onClick = {
+              this.handleRefreshClick
+            }>
+              Refresh
+            </button> }
+        </p>
+
+        { isFetching && posts.length === 0 && <h2>Loading...</h2> }
+        { !isFetching && posts.length === 0 && <h2>Empty.</h2> }
+        { posts.length > 0 &&
+          <div style={{ opacity: isFetching ? 0.5 : 1 }}>
+            <Posts posts={ posts } />
+          </div> }
       </div>
     )
   }
@@ -106,8 +100,8 @@ class SubredditScraper extends Component {
 
 // PropTypes ------------------------------------------------------------------
 SubredditScraper.propTypes = {
+  subredditName: PropTypes.string.isRequired,
   subreddits: PropTypes.array.isRequired,
-  selectedSubreddit: PropTypes.string.isRequired,
   posts: PropTypes.array.isRequired,
   isFetching: PropTypes.bool.isRequired,
   lastUpdated: PropTypes.number,
@@ -116,18 +110,13 @@ SubredditScraper.propTypes = {
 // ----------------------------------------------------------------------------
 
 // Map Props ------------------------------------------------------------------
-function mapStateToProps(state) {
-  let { selectedSubreddit } = state                                             // Let variable to allow for reassignment
+function mapStateToProps(state, ownProps) {
   const { subreddits, postsBySubreddit } = state                                // Declares state variables to const for props
-  if (selectedSubreddit === ""){                                                // If selected subreddit is empty string
-    selectedSubreddit=subreddits[0].name                                        // Set selected subreddit to default state
-  }                                                                             // Note: does not change the state variable
   const { isFetching, lastUpdated, items: posts } =
-    postsBySubreddit[selectedSubreddit] || { isFetching: true, items: [] }
+    postsBySubreddit[ownProps.subredditName] || { isFetching: true, items: [] }
 
   return {
     subreddits,
-    selectedSubreddit,
     posts,
     isFetching,
     lastUpdated

@@ -14,7 +14,7 @@ import SubredditFilter from '../components/SubredditFilter';
 // Container Imports ----------------------------------------------------------
 import AddSubreddit from '../containers/AddSubreddit';
 import VisibleSubredditList from '../containers/VisibleSubredditList';
-import SubredditScraper from '../containers/SubredditScraper';
+import Subreddits from '../containers/Subreddits';
 // ----------------------------------------------------------------------------
 
 // Redux Todo Page ------------------------------------------------------------
@@ -23,7 +23,7 @@ const Reddit = () => (
     <AddSubreddit />
     <VisibleSubredditList />
     <SubredditFilter />
-    <SubredditScraper />
+    <Subreddits />
   </div>
 )
 // ----------------------------------------------------------------------------
