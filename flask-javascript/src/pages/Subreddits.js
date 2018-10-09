@@ -14,20 +14,20 @@ import SubredditFilter from '../components/SubredditFilter';
 // Container Imports ----------------------------------------------------------
 import AddSubreddit from '../containers/AddSubreddit';
 import VisibleSubredditList from '../containers/VisibleSubredditList';
-import Subreddits from '../containers/Subreddits';
+import MultiSubreddits from '../containers/MultiSubreddits';
 // ----------------------------------------------------------------------------
 
 // Redux Todo Page ------------------------------------------------------------
-const Reddit = () => (
+const Subreddits = () => (
   <div className = "col">
     <AddSubreddit />
     <VisibleSubredditList />
     <SubredditFilter />
-    <Subreddits />
+    <MultiSubreddits />
   </div>
 )
 // ----------------------------------------------------------------------------
 
 // Component Export -----------------------------------------------------------
-export default Reddit;
+export default Subreddits;
 // ----------------------------------------------------------------------------

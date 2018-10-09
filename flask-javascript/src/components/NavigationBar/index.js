@@ -1,4 +1,5 @@
 // ----------------------------------------------------------------------------
+// Original Creator: Bootstrap
 // File Developer: Peter Pak
 // Description: Component for navigation bar
 // ----------------------------------------------------------------------------
@@ -53,13 +54,14 @@ const NavigationBar = () => (
             <h5 className="col">Redux</h5>
             <div className="dropdown-divider"></div>
 
-            { /* Reddit Example */ }
-            <NavLink className = "dropdown-item nav-link" to = "/reddit">
-              Reddit
+            { /* Subreddits Example */ }
+            <NavLink className = "dropdown-item nav-link" to = "/subreddits">
+              Subreddits
             </NavLink>
           </div>
         </li>
 
+        { /* About Page */ }
         <li className = "nav-item">
           <NavLink className = "nav-link" to = "/about">About</NavLink>
         </li>

@@ -12,19 +12,19 @@ import FilterLink from '../../containers/FilterLink';
 // ----------------------------------------------------------------------------
 
 // Action Import --------------------------------------------------------------
-import { VisibilityFilters } from '../../actions';
+import { SubredditVisibilityFilters } from '../../actions';
 // ----------------------------------------------------------------------------
 
 // Footer Component -----------------------------------------------------------
 const SubredditFilter = () => (
   <div>
-    <FilterLink filter = { VisibilityFilters.SHOW_ALL }>
+    <FilterLink filter = { SubredditVisibilityFilters.SHOW_ALL_SUBREDDITS }>
       All
     </FilterLink>
-    <FilterLink filter = { VisibilityFilters.SHOW_VIEWING }>
+    <FilterLink filter = { SubredditVisibilityFilters.SHOW_VIEWING }>
       Viewing
     </FilterLink>
-    <FilterLink filter = { VisibilityFilters.SHOW_HIDING }>
+    <FilterLink filter = { SubredditVisibilityFilters.SHOW_HIDING }>
       Hiding
     </FilterLink>
   </div>

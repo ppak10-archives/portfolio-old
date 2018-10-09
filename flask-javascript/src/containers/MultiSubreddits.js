@@ -1,7 +1,7 @@
 // ----------------------------------------------------------------------------
 // Original Creator: Redux
 // File Developer: Peter Pak
-// Description: Component for displaying subreddits
+// Description: Container for displaying multiple subreddits
 // ----------------------------------------------------------------------------
 
 // Package Imports ------------------------------------------------------------
@@ -15,7 +15,7 @@ import SubredditScraper from './SubredditScraper';
 // ----------------------------------------------------------------------------
 
 // Subreddit Scraper Container ------------------------------------------------
-class Subreddits extends Component {
+class MultiSubreddits extends Component {
 
   render() {
 
@@ -55,5 +55,5 @@ function mapStateToProps(state) {                                               
 // ----------------------------------------------------------------------------
 
 // Component Export -----------------------------------------------------------
-export default connect(mapStateToProps) (Subreddits)
+export default connect(mapStateToProps) (MultiSubreddits)
 // ----------------------------------------------------------------------------

@@ -12,7 +12,7 @@ import { connect } from 'react-redux';
 // Page Imports ---------------------------------------------------------------
 import Welcome from '../pages/Welcome';
 import Home from '../pages/Home';
-import Reddit from '../pages/Reddit';
+import Subreddits from '../pages/Subreddits';
 import About from '../pages/About';
 // ----------------------------------------------------------------------------
 
@@ -26,7 +26,7 @@ const App = () => (
     <NavigationBar />
     <Route exact path = "/" component = { Welcome } />
     <Route path = "/home" component = { Home } />
-    <Route path = "/reddit" component = { Reddit } />    
+    <Route path = "/subreddits" component = { Subreddits } />
     <Route path = "/about" component = { About } />
   </div>
 )

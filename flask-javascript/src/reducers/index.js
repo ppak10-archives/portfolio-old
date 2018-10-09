@@ -10,7 +10,7 @@ import { combineReducers } from 'redux';
 // Reducer Imports ------------------------------------------------------------
 import test from './test.js';
 import subreddits from './subreddits';
-import visibilityFilter from './visibilityFilter.js';
+import subredditVisibilityFilter from './subredditVisibilityFilter.js';
 import postsBySubreddit from './postsBySubreddit.js';
 import selectedSubreddit from './selectedSubreddit.js';
 // ----------------------------------------------------------------------------
@@ -21,14 +21,14 @@ import selectedSubreddit from './selectedSubreddit.js';
 // {
 //  test: {},
 //  subreddits: [],
-//  visibilityFilter: 'SHOW_ALL',
+//  subredditVisibilityFilter: 'SHOW_ALL_SUBREDDITS',
 //  etc...
 // }
 
 const rootReducer = combineReducers({
   test,
   subreddits,
-  visibilityFilter,
+  subredditVisibilityFilter,
   postsBySubreddit,
   selectedSubreddit
 })

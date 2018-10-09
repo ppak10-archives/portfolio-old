@@ -9,7 +9,7 @@ import { connect } from 'react-redux'
 // ----------------------------------------------------------------------------
 
 // Actions Import -------------------------------------------------------------
-import { toggleSubreddit , VisibilityFilters } from '../actions'                // Imports actions to dispatch later
+import { toggleSubreddit , SubredditVisibilityFilters } from '../actions'       // Imports actions to dispatch later
 // ----------------------------------------------------------------------------
 
 // Component Imports ----------------------------------------------------------
@@ -19,11 +19,11 @@ import SubredditList from '../components/SubredditList'
 // Visible Subreddit List Container -------------------------------------------
 const getVisibleSubreddits = (subreddits, filter) => {
   switch (filter) {
-    case VisibilityFilters.SHOW_ALL:
+    case SubredditVisibilityFilters.SHOW_ALL_SUBREDDITS:
       return subreddits
-    case VisibilityFilters.SHOW_VIEWING:
+    case SubredditVisibilityFilters.SHOW_VIEWING:
       return subreddits.filter(t => t.viewing)
-    case VisibilityFilters.SHOW_HIDING:
+    case SubredditVisibilityFilters.SHOW_HIDING:
       return subreddits.filter(t => !t.viewing)
     default:
       throw new Error('Unknown filter: ' + filter)
@@ -33,7 +33,8 @@ const getVisibleSubreddits = (subreddits, filter) => {
 
 // Map to Props ---------------------------------------------------------------
 const mapStateToProps = state => ({
-  subreddits: getVisibleSubreddits(state.subreddits, state.visibilityFilter)
+  subreddits: getVisibleSubreddits(state.subreddits,
+     state.subredditVisibilityFilter)
 })
 
 const mapDispatchToProps = dispatch => ({

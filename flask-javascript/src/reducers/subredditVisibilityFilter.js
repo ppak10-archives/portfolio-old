@@ -5,13 +5,14 @@
 // ----------------------------------------------------------------------------
 
 // Action Import --------------------------------------------------------------
-import { VisibilityFilters } from '../actions/index.js'
+import { SubredditVisibilityFilters } from '../actions/index.js'
 // ----------------------------------------------------------------------------
 
-// Visibility Filter Reducer --------------------------------------------------
-const visibilityFilter = (state = VisibilityFilters.SHOW_ALL, action) => {
+// Subreddit Visibility Filter Reducer ----------------------------------------
+const subredditVisibilityFilter =
+  (state = SubredditVisibilityFilters.SHOW_ALL_SUBREDDITS, action) => {
   switch (action.type) {
-    case 'SET_VISIBILITY_FILTER':
+    case 'SET_SUBREDDIT_VISIBILITY_FILTER':
       return action.filter
     default:
       return state
@@ -20,5 +21,5 @@ const visibilityFilter = (state = VisibilityFilters.SHOW_ALL, action) => {
 // ----------------------------------------------------------------------------
 
 // Reducer Export -------------------------------------------------------------
-export default visibilityFilter
+export default subredditVisibilityFilter
 // ----------------------------------------------------------------------------

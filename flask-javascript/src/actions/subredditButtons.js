@@ -13,8 +13,8 @@ export const addSubredditButton = subredditName => ({
   subredditName
 })
 
-export const setVisibilityFilter = filter => ({
-  type: 'SET_VISIBILITY_FILTER',
+export const setSubredditVisibilityFilter = filter => ({
+  type: 'SET_SUBREDDIT_VISIBILITY_FILTER',
   filter
 })
 
@@ -23,8 +23,8 @@ export const toggleSubreddit = id => ({
   id
 })
 
-export const VisibilityFilters = {
-  SHOW_ALL: 'SHOW_ALL',
+export const SubredditVisibilityFilters = {
+  SHOW_ALL_SUBREDDITS: 'SHOW_ALL_SUBREDDITS',
   SHOW_VIEWING: 'SHOW_VIEWING',
   SHOW_HIDING: 'SHOW_HIDING'
 }
