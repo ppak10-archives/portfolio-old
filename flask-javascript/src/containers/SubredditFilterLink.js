@@ -1,28 +1,28 @@
 // ----------------------------------------------------------------------------
 // Original Creator: Redux
 // File Developer: Peter Pak
-// Description: Script for filter link component
+// Description: Container for Redux subreddit filter link
 // ----------------------------------------------------------------------------
 
-// Module Import --------------------------------------------------------------
-import { connect } from 'react-redux';
+// Package Imports ------------------------------------------------------------
+import { connect } from 'react-redux'
 // ----------------------------------------------------------------------------
 
 // Action Import --------------------------------------------------------------
-import { setVisibilityFilter } from '../actions';
+import { setSubredditVisibilityFilter } from '../actions/index'
 // ----------------------------------------------------------------------------
 
-// Component Import -----------------------------------------------------------
-import Link from '../components/Link';
+// Component Imports ----------------------------------------------------------
+import Link from '../components/Link'
 // ----------------------------------------------------------------------------
 
 // Map to Props ---------------------------------------------------------------
 const mapStateToProps = (state, ownProps) => ({
-  active:ownProps.filter === state.visibilityFilter
+  active: ownProps.filter === state.subredditVisibilityFilter
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  onClick: () => dispatch(setVisibilityFilter(ownProps.filter))
+  onClick: () => dispatch(setSubredditVisibilityFilter(ownProps.filter))
 })
 // ----------------------------------------------------------------------------
 

@@ -8,11 +8,13 @@ import { combineReducers } from 'redux';
 // ----------------------------------------------------------------------------
 
 // Reducer Imports ------------------------------------------------------------
-import test from './test.js';
+import test from './test';
+import todos from './todos';
+import visibilityFilter from './visibilityFilter';
 import subreddits from './subreddits';
-import subredditVisibilityFilter from './subredditVisibilityFilter.js';
-import postsBySubreddit from './postsBySubreddit.js';
-import selectedSubreddit from './selectedSubreddit.js';
+import subredditVisibilityFilter from './subredditVisibilityFilter';
+import postsBySubreddit from './postsBySubreddit';
+import selectedSubreddit from './selectedSubreddit';
 // ----------------------------------------------------------------------------
 
 // Root Reducer ---------------------------------------------------------------
@@ -27,6 +29,8 @@ import selectedSubreddit from './selectedSubreddit.js';
 
 const rootReducer = combineReducers({
   test,
+  todos,
+  visibilityFilter,
   subreddits,
   subredditVisibilityFilter,
   postsBySubreddit,

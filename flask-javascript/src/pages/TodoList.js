@@ -1,33 +1,31 @@
 // ----------------------------------------------------------------------------
 // File Developer: Peter Pak
-// Description: Component layout for Redux subreddits example page
+// Description: Component layout for Redux todo list example page
 // ----------------------------------------------------------------------------
 
 // Module Imports -------------------------------------------------------------
 import React from 'react';
 // ----------------------------------------------------------------------------
 
-// Component Imports ----------------------------------------------------------
-import SubredditFilter from '../components/SubredditFilter';
+// Component Import -----------------------------------------------------------
+import Footer from '../components/Footer';
 // ----------------------------------------------------------------------------
 
 // Container Imports ----------------------------------------------------------
-import AddSubreddit from '../containers/AddSubreddit';
-import VisibleSubredditList from '../containers/VisibleSubredditList';
-import MultiSubreddits from '../containers/MultiSubreddits';
+import AddTodo from '../containers/AddTodo';
+import VisibleTodoList from '../containers/VisibleTodoList';
 // ----------------------------------------------------------------------------
 
-// Redux Todo Page ------------------------------------------------------------
-const Subreddits = () => (
+// Todo List Example Page -----------------------------------------------------
+const TodoList = () => (
   <div className = "col">
-    <AddSubreddit />
-    <VisibleSubredditList />
-    <SubredditFilter />
-    <MultiSubreddits />
+    <AddTodo />
+    <VisibleTodoList />
+    <Footer />
   </div>
 )
 // ----------------------------------------------------------------------------
 
 // Component Export -----------------------------------------------------------
-export default Subreddits;
+export default TodoList
 // ----------------------------------------------------------------------------

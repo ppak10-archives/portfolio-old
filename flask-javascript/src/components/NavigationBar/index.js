@@ -54,6 +54,11 @@ const NavigationBar = () => (
             <h5 className="col">Redux</h5>
             <div className="dropdown-divider"></div>
 
+            { /* Todo List Example */ }
+            <NavLink className = "dropdown-item nav-link" to = "/todolist">
+              Todo List
+            </NavLink>
+
             { /* Subreddits Example */ }
             <NavLink className = "dropdown-item nav-link" to = "/subreddits">
               Subreddits

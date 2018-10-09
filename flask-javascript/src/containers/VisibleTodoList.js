@@ -1,28 +1,44 @@
 // ----------------------------------------------------------------------------
 // Original Creator: Redux
 // File Developer: Peter Pak
-// Description: Script for filter link component
+// Description: Container for visible todo list
 // ----------------------------------------------------------------------------
 
 // Module Import --------------------------------------------------------------
 import { connect } from 'react-redux';
 // ----------------------------------------------------------------------------
 
-// Action Import --------------------------------------------------------------
-import { setVisibilityFilter } from '../actions';
+// Action Imports -------------------------------------------------------------
+import { toggleTodo } from '../actions';
+import { VisibilityFilters } from '../actions';
 // ----------------------------------------------------------------------------
 
 // Component Import -----------------------------------------------------------
-import Link from '../components/Link';
+import TodoList from '../components/TodoList'
+// ----------------------------------------------------------------------------
+
+// Visible Todo List Container ------------------------------------------------
+const getVisibleTodos = (todos, filter) => {
+  switch (filter) {
+    case VisibilityFilters.SHOW_ALL:
+      return todos
+    case VisibilityFilters.SHOW_COMPLETED:
+      return todos.filter(t => t.completed)
+    case VisibilityFilters.SHOW_ACTIVE:
+      return todos.filter(t => !t.completed)
+    default:
+      throw new Error('Unknown filter: ' + filter)
+  }
+}
 // ----------------------------------------------------------------------------
 
 // Map to Props ---------------------------------------------------------------
-const mapStateToProps = (state, ownProps) => ({
-  active:ownProps.filter === state.visibilityFilter
+const mapStateToProps = state => ({
+  todos: getVisibleTodos(state.todos, state.visibilityFilter)
 })
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
-  onClick: () => dispatch(setVisibilityFilter(ownProps.filter))
+const mapDispatchToProps = dispatch => ({
+  toggleTodo: id => dispatch(toggleTodo(id))
 })
 // ----------------------------------------------------------------------------
 
@@ -30,5 +46,5 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Link)
+)(TodoList)
 // ----------------------------------------------------------------------------

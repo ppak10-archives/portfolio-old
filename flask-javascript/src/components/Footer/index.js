@@ -1,39 +1,38 @@
 // ----------------------------------------------------------------------------
+// Original Creator: Redux
 // File Developer: Peter Pak
-// Description: Component for subreddit filter
+// Description: Component for todo list footer
 // ----------------------------------------------------------------------------
 
-// Module Imports -------------------------------------------------------------
+// Module Import --------------------------------------------------------------
 import React from 'react';
 // ----------------------------------------------------------------------------
 
-// Container Imports ----------------------------------------------------------
-import SubredditFilterLink from '../../containers/SubredditFilterLink';
+// Container Import -----------------------------------------------------------
+import FilterLink from '../../containers/FilterLink';
 // ----------------------------------------------------------------------------
 
 // Action Import --------------------------------------------------------------
-import { SubredditVisibilityFilters } from '../../actions';
+import { VisibilityFilters } from '../../actions';
 // ----------------------------------------------------------------------------
 
 // Footer Component -----------------------------------------------------------
-const SubredditFilter = () => (
+const Footer = () => (
   <div>
-    <SubredditFilterLink filter = {
-      SubredditVisibilityFilters.SHOW_ALL_SUBREDDITS }>
+    <span>Show: </span>
+    <FilterLink filter = { VisibilityFilters.SHOW_ALL}>
       All
-    </SubredditFilterLink>
-    <SubredditFilterLink filter = {
-      SubredditVisibilityFilters.SHOW_VIEWING }>
-      Viewing
-    </SubredditFilterLink>
-    <SubredditFilterLink filter = {
-      SubredditVisibilityFilters.SHOW_HIDING }>
-      Hiding
-    </SubredditFilterLink>
+    </FilterLink>
+    <FilterLink filter = { VisibilityFilters.SHOW_ACTIVE}>
+      Active
+    </FilterLink>
+    <FilterLink filter = { VisibilityFilters.SHOW_COMPLETED}>
+      Completed
+    </FilterLink>
   </div>
 )
 // ----------------------------------------------------------------------------
 
 // Component Export -----------------------------------------------------------
-export default SubredditFilter
+export default Footer
 // ----------------------------------------------------------------------------
