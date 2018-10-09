@@ -18,7 +18,7 @@ import Link from '../components/Link';
 
 // Map to Props ---------------------------------------------------------------
 const mapStateToProps = (state, ownProps) => ({
-  active:ownProps.filter === state.visibilityFilter
+  active: ownProps.filter === state.visibilityFilter
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

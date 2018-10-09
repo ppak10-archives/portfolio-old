@@ -128,7 +128,11 @@ class SubredditScraper extends Component {
 
 // PropTypes ------------------------------------------------------------------
 SubredditScraper.propTypes = {
-  subreddit: PropTypes.object.isRequired,
+  subreddit: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    viewing: PropTypes.bool.isRequired,
+    name: PropTypes.string.isRequired
+  }).isRequired,
   subreddits: PropTypes.array.isRequired,
   posts: PropTypes.array.isRequired,
   isFetching: PropTypes.bool.isRequired,

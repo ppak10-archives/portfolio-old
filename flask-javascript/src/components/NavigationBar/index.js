@@ -55,12 +55,12 @@ const NavigationBar = () => (
             <div className="dropdown-divider"></div>
 
             { /* Todo List Example */ }
-            <NavLink className = "dropdown-item nav-link" to = "/todolist">
+            <NavLink className = "dropdown-item" to = "/todolist">
               Todo List
             </NavLink>
 
             { /* Subreddits Example */ }
-            <NavLink className = "dropdown-item nav-link" to = "/subreddits">
+            <NavLink className = "dropdown-item" to = "/subreddits">
               Subreddits
             </NavLink>
           </div>

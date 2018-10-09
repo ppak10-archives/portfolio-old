@@ -5,12 +5,14 @@
 // ----------------------------------------------------------------------------
 
 // Module Import --------------------------------------------------------------
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react'                                                       // Import react module for component
+import PropTypes from 'prop-types'                                              // Import prop types for checks
 // ----------------------------------------------------------------------------
 
 // Todo Component -------------------------------------------------------------
-const Todo = ({ onClick, completed, text }) => (
+const Todo = ({ onClick, completed, text }) => (                                // Todo component to hold single todo item
+
+  /* Todo Item */
   <li onClick = { onClick } style = { {
     textDecoration: completed ? 'line-through' : 'none'
   } }>
@@ -20,13 +22,13 @@ const Todo = ({ onClick, completed, text }) => (
 // ----------------------------------------------------------------------------
 
 // PropTypes ------------------------------------------------------------------
-Todo.propTypes = {
-  onClick: PropTypes.func.isRequired,
-  completed: PropTypes.bool.isRequired,
-  text: PropTypes.string.isRequired
+Todo.propTypes = {                                                              // Prop types check for todo component
+  onClick: PropTypes.func.isRequired,                                           // On click prop must be a function
+  completed: PropTypes.bool.isRequired,                                         // Completed prop must be a boolean
+  text: PropTypes.string.isRequired                                             // Text prop must be a string
 }
 // ----------------------------------------------------------------------------
 
 // Component Export -----------------------------------------------------------
-export default Todo
+export default Todo                                                             // Export todo component
 // ----------------------------------------------------------------------------

@@ -4,17 +4,17 @@
 // ----------------------------------------------------------------------------
 
 // Module Imports -------------------------------------------------------------
-import { combineReducers } from 'redux';
+import { combineReducers } from 'redux';                                        // Import combine reducers module
 // ----------------------------------------------------------------------------
 
 // Reducer Imports ------------------------------------------------------------
-import test from './test';
-import todos from './todos';
-import visibilityFilter from './visibilityFilter';
-import subreddits from './subreddits';
-import subredditVisibilityFilter from './subredditVisibilityFilter';
-import postsBySubreddit from './postsBySubreddit';
-import selectedSubreddit from './selectedSubreddit';
+import test from './test';                                                      // Import test reducer
+import todos from './todos';                                                    // Import todos reducer
+import visibilityFilter from './visibilityFilter';                              // Import visibility filter reducer
+import subreddits from './subreddits';                                          // Import subreddits reducer
+import subredditVisibilityFilter from './subredditVisibilityFilter';            // Import subreddit visibility filter reducer
+import postsBySubreddit from './postsBySubreddit';                              // Import posts by subreddit reducer
+import selectedSubreddit from './selectedSubreddit';                            // Import selected subreddit reducer
 // ----------------------------------------------------------------------------
 
 // Root Reducer ---------------------------------------------------------------
@@ -39,5 +39,5 @@ const rootReducer = combineReducers({
 // ----------------------------------------------------------------------------
 
 // Root Reducer Export --------------------------------------------------------
-export default rootReducer
+export default rootReducer                                                      // Export root reducer 
 // ----------------------------------------------------------------------------

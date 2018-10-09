@@ -5,27 +5,33 @@
 // ----------------------------------------------------------------------------
 
 // Module Import --------------------------------------------------------------
-import React from 'react';
+import React from 'react';                                                      // Import react for component
 // ----------------------------------------------------------------------------
 
 // Container Import -----------------------------------------------------------
-import FilterLink from '../../containers/FilterLink';
+import FilterLink from '../../containers/FilterLink';                           // Import filter link container
 // ----------------------------------------------------------------------------
 
 // Action Import --------------------------------------------------------------
-import { VisibilityFilters } from '../../actions';
+import { VisibilityFilters } from '../../actions';                              // Import visibility filter types
 // ----------------------------------------------------------------------------
 
 // Footer Component -----------------------------------------------------------
-const Footer = () => (
+const Footer = () => (                                                          // Create stateless filter component
   <div>
     <span>Show: </span>
+
+    { /* Show All Todos Filter */ }
     <FilterLink filter = { VisibilityFilters.SHOW_ALL}>
       All
     </FilterLink>
+
+    { /* Show Active Todos Filter */ }
     <FilterLink filter = { VisibilityFilters.SHOW_ACTIVE}>
       Active
     </FilterLink>
+
+    { /* Show Completed Todos Filter */ }
     <FilterLink filter = { VisibilityFilters.SHOW_COMPLETED}>
       Completed
     </FilterLink>
@@ -34,5 +40,5 @@ const Footer = () => (
 // ----------------------------------------------------------------------------
 
 // Component Export -----------------------------------------------------------
-export default Footer
+export default Footer                                                           // Export footer component
 // ----------------------------------------------------------------------------
