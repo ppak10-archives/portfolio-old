@@ -12,6 +12,7 @@ import { connect } from 'react-redux';                                          
 // Page Imports ---------------------------------------------------------------
 import Welcome from '../pages/Welcome';                                         // Import welcome page component
 import Home from '../pages/Home';                                               // Import home page component
+import TicTacToe from '../pages/TicTacToe';                                     // Import tic tac toe page component
 import TodoList from '../pages/TodoList';                                       // Import todo list page component
 import Subreddits from '../pages/Subreddits';                                   // Import subreddits page component
 import About from '../pages/About';                                             // Import about page component
@@ -31,6 +32,7 @@ const App = () => (                                                             
     { /* Page Routes */ }
     <Route exact path = "/" component = { Welcome } />
     <Route path = "/home" component = { Home } />
+    <Route path = "/tictactoe" component = { TicTacToe }/>
     <Route path = "/todolist" component = { TodoList } />
     <Route path = "/subreddits" component = { Subreddits } />
     <Route path = "/about" component = { About } />

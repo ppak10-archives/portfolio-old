@@ -1,21 +1,21 @@
 // ----------------------------------------------------------------------------
+// Original Creator: React
 // File Developer: Peter Pak
-// Description: Component layout for home page
+// Description: Component for tic tac toe square
 // ----------------------------------------------------------------------------
 
-// Module Imports -------------------------------------------------------------
-import React from 'react';
+// Module Import --------------------------------------------------------------
+import React from 'react'
 // ----------------------------------------------------------------------------
 
-// Home Page ------------------------------------------------------------------
-const Home = () => (
-  <div className = "col">
-    <h1>Home</h1>
-    <p>Home page uses React</p>
-  </div>
+// Square Component -----------------------------------------------------------
+const Square = () => (
+  <button className = "square">
+    {/* Todo */}
+  </button>
 )
 // ----------------------------------------------------------------------------
 
 // Component Export -----------------------------------------------------------
-export default Home
+export default Square
 // ----------------------------------------------------------------------------

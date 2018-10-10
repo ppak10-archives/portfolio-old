@@ -47,8 +47,11 @@ const NavigationBar = () => (
             { /* React Examples Divider */ }
             <h5 className="col">React</h5>
             <div className="dropdown-divider"></div>
-            <a className="dropdown-item" href="#">Action</a>
-            <a className="dropdown-item" href="#">Another action</a>
+
+            { /* Tic Tac Toe Example */ }
+            <NavLink className = "dropdown-item" to = "/tictactoe">
+              Tic Tac Toe
+            </NavLink>
 
             { /* Redux Examples Divider */ }
             <h5 className="col">Redux</h5>

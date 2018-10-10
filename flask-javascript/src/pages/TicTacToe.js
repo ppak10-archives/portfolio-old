@@ -1,21 +1,26 @@
 // ----------------------------------------------------------------------------
 // File Developer: Peter Pak
-// Description: Component layout for home page
+// Description: Component layout for React tic tac toe example page
 // ----------------------------------------------------------------------------
 
 // Module Imports -------------------------------------------------------------
 import React from 'react';
 // ----------------------------------------------------------------------------
 
-// Home Page ------------------------------------------------------------------
-const Home = () => (
+// Container Import -----------------------------------------------------------
+import TicTacToeGame from '../containers/TicTacToeGame';
+// ----------------------------------------------------------------------------
+
+// Tic Tac Toe Example Page ---------------------------------------------------
+const TicTacToe = () => (
   <div className = "col">
-    <h1>Home</h1>
-    <p>Home page uses React</p>
+    <h1>Tic Tac Toe</h1>
+    <p>React basic tutorial example</p>
+    <TicTacToeGame />
   </div>
 )
 // ----------------------------------------------------------------------------
 
 // Component Export -----------------------------------------------------------
-export default Home
+export default TicTacToe;
 // ----------------------------------------------------------------------------
