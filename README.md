@@ -1,9 +1,9 @@
-# Flask-JavaScript-Notes
-###### Webserver built using [Python](https://www.python.org) [Flask](http://flask.pocoo.org) web-framework for back-end development while using [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) [Node](https://nodejs.org/en/) modules such as [React](http://reactjs.org) and [Redux](https://redux.js.org) for front-end development.
+# Full-Stack-Notes
+###### Notes for building web server using a [Python](https://www.python.org) web-framework, [Flask](http://flask.pocoo.org), for back-end development while using [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) [Node](https://nodejs.org/en/) modules such as [React](http://reactjs.org), [Redux](https://redux.js.org), and [Webpack](https://webpack.js.org/) for front-end development.
 
 ## Getting Started
 If you haven't installed Python or Flask, refer to the [wiki](https://github.com/ppak10/Flask-JavaScript-Notes/wiki) page [here](https://github.com/ppak10/Flask-JavaScript-Notes/wiki/Getting-Started) to get started.
-Clone repository and cd into ```Flask-JavaScript-Notes``` directory and install Node modules with command:
+Clone repository and cd into ```Full-Stack-Notes``` directory and install Node modules with command:
 ```
 ./install.sh
 ```
