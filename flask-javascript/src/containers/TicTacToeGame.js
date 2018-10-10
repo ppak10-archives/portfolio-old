@@ -8,17 +8,17 @@
 import React, { Component } from 'react';
 // ----------------------------------------------------------------------------
 
-// Component Import -----------------------------------------------------------
-import Board from '../components/Board';
+// Container Import -----------------------------------------------------------
+import TicTacToeBoard from './TicTacToeBoard';
 // ----------------------------------------------------------------------------
 
-// Game Component -------------------------------------------------------------
+// Game Container -------------------------------------------------------------
 class Game extends Component {
   render() {
     return (
       <div className = "game">
         <div className = "game-board">
-          <Board />
+          <TicTacToeBoard />
         </div>
         <div className = "game-info">
           <div>{ /* status */ }</div>
@@ -30,6 +30,6 @@ class Game extends Component {
 }
 // ----------------------------------------------------------------------------
 
-// Component Export -----------------------------------------------------------
-export default Board
+// Container Export -----------------------------------------------------------
+export default Game
 // ----------------------------------------------------------------------------
