@@ -1,61 +1,32 @@
-const BundleAnalyzerPlugin =
-  require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+// ----------------------------------------------------------------------------
+// Original Creator: Martin Angelov
+// File Developer: Peter Pak
+// Description: Webpack configuration function for development and production
+// ----------------------------------------------------------------------------
 
-module.exports = {
-  mode: 'production',
-  plugins: [
-    new BundleAnalyzerPlugin()
-  ],
-  devServer:{
-    publicPath: '/dist/',                                                       // Set dev server public path same as output
-    historyApiFallback: true,                                                   // Routing requests go back to index.html
-    port: 9000                                                                  // Development server localhost port
-  },
-  entry: ['@babel/polyfill','./src'],
-  output: {
-    path: __dirname + '/server/static/dist',
-    publicPath: 'dist/',
-    filename: '[name].bundle.js',                                               // Outputs as main.bundle.js
-    chunkFilename: '[name].bundle.js'
-  },
-  resolve: {
-    extensions: ['.js', '.jsx']
-  },
-  module: {
-    rules: [
-      {
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-react'],
-            plugins: [
-              '@babel/plugin-proposal-object-rest-spread',
-              '@babel/plugin-syntax-dynamic-import'
-            ]
-          }
-        }
-      },
-      {
-        test:/\.scss$/,
-        use: [
-          { loader: 'style-loader' },                                           // inject CSS to page
-          { loader: 'css-loader' },                                             // translates CSS into CommonJS modules
-          {
-            loader: 'postcss-loader', // Run post css actions
-            options: {
-              plugins: function () { // post css plugins, can be exported to postcss.config.js
-                return [
-                  require('precss'),
-                  require('autoprefixer')
-                ];
-              }
-            }
-          },
-          { loader: 'sass-loader' }                                             // compiles Sass to CSS
-        ]
-      }
-    ]
+// Path Variables -------------------------------------------------------------
+var path = require('path');
+var BUILD_DIR = path.resolve(__dirname, './server/static/dist');
+var APP_DIR = path.resolve(__dirname, './src');
+// ----------------------------------------------------------------------------
+
+// Directory Configuration ----------------------------------------------------
+const configDirs = {
+  BUILD_DIR: BUILD_DIR,
+  APP_DIR: APP_DIR
+}
+// ----------------------------------------------------------------------------
+
+// Webpack Configuration Function ---------------------------------------------
+function buildConfig(env) {
+  if (env === 'dev' || env === 'prod') {
+    return require('./config/' + env + '.js')(configDirs);
+  } else {
+    console.log("Webpack build parameter must either be: `dev` or `prod`.")
   }
-};
+}
+// ----------------------------------------------------------------------------
+
+// Module Export --------------------------------------------------------------
+module.exports = buildConfig;
+// ----------------------------------------------------------------------------
