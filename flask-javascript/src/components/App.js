@@ -7,20 +7,36 @@
 import React from 'react';                                                      // Import react for component
 import { Route } from 'react-router-dom';                                       // Import route module from react router dom
 import { connect } from 'react-redux';                                          // Import connect module from react redux
+import Loadable from 'react-loadable';                                          // Imports module for react code splitting
+// ----------------------------------------------------------------------------
+
+// Component Imports ----------------------------------------------------------
+import NavigationBar from './NavigationBar';                                    // Import navigation bar component
 // ----------------------------------------------------------------------------
 
 // Page Imports ---------------------------------------------------------------
 import Welcome from '../pages/Welcome';                                         // Import welcome page component
 import Home from '../pages/Home';                                               // Import home page component
-import TicTacToe from '../pages/TicTacToe';                                     // Import react tic tac toe page component
-import TodoList from '../pages/TodoList';                                       // Import redux todo list page component
-import Reddit from '../pages/Reddit';                                           // Import redux reddit page component
-import Subreddits from '../pages/Subreddits';                                   // Import redux subreddits page component
 import About from '../pages/About';                                             // Import about page component
 // ----------------------------------------------------------------------------
 
-// Component Imports ----------------------------------------------------------
-import NavigationBar from './NavigationBar';                                    // Import navigation bar component
+// Dynamic Page Imports -------------------------------------------------------
+const TicTacToe = Loadable({
+  loader: () => import('../pages/TicTacToe'),                                   // Import react tic tac toe page component
+  loading: () => <div>Loading...</div>
+});
+const TodoList = Loadable({
+  loader: () => import('../pages/TodoList'),                                    // Import redux todo list page component
+  loading: () => <div>Loading...</div>
+});
+const Reddit = Loadable({
+  loader: () => import('../pages/Reddit'),                                      // Import redux reddit page component
+  loading: () => <div>Loading...</div>
+});
+const Subreddits = Loadable({
+  loader: () => import('../pages/Subreddits'),                                  // Import redux subreddits page component
+  loading: () => <div>Loading...</div>
+});
 // ----------------------------------------------------------------------------
 
 // App Component --------------------------------------------------------------
@@ -39,7 +55,7 @@ const App = () => (                                                             
     <Route path = "/subreddits" component = { Subreddits } />
     <Route path = "/about" component = { About } />
   </div>
-)
+);
 // ----------------------------------------------------------------------------
 
 // Component Export -----------------------------------------------------------

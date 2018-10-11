@@ -1,15 +1,21 @@
+const BundleAnalyzerPlugin =
+  require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
 module.exports = {
   mode: 'production',
+  plugins: [
+    new BundleAnalyzerPlugin()
+  ],
   devServer:{
-    publicPath: '/dist/',
-    historyApiFallback: true,
-    port: 9000
+    publicPath: '/dist/',                                                       // Set dev server public path same as output
+    historyApiFallback: true,                                                   // Routing requests go back to index.html
+    port: 9000                                                                  // Development server localhost port
   },
-  entry: ['@babel/polyfill','./src/index.js'],
+  entry: ['@babel/polyfill','./src'],
   output: {
     path: __dirname + '/server/static/dist',
     publicPath: 'dist/',
-    filename: '[name].bundle.js',
+    filename: '[name].bundle.js',                                               // Outputs as main.bundle.js
     chunkFilename: '[name].bundle.js'
   },
   resolve: {
