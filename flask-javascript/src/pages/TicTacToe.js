@@ -4,15 +4,15 @@
 // ----------------------------------------------------------------------------
 
 // Module Imports -------------------------------------------------------------
-import React from 'react';
+import React from 'react';                                                      // Imports react for component
 // ----------------------------------------------------------------------------
 
 // Container Import -----------------------------------------------------------
-import TicTacToeGame from '../containers/TicTacToeGame';
+import TicTacToeGame from '../containers/TicTacToeGame';                        // Imports tic tac toe game container
 // ----------------------------------------------------------------------------
 
 // Tic Tac Toe Example Page ---------------------------------------------------
-const TicTacToe = () => (
+const TicTacToe = () => (                                                       // Component for tic tac toe example page
   <div className = "col">
     <h1>Tic Tac Toe</h1>
     <p>Basic React example adapted from
@@ -28,5 +28,5 @@ const TicTacToe = () => (
 // ----------------------------------------------------------------------------
 
 // Component Export -----------------------------------------------------------
-export default TicTacToe;
+export default TicTacToe;                                                       // Export tic tac toe game component
 // ----------------------------------------------------------------------------

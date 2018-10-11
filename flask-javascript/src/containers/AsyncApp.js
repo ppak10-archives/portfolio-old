@@ -1,7 +1,7 @@
 // ----------------------------------------------------------------------------
 // Original Creator: Redux
 // File Developer: Peter Pak
-// Description: Container for asynchronous subreddit scraper
+// Description: Container for asynchronous reddit app
 // ----------------------------------------------------------------------------
 
 // Package Imports ------------------------------------------------------------
@@ -12,56 +12,54 @@ import { connect } from 'react-redux'                                           
 
 // Actions Import -------------------------------------------------------------
 import {
+  selectSubreddit,
   fetchPostsIfNeeded,
-  invalidateSubreddit,
-  toggleSubreddit
+  invalidateSubreddit
 } from '../actions'
 // ----------------------------------------------------------------------------
 
 // Component Import -----------------------------------------------------------
-import Posts from '../components/SubredditPosts'
+import Picker from '../components/Picker';
+import Posts from '../components/RedditPosts';
 // ----------------------------------------------------------------------------
 
 // Subreddit Scraper Container ------------------------------------------------
-class SubredditScraper extends Component {
+class AsyncApp extends Component {
   constructor(props) {
     super(props)
+    this.handleChange = this.handleChange.bind(this)                            // Bind handle change function to this
     this.handleRefreshClick = this.handleRefreshClick.bind(this)                // Bind handle refresh click function to this
-    this.handleHideClick = this.handleHideClick.bind(this)                      // Bind handle hide click function to this
   }
 
   componentDidMount() {
-    const { dispatch, subreddit } = this.props
-    dispatch(fetchPostsIfNeeded(subreddit.name))
+    const { dispatch, selectedSubreddit } = this.props
+    dispatch(fetchPostsIfNeeded(selectedSubreddit))
   }
 
   componentDidUpdate(prevProps) {
-    if (this.props.subreddit.name !== prevProps.subreddit.name) {
-      const { dispatch, subreddit } = this.props
-      dispatch(fetchPostsIfNeeded(subreddit.name))
+    if (this.props.selectedSubreddit !== prevProps.selectedSubreddit) {
+      const { dispatch, selectedSubreddit } = this.props
+      dispatch(fetchPostsIfNeeded(selectedSubreddit))
     }
+  }
+
+  handleChange(nextSubreddit) {
+    this.props.dispatch(selectSubreddit(nextSubreddit))
+    this.props.dispatch(fetchPostsIfNeeded(nextSubreddit))
   }
 
   handleRefreshClick(e) {
     e.preventDefault()
 
-    const { dispatch, subreddit } = this.props
-    dispatch(invalidateSubreddit(subreddit.name))
-    dispatch(fetchPostsIfNeeded(subreddit.name))
-  }
-
-  handleHideClick(e) {
-    e.preventDefault()
-
-    const { dispatch, subreddit } = this.props
-    dispatch(toggleSubreddit(subreddit.id))
+    const { dispatch, selectedSubreddit } = this.props
+    dispatch(invalidateSubreddit(selectedSubreddit))
+    dispatch(fetchPostsIfNeeded(selectedSubreddit))
   }
 
   render() {
 
     const {
-      subreddit,
-      subreddits,
+      selectedSubreddit,
       posts,
       isFetching,
       lastUpdated
@@ -71,15 +69,12 @@ class SubredditScraper extends Component {
 
       <div>
 
-        { /* Subreddit Title */ }
-        <h2>
-          <button className = "btn btn-warning" onClick = {
-            this.handleHideClick
-          }>
-            Hide
-          </button>
-          /r/{ subreddit.name }
-        </h2>
+        { /* Subreddit Picker */ }
+        <Picker
+          value = { selectedSubreddit }
+          onChange = { this.handleChange }
+          options = {['reactjs', 'frontend']}
+        />
 
         { /* Fetch Success */ }
         <p>
@@ -105,13 +100,10 @@ class SubredditScraper extends Component {
 
         { /* Fetched Posts */ }
         { posts.length > 0 &&
-          <div className = "scroll-container" style = {
-            { opacity: isFetching ? 0.5 : 1 }
-          }>
-            <Posts posts={ posts } />
+          <div style = {{ opacity: isFetching ? 0.5 : 1 }}>
+            <Posts posts = { posts } />
           </div>
         }
-
       </div>
     )
   }
@@ -119,13 +111,8 @@ class SubredditScraper extends Component {
 // ----------------------------------------------------------------------------
 
 // PropTypes ------------------------------------------------------------------
-SubredditScraper.propTypes = {
-  subreddit: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    viewing: PropTypes.bool.isRequired,
-    name: PropTypes.string.isRequired
-  }).isRequired,
-  subreddits: PropTypes.array.isRequired,
+AsyncApp.propTypes = {
+  selectedSubreddit: PropTypes.string.isRequired,
   posts: PropTypes.array.isRequired,
   isFetching: PropTypes.bool.isRequired,
   lastUpdated: PropTypes.number,
@@ -134,14 +121,14 @@ SubredditScraper.propTypes = {
 // ----------------------------------------------------------------------------
 
 // Map Props ------------------------------------------------------------------
-function mapStateToProps(state, ownProps) {
-  const { subreddits, postsBySubreddit } = state                                // Declares const state variables for props
+function mapStateToProps(state) {
+  const { selectedSubreddit, postsBySubreddit } = state                           // Declares const state variables for props
   const { isFetching, lastUpdated, items: posts } =
-    postsBySubreddit[ownProps.subreddit.name] ||
+    postsBySubreddit[selectedSubreddit] ||
       { isFetching: true, items: [] }
 
   return {
-    subreddits,
+    selectedSubreddit,
     posts,
     isFetching,
     lastUpdated
@@ -150,5 +137,5 @@ function mapStateToProps(state, ownProps) {
 // ----------------------------------------------------------------------------
 
 // Component Export -----------------------------------------------------------
-export default connect(mapStateToProps) (SubredditScraper)
+export default connect(mapStateToProps) (AsyncApp)
 // ----------------------------------------------------------------------------

@@ -1,6 +1,7 @@
 // ----------------------------------------------------------------------------
+// Original Creator: Redux
 // File Developer: Peter Pak
-// Description: Component for Redux picker
+// Description: Component for reddit subreddit picker
 // ----------------------------------------------------------------------------
 
 // Package Imports ------------------------------------------------------------
@@ -15,11 +16,11 @@ class Picker extends Component {
 
     return (
       <span>
-        <h1>{value}</h1>
-        <select onChange={e => onChange(e.target.value)} value={value}>
-          {options.map(option => (
-            <option value={option.name} key={option.name}>
-              {option.name}
+        <h1>{ value }</h1>
+        <select onChange={ e => onChange(e.target.value) } value={ value }>
+          { options.map(option => (
+            <option value={ option } key={ option }>
+              { option }
             </option>
           ))}
         </select>

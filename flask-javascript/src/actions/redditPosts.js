@@ -1,4 +1,5 @@
 // ----------------------------------------------------------------------------
+// Original Creator: Redux
 // File Developer: Peter Pak
 // Description: Script to hold Redux actions for Reddit posts
 // ----------------------------------------------------------------------------

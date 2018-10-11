@@ -62,6 +62,11 @@ const NavigationBar = () => (
               Todo List
             </NavLink>
 
+            { /* Reddit Example */ }
+            <NavLink className = "dropdown-item" to = "/reddit">
+              Reddit
+            </NavLink>
+
             { /* Subreddits Example */ }
             <NavLink className = "dropdown-item" to = "/subreddits">
               Subreddits

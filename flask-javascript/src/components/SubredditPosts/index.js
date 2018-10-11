@@ -1,7 +1,7 @@
 // ----------------------------------------------------------------------------
 // Original Creator: Redux
 // File Developer: Peter Pak
-// Description: Component for Redux posts
+// Description: Component for subreddit posts
 // ----------------------------------------------------------------------------
 
 // Package Imports ------------------------------------------------------------
@@ -9,8 +9,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 // ----------------------------------------------------------------------------
 
-// Posts Component ------------------------------------------------------------
-class Posts extends Component {
+// Subreddit Posts Component --------------------------------------------------
+class SubredditPosts extends Component {
   render() {
     return (
       <div className = "scroll" >
@@ -49,11 +49,11 @@ class Posts extends Component {
 // ----------------------------------------------------------------------------
 
 // PropTypes ------------------------------------------------------------------
-Posts.propTypes = {
+SubredditPosts.propTypes = {
   posts: PropTypes.array.isRequired
 }
 // ----------------------------------------------------------------------------
 
 // Component Export -----------------------------------------------------------
-export default Posts
+export default SubredditPosts
 // ----------------------------------------------------------------------------

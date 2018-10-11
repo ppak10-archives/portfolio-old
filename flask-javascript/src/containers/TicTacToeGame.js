@@ -13,7 +13,7 @@ import TicTacToeBoard from '../components/TicTacToeBoard';                      
 // ----------------------------------------------------------------------------
 
 // Game Container -------------------------------------------------------------
-class Game extends Component {
+class TicTacToeGame extends Component {                                         // Container for tic tac toe game
   constructor(props){                                                           // Constructor used to iniialize state
     super(props);                                                               // Super is required in subclass
     this.state = {                                                              // Lifts state to a parent component
@@ -94,7 +94,7 @@ class Game extends Component {
     if (winner) {                                                               // If the helper method returned a value
       status = 'Winner: ' + winner;                                             // Set status to winner's value
     } else {                                                                    // Else if helper method returned null
-      status = 'Current Turn: ' + (this.state.xIsNext ? 'X' : 'O');              // Sets status for displaying next player
+      status = 'Current Turn: ' + (this.state.xIsNext ? 'X' : 'O');             // Sets status for displaying next player
     }
 
     return (
@@ -116,5 +116,5 @@ class Game extends Component {
 // ----------------------------------------------------------------------------
 
 // Container Export -----------------------------------------------------------
-export default Game
+export default TicTacToeGame                                                    // Export tic tac toe game container
 // ----------------------------------------------------------------------------
