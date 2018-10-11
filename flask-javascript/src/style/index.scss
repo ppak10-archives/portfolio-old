@@ -4,10 +4,15 @@
 // ----------------------------------------------------------------------------
 
 // Module Imports -------------------------------------------------------------
-@import "~bootstrap/scss/bootstrap";                                            // Primary bootstrap import
+@import "~bootstrap/scss/bootstrap";                                            // Primary import for bootstrap 4
 // ----------------------------------------------------------------------------
 
 // Custom Style Imports -------------------------------------------------------
-@import "./elements";
-@import "./classes";
+@import "./elements";                                                           // Imports basic element styles
+@import "./classes";                                                            // Imports basic class styles
+// ----------------------------------------------------------------------------
+
+// Component Style Imports ----------------------------------------------------
+@import "../components/TicTacToeBoard/board";                                   // Imports styles for tic tac toe board
+@import "../components/TicTacToeSquare/square";                                 // Imports styles for tic tac toe square 
 // ----------------------------------------------------------------------------

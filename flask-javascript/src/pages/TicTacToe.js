@@ -15,7 +15,13 @@ import TicTacToeGame from '../containers/TicTacToeGame';
 const TicTacToe = () => (
   <div className = "col">
     <h1>Tic Tac Toe</h1>
-    <p>React basic tutorial example</p>
+    <p>Basic React example adapted from
+      <span>
+        <a target = "_blank" rel = "noopener noreferrer"
+          href = "https://reactjs.org/tutorial/tutorial.html" > tutorial
+        </a>
+      </span>
+    </p>
     <TicTacToeGame />
   </div>
 )
