@@ -1,13 +1,16 @@
 module.exports = {
   mode: 'production',
   devServer:{
+    publicPath: '/dist/',
     historyApiFallback: true,
     port: 9000
   },
-  entry: ['@babel/polyfill','./src'],
+  entry: ['@babel/polyfill','./src/index.js'],
   output: {
-    path: __dirname + '/server/static/js',
-    filename: 'bundle.js',
+    path: __dirname + '/server/static/dist',
+    publicPath: 'dist/',
+    filename: '[name].bundle.js',
+    chunkFilename: '[name].bundle.js'
   },
   resolve: {
     extensions: ['.js', '.jsx']
@@ -21,7 +24,10 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-react'],
-            plugins: ['@babel/plugin-proposal-object-rest-spread']
+            plugins: [
+              '@babel/plugin-proposal-object-rest-spread',
+              '@babel/plugin-syntax-dynamic-import'
+            ]
           }
         }
       },
