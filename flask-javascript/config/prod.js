@@ -7,6 +7,10 @@
 // Production Configuration Function ------------------------------------------
 function productionConfiguration(configDirs) {
   let prodConfig = Object.assign({}, require('./common.js')(configDirs));       // Declares common settings from common.js
+
+  // Miscellaneous Settings ---------------------------------------------------
+  prodConfig.output.publicPath = 'static/dist/';
+
   return prodConfig
 };
 // ----------------------------------------------------------------------------

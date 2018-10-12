@@ -4,7 +4,7 @@
 // Description: Webpack development configuration settings
 // ----------------------------------------------------------------------------
 
-// Module Imports -------------------------------------------------------------
+// Plugin Imports -------------------------------------------------------------
 const BundleAnalyzerPlugin =
   require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 // ----------------------------------------------------------------------------
@@ -13,7 +13,19 @@ const BundleAnalyzerPlugin =
 function developmentConfiguration(configDirs) {
   let devConfig = Object.assign({}, require('./common.js')(configDirs));        // Declares common settings from common.js
 
+  // Plugins ------------------------------------------------------------------
   devConfig.plugins.push(new BundleAnalyzerPlugin());
+
+  // Development Server Configuration -----------------------------------------
+  devConfig[ "devServer" ] = {
+    publicPath: '/dist/',                                                       // Set dev server public path same as output
+    historyApiFallback: true,                                                   // Routing requests go back to index.html
+    port: 9000                                                                  // Development server localhost port
+  };
+
+  // Miscellaneous Settings ---------------------------------------------------
+  devConfig.output.publicPath = 'dist/';
+
   return devConfig
 };
 // ----------------------------------------------------------------------------

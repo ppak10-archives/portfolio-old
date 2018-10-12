@@ -21,7 +21,7 @@ const TicTacToeSquare = ({ value, onClick }) => (                               
 
 // PropTypes ------------------------------------------------------------------
 TicTacToeSquare.propTypes = {                                                   // Prop types check for square component
-  value: PropTypes.number.isRequired,                                           // Value prop must be a number type
+  value: PropTypes.string,                                                      // Value prop should be a string
 }
 // ----------------------------------------------------------------------------
 

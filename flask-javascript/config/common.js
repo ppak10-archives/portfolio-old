@@ -4,19 +4,17 @@
 // Description: Webpack common configuration settings
 // ----------------------------------------------------------------------------
 
+// Plugin Imports -------------------------------------------------------------
+// ----------------------------------------------------------------------------
+
 // Build Configuration Function -----------------------------------------------
 function buildConfig(configDirs) {
   return {
     plugins: [],
-    devServer:{
-      publicPath: '/dist/',                                                     // Set dev server public path same as output
-      historyApiFallback: true,                                                 // Routing requests go back to index.html
-      port: 9000                                                                // Development server localhost port
-    },
     entry: [ '@babel/polyfill', configDirs.APP_DIR ],
     output: {
       path: configDirs.BUILD_DIR,
-      publicPath: 'dist/',
+      publicPath: '',
       filename: '[name].bundle.js',                                             // Outputs as main.bundle.js
       chunkFilename: '[name].bundle.js'
     },
