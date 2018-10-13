@@ -45,6 +45,10 @@ const LoaderSTL = Loadable({
   loader: () => import('../pages/LoaderSTL'),                                   // Import three.js stl loader page component
   loading: () => <div>Loading...</div>
 })
+const LoaderOBJMTL = Loadable({
+  loader: () => import('../pages/LoaderOBJMTL'),                                // Import three.js obj & mtl loader page
+  loading: () => <div>Loading...</div>
+})
 // ----------------------------------------------------------------------------
 
 // App Component --------------------------------------------------------------
@@ -63,6 +67,7 @@ const App = () => (                                                             
     <Route path = "/subreddits" component = { Subreddits } />
     <Route path = "/simplecube" component = { SimpleCube } />
     <Route path = "/loaderstl" component = { LoaderSTL } />
+    <Route path = "/loaderobjmtl" component = { LoaderOBJMTL } />
     <Route path = "/about" component = { About } />
   </div>
 );

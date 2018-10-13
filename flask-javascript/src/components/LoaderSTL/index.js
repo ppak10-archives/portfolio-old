@@ -7,7 +7,7 @@
 // Modules Import -------------------------------------------------------------
 import React, { Component } from 'react';                                       // Import react from component
 import * as THREE from 'three';                                                 // Import three.js module for component
-import { STLLoader } from 'three/examples/js/loaders/STLLoader';
+import { STLLoader } from 'three/examples/js/loaders/STLLoader';                // Import three.js examples with plugin
 // ----------------------------------------------------------------------------
 
 // Simple Cube Example Component ----------------------------------------------
@@ -56,23 +56,27 @@ class LoaderSTLExample extends Component{                                       
     // STL Loaders ------------------------------------------------------------
     const loader = new STLLoader();
 
-    loader.load('./static/models/stl/ascii/slotted_disk.stl', function( geometry ){
-      const material = new THREE.MeshPhongMaterial( {
-        color: 0xff5533,
-        specular: 0x111111,
-        shininess: 200
-      } );
-      const mesh = new THREE.Mesh( geometry, material );
+    loader.load('./static/models/stl/ascii/slotted_disk.stl',
+      function( geometry ) {
 
-      mesh.position.set( 0, -0.25, 0.6 );
-      mesh.rotation.set( 0, -Math.PI / 2, 0 );
-      mesh.scale.set( 0.5, 0.5, 0.5 );
+        const material = new THREE.MeshPhongMaterial({
+          color: 0xff5533,
+          specular: 0x111111,
+          shininess: 200
+        });
 
-      mesh.castShadow = true;
-      mesh.recieveShadow = true;
+        const mesh = new THREE.Mesh( geometry, material );
 
-      scene.add( mesh );
-    });
+        mesh.position.set( 0, -0.25, 0.6 );
+        mesh.rotation.set( 0, -Math.PI / 2, 0 );
+        mesh.scale.set( 0.5, 0.5, 0.5 );
+
+        mesh.castShadow = true;
+        mesh.recieveShadow = true;
+
+        scene.add( mesh );
+      }
+    );
 
     const material = new THREE.MeshPhongMaterial({
       color: 0xAAAAAA,
@@ -80,52 +84,58 @@ class LoaderSTLExample extends Component{                                       
       shininess: 200
     });
 
-    loader.load('./static/models/stl/binary/pr2_head_pan.stl', function( geometry ){
-      const mesh = new THREE.Mesh( geometry, material );
+    loader.load('./static/models/stl/binary/pr2_head_pan.stl',
+      function( geometry ) {
+        const mesh = new THREE.Mesh( geometry, material );
 
-      mesh.position.set( 0, -0.37, -0.6 );
-      mesh.rotation.set( -Math.PI/2, 0, 0 );
-      mesh.scale.set( 2, 2, 2 );
+        mesh.position.set( 0, -0.37, -0.6 );
+        mesh.rotation.set( -Math.PI/2, 0, 0 );
+        mesh.scale.set( 2, 2, 2 );
 
-      mesh.castShadow = true;
-      mesh.receiveShadow = true;
+        mesh.castShadow = true;
+        mesh.receiveShadow = true;
 
-      scene.add( mesh );
-    });
-
-    loader.load('./static/models/stl/binary/pr2_head_tilt.stl', function( geometry ){
-      const mesh = new THREE.Mesh( geometry, material );
-
-      mesh.position.set( 0.136, -0.37, -0.6 );
-      mesh.rotation.set( -Math.PI/2, 0.3, 0 );
-      mesh.scale.set( 2, 2, 2 );
-
-      mesh.castShadow = true;
-      mesh.receiveShadow = true;
-
-      scene.add( mesh );
-    });
-
-    loader.load('./static/models/stl/binary/colored.stl', function( geometry ){
-      const meshMaterial = material;
-      if (geometry.hasColors){
-        meshMaterial = new THREE.MeshPhongMaterial({
-          opacity: geometry.alpha,
-          vertexColors: THREE.VertexColors
-        });
+        scene.add( mesh );
       }
+    );
 
-      const mesh = new THREE.Mesh( geometry, material );
+    loader.load('./static/models/stl/binary/pr2_head_tilt.stl',
+      function( geometry ){
+        const mesh = new THREE.Mesh( geometry, material );
 
-      mesh.position.set( 0.5, 0.2, 0 );
-      mesh.rotation.set( -Math.PI/2, Math.PI/2, 0 );
-      mesh.scale.set( 0.3, 0.3, 0.3 );
+        mesh.position.set( 0.136, -0.37, -0.6 );
+        mesh.rotation.set( -Math.PI/2, 0.3, 0 );
+        mesh.scale.set( 2, 2, 2 );
 
-      mesh.castShadow = true;
-      mesh.receiveShadow = true;
+        mesh.castShadow = true;
+        mesh.receiveShadow = true;
 
-      scene.add( mesh );
-    });
+        scene.add( mesh );
+      }
+    );
+
+    loader.load('./static/models/stl/binary/colored.stl',
+      function( geometry ){
+        const meshMaterial = material;
+        if (geometry.hasColors){
+          meshMaterial = new THREE.MeshPhongMaterial({
+            opacity: geometry.alpha,
+            vertexColors: THREE.VertexColors
+          });
+        }
+
+        const mesh = new THREE.Mesh( geometry, material );
+
+        mesh.position.set( 0.5, 0.2, 0 );
+        mesh.rotation.set( -Math.PI/2, Math.PI/2, 0 );
+        mesh.scale.set( 0.3, 0.3, 0.3 );
+
+        mesh.castShadow = true;
+        mesh.receiveShadow = true;
+
+        scene.add( mesh );
+      }
+    );
 
     // Lighting ---------------------------------------------------------------
     scene.add( new THREE.HemisphereLight( 0x443333, 0x111122 ));
@@ -142,10 +152,8 @@ class LoaderSTLExample extends Component{                                       
     this.renderer = renderer                                                    // Sets renderer value to class
     this.mount.appendChild( this.renderer.domElement )                          // Adds renderer to mount reference
 
-
     this.camera = camera                                                        // Sets camera value to class
     this.cameraTarget = cameraTarget
-
     this.material = material                                                    // Sets material value to class
 
     this.start()                                                                // Calls class start method

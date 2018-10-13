@@ -79,6 +79,10 @@ const NavigationBar = () => (
             <NavLink className = "dropdown-item" to = "/loaderstl">
               STL Loader
             </NavLink>
+
+            <NavLink className = "dropdown-item" to = "/loaderobjmtl">
+              OBJ & MTL Loader
+            </NavLink>
           </div>
         </li>
 
