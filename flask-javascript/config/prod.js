@@ -9,7 +9,7 @@ function productionConfiguration(configDirs) {
   let prodConfig = Object.assign({}, require('./common.js')(configDirs));       // Declares common settings from common.js
 
   // Miscellaneous Settings ---------------------------------------------------
-  prodConfig.output.publicPath = 'static/dist/';
+  prodConfig.output.publicPath = 'static/dist/';                                // Sets webpack bundles output path to dist
 
   return prodConfig
 };

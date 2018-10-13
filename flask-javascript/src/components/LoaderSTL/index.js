@@ -56,7 +56,7 @@ class LoaderSTLExample extends Component{                                       
     // STL Loaders ------------------------------------------------------------
     const loader = new STLLoader();
 
-    loader.load('./dist/models/stl/ascii/slotted_disk.stl', function( geometry ){
+    loader.load('./static/models/stl/ascii/slotted_disk.stl', function( geometry ){
       const material = new THREE.MeshPhongMaterial( {
         color: 0xff5533,
         specular: 0x111111,
@@ -80,7 +80,7 @@ class LoaderSTLExample extends Component{                                       
       shininess: 200
     });
 
-    loader.load('./dist/models/stl/binary/pr2_head_pan.stl', function( geometry ){
+    loader.load('./static/models/stl/binary/pr2_head_pan.stl', function( geometry ){
       const mesh = new THREE.Mesh( geometry, material );
 
       mesh.position.set( 0, -0.37, -0.6 );
@@ -93,7 +93,7 @@ class LoaderSTLExample extends Component{                                       
       scene.add( mesh );
     });
 
-    loader.load('./dist/models/stl/binary/pr2_head_tilt.stl', function( geometry ){
+    loader.load('./static/models/stl/binary/pr2_head_tilt.stl', function( geometry ){
       const mesh = new THREE.Mesh( geometry, material );
 
       mesh.position.set( 0.136, -0.37, -0.6 );
@@ -106,7 +106,7 @@ class LoaderSTLExample extends Component{                                       
       scene.add( mesh );
     });
 
-    loader.load('./dist/models/stl/binary/colored.stl', function( geometry ){
+    loader.load('./static/models/stl/binary/colored.stl', function( geometry ){
       const meshMaterial = material;
       if (geometry.hasColors){
         meshMaterial = new THREE.MeshPhongMaterial({

@@ -13,7 +13,8 @@ var APP_DIR = path.resolve(__dirname, './src');
 // Directory Configuration ----------------------------------------------------
 const configDirs = {
   BUILD_DIR: BUILD_DIR,
-  APP_DIR: APP_DIR
+  APP_DIR: APP_DIR,
+  PATH: path
 }
 // ----------------------------------------------------------------------------
 
