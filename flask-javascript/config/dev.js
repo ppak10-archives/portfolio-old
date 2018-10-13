@@ -14,22 +14,22 @@ function developmentConfiguration(configDirs) {
   let devConfig = Object.assign({}, require('./common.js')(configDirs));        // Declares common settings from common.js
 
   // Plugins ------------------------------------------------------------------
-  devConfig.plugins.push(new BundleAnalyzerPlugin());
+  devConfig.plugins.push(new BundleAnalyzerPlugin());                           // Plugin to analyze bundle file sizes
 
-  // Development Server Configuration -----------------------------------------
-  devConfig[ "devServer" ] = {
+  // Webpack Development Server Configuration ---------------------------------
+  devConfig[ "devServer" ] = {                                                  // Webpack development server config settings
     publicPath: '/dist/',                                                       // Set dev server public path same as output
     historyApiFallback: true,                                                   // Routing requests go back to index.html
     port: 9000                                                                  // Development server localhost port
   };
 
   // Miscellaneous Settings ---------------------------------------------------
-  devConfig.output.publicPath = 'dist/';
+  devConfig.output.publicPath = 'dist/';                                        // Output public path to match dev server
 
   return devConfig
 };
 // ----------------------------------------------------------------------------
 
 // Module Export --------------------------------------------------------------
-module.exports = developmentConfiguration;
+module.exports = developmentConfiguration;                                      // Export webpack development configurations
 // ----------------------------------------------------------------------------

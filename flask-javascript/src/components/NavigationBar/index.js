@@ -48,7 +48,6 @@ const NavigationBar = () => (
             <h5 className="col">React</h5>
             <div className="dropdown-divider"></div>
 
-            { /* Tic Tac Toe Example */ }
             <NavLink className = "dropdown-item" to = "/tictactoe">
               Tic Tac Toe
             </NavLink>
@@ -57,19 +56,24 @@ const NavigationBar = () => (
             <h5 className="col">Redux</h5>
             <div className="dropdown-divider"></div>
 
-            { /* Todo List Example */ }
             <NavLink className = "dropdown-item" to = "/todolist">
               Todo List
             </NavLink>
 
-            { /* Reddit Example */ }
             <NavLink className = "dropdown-item" to = "/reddit">
               Reddit
             </NavLink>
 
-            { /* Subreddits Example */ }
             <NavLink className = "dropdown-item" to = "/subreddits">
               Subreddits
+            </NavLink>
+
+            { /* Three.js Examples Divider */ }
+            <h5 className="col">Three.js</h5>
+            <div className="dropdown-divider"></div>
+            
+            <NavLink className = "dropdown-item" to = "/simplecube">
+              Simple Cube
             </NavLink>
           </div>
         </li>

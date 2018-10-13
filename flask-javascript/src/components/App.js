@@ -37,6 +37,10 @@ const Subreddits = Loadable({
   loader: () => import('../pages/Subreddits'),                                  // Import redux subreddits page component
   loading: () => <div>Loading...</div>
 });
+const SimpleCube = Loadable({
+  loader: () => import('../pages/SimpleCube'),                                  // Import three.js simple cube page component
+  loading: () => <div>Loading...</div>
+})
 // ----------------------------------------------------------------------------
 
 // App Component --------------------------------------------------------------
@@ -53,6 +57,7 @@ const App = () => (                                                             
     <Route path = "/todolist" component = { TodoList } />
     <Route path = "/reddit" component = { Reddit } />
     <Route path = "/subreddits" component = { Subreddits } />
+    <Route path = "/simplecube" component = { SimpleCube } />
     <Route path = "/about" component = { About } />
   </div>
 );

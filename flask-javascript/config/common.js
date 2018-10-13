@@ -8,15 +8,15 @@
 // ----------------------------------------------------------------------------
 
 // Build Configuration Function -----------------------------------------------
-function buildConfig(configDirs) {
+function commonConfig(configDirs) {
   return {
     plugins: [],
     entry: [ '@babel/polyfill', configDirs.APP_DIR ],
     output: {
       path: configDirs.BUILD_DIR,
-      publicPath: '',
+      publicPath: '',                                                           // Public path directory to reference chunks
       filename: '[name].bundle.js',                                             // Outputs as main.bundle.js
-      chunkFilename: '[name].bundle.js'
+      chunkFilename: '[name].bundle.js'                                         // Outputs as 1.bundle.js, 2.bundle.js, etc.
     },
     resolve: {
       extensions: ['.js', '.jsx']
@@ -63,5 +63,5 @@ function buildConfig(configDirs) {
 // ----------------------------------------------------------------------------
 
 // Module Export --------------------------------------------------------------
-module.exports = buildConfig;
+module.exports = commonConfig;                                                  // Export common webpack configurations
 // ----------------------------------------------------------------------------
