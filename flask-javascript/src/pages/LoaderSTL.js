@@ -1,6 +1,6 @@
 // ----------------------------------------------------------------------------
 // File Developer: Peter Pak
-// Description: Component layout for simple cube example page
+// Description: Component layout for stl file loader example page
 // ----------------------------------------------------------------------------
 
 // Module Imports -------------------------------------------------------------
@@ -8,33 +8,33 @@ import React from 'react';                                                      
 // ----------------------------------------------------------------------------
 
 // Component Import -----------------------------------------------------------
-import SimpleCubeExample from '../components/SimpleCube';                       // Imports three.js simple cube component
+import LoaderSTLExample from '../components/LoaderSTL';                         // Import stl loader example component
 // ----------------------------------------------------------------------------
 
-// Simple Cube Example Page ---------------------------------------------------
-const SimpleCube = () => (                                                      // Simple cube page component
+// STL loader Example Page ----------------------------------------------------
+const LoaderSTL = () => (                                                       // STL loader example page component
   <div className = "col">
-    <h1>Three.js: Simple Cube Example</h1>
+    <h1>Three.js: STL Loader Example</h1>
     <p>Example of a&nbsp;
       <span>
         <a target = "_blank" rel="noopener noreferrer"
-          href = "https://codepen.io/WebSeed/pen/MEBoRq?editors=0010">
-          simple cube
+          href = "https://threejs.org/examples/#webgl_loader_stl">
+          stl loader
         </a>
       </span>
-       &nbsp;in three.js done in React by&nbsp;
+       &nbsp;in three.js done by&nbsp;
       <span>
         <a target = "_blank" rel="noopener noreferrer"
-          href = "https://codepen.io/WebSeed/">
-          Will Bamford
+          href = "https://github.com/aleeper">
+          Adam Leeper
         </a>
       </span>
     </p>
-    <SimpleCubeExample />
+    <LoaderSTLExample />
   </div>
 )
 // ----------------------------------------------------------------------------
 
 // Component Export -----------------------------------------------------------
-export default SimpleCube;                                                      // Export simple cube page component
+export default LoaderSTL;                                                       // Export STL loader component
 // ----------------------------------------------------------------------------

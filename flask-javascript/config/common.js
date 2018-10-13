@@ -5,12 +5,13 @@
 // ----------------------------------------------------------------------------
 
 // Plugin Imports -------------------------------------------------------------
+const ThreeWebpackPlugin = require('@wildpeaks/three-webpack-plugin');
 // ----------------------------------------------------------------------------
 
 // Build Configuration Function -----------------------------------------------
 function commonConfig(configDirs) {
   return {
-    plugins: [],
+    plugins: [ new ThreeWebpackPlugin() ],
     entry: [ '@babel/polyfill', configDirs.APP_DIR ],
     output: {
       path: configDirs.BUILD_DIR,

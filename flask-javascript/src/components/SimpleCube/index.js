@@ -1,84 +1,85 @@
 // ----------------------------------------------------------------------------
-// Original Creator: Three.js
+// Original Creator: Will Bamford
 // File Developer: Peter Pak
 // Description: Component for simple cube example
 // ----------------------------------------------------------------------------
 
 // Modules Import -------------------------------------------------------------
-import React, { Component } from 'react';
-import * as THREE from 'three';
+import React, { Component } from 'react';                                       // Import react from component
+import * as THREE from 'three';                                                 // Import three.js module for component
 // ----------------------------------------------------------------------------
 
 // Simple Cube Example Component ----------------------------------------------
-class SimpleCubeExample extends Component{
-  constructor(props) {
-    super(props);
+class SimpleCubeExample extends Component{                                      // Component for simple cube example
+  constructor(props) {                                                          // Constructor for component
+    super(props);                                                               // Super required for react component
 
-    this.start = this.start.bind(this);
-    this.stop = this.stop.bind(this);
-    this.animate = this.animate.bind(this);
+    this.start = this.start.bind(this);                                         // Bind start method to class
+    this.stop = this.stop.bind(this);                                           // Bind stop method to class
+    this.animate = this.animate.bind(this);                                     // Bind animate method to class
   }
 
-  componentDidMount() {
-    const width = this.mount.clientWidth
-    const height = this.mount.clientHeight
+  componentDidMount() {                                                         // When react component is first mounted
+    const width = this.mount.clientWidth                                        // Retrieves client width from component ref
+    const height = this.mount.clientHeight                                      // Retrieves client height from component ref
 
-    const scene = new THREE.Scene()
-    const camera = new THREE.PerspectiveCamera(
+    const scene = new THREE.Scene()                                             // Declares three.js scene
+    const camera = new THREE.PerspectiveCamera(                                 // Declares three.js perspective camera
       75,
       width / height,
       0.1,
       1000
     )
 
-    const renderer = new THREE.WebGLRenderer({ antialias: true })
-    const geometry = new THREE.BoxGeometry(1, 1, 1)
-    const material = new THREE.MeshBasicMaterial({ color: '#433F81' })
-    const cube = new THREE.Mesh(geometry, material)
+    const renderer = new THREE.WebGLRenderer({ antialias: true })               // Declares three.js webgl renderer
+    const geometry = new THREE.BoxGeometry(1, 1, 1)                             // Declares three.js box geometry
+    const material = new THREE.MeshBasicMaterial({ color: 0xff00ff })           // Declares three.js mesh basic material
+    const cube = new THREE.Mesh(geometry, material)                             // Declares mesh with geometry and material
 
-    camera.position.z =4
-    scene.add(cube)
-    renderer.setClearColor('#000000')
-    renderer.setSize(width, height)
+    camera.position.z = 4                                                       // Sets camera position z value
+    scene.add(cube)                                                             // Adds cube to scene constant
+    renderer.setClearColor('#000000')                                           // Sets renderer constant clear color
+    renderer.setSize(width, height)                                             // Sets renderer constant size
 
-    this.scene = scene
-    this.camera = camera
-    this.renderer = renderer
-    this.material = material
-    this.cube = cube
+    this.scene = scene                                                          // Sets scene value to class
+    this.camera = camera                                                        // Sets camera value to class
+    this.renderer = renderer                                                    // Sets renderer value to class
+    this.material = material                                                    // Sets material value to class
+    this.cube = cube                                                            // Sets cube value to class
 
-    this.mount.appendChild( this.renderer.domElement )
-    this.start()
+    this.mount.appendChild( this.renderer.domElement )                          // Adds renderer to mount reference
+    this.start()                                                                // Calls class start method
   }
 
-  componentWillUnmount() {
-    this.stop()
-    this.mount.removeChild(this.renderer.domElement)
+  componentWillUnmount() {                                                      // When component is to be unmounted
+    this.stop()                                                                 // Calls stop method animate loop
+    this.mount.removeChild(this.renderer.domElement)                            // Removes renderer from mount reference
   }
 
-  start() {
-    if (!this.frameId) {
-      this.frameId = requestAnimationFrame(this.animate)
+  start() {                                                                     // Start method for three.js animation
+    if (!this.frameId) {                                                        // If no current animation frame id is set
+      this.frameId = requestAnimationFrame(this.animate)                        // Sets frame id by calling animate method
     }
   }
 
-  stop() {
-    cancelAnimationFrame(this.frameId)
+  stop() {                                                                      // Stop method for three.js animation
+    cancelAnimationFrame(this.frameId)                                          // Cancels scheduled animation frome
   }
 
-  animate() {
-    this.cube.rotation.x += 0.01
-    this.cube.rotation.y += 0.01
+  animate() {                                                                   // Method fed into request animation frame
+    this.cube.rotation.x += 0.01                                                // Changes the cube's x rotation
+    this.cube.rotation.y += 0.01                                                // Changes the cube's y rotation
 
-    this.renderScene()
-    this.frameId = window.requestAnimationFrame(this.animate)
+    this.renderScene()                                                          // Calls render scene method for three.js
+    this.frameId = window.requestAnimationFrame(this.animate)                   // Creates loop for animate method
   }
 
-  renderScene(){
-    this.renderer.render(this.scene, this.camera)
+  renderScene(){                                                                // Method called to render three.js scene
+    this.renderer.render(this.scene, this.camera)                               // Uses three.js renderer to render scene
   }
-  render(){
-    return (
+  
+  render(){                                                                     // Render method to hold three.js component
+    return (                                                                    // Returns div to hold reference to scene
       <div
         style = {{ width: '400px', height: '400px' }}
         ref = { ( mount ) => { this.mount = mount }}
@@ -89,5 +90,5 @@ class SimpleCubeExample extends Component{
 // ----------------------------------------------------------------------------
 
 // Component Export -----------------------------------------------------------
-export default SimpleCubeExample;
+export default SimpleCubeExample;                                               // Export simple cube example component
 // ----------------------------------------------------------------------------

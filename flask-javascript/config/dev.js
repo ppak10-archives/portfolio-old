@@ -7,6 +7,7 @@
 // Plugin Imports -------------------------------------------------------------
 const BundleAnalyzerPlugin =
   require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 // ----------------------------------------------------------------------------
 
 // Development Configuration Function -----------------------------------------
@@ -15,6 +16,9 @@ function developmentConfiguration(configDirs) {
 
   // Plugins ------------------------------------------------------------------
   devConfig.plugins.push(new BundleAnalyzerPlugin());                           // Plugin to analyze bundle file sizes
+  devConfig.plugins.push(new CopyWebpackPlugin([{
+    from : 'server/static/models', to: 'models'
+  }]))
 
   // Webpack Development Server Configuration ---------------------------------
   devConfig[ "devServer" ] = {                                                  // Webpack development server config settings

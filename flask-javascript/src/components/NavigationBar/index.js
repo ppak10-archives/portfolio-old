@@ -71,9 +71,13 @@ const NavigationBar = () => (
             { /* Three.js Examples Divider */ }
             <h5 className="col">Three.js</h5>
             <div className="dropdown-divider"></div>
-            
+
             <NavLink className = "dropdown-item" to = "/simplecube">
               Simple Cube
+            </NavLink>
+
+            <NavLink className = "dropdown-item" to = "/loaderstl">
+              STL Loader
             </NavLink>
           </div>
         </li>
