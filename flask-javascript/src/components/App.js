@@ -21,28 +21,12 @@ import About from '../pages/About';                                             
 // ----------------------------------------------------------------------------
 
 // Dynamic Page Imports -------------------------------------------------------
-const TicTacToe = Loadable({
-  loader: () => import('../pages/TicTacToe'),                                   // Import react tic tac toe page component
-  loading: () => <div>Loading...</div>
-});
-const TodoList = Loadable({
-  loader: () => import('../pages/TodoList'),                                    // Import redux todo list page component
-  loading: () => <div>Loading...</div>
-});
-const Reddit = Loadable({
-  loader: () => import('../pages/Reddit'),                                      // Import redux reddit page component
-  loading: () => <div>Loading...</div>
-});
 const Subreddits = Loadable({
   loader: () => import('../pages/Subreddits'),                                  // Import redux subreddits page component
   loading: () => <div>Loading...</div>
 });
 const SimpleCube = Loadable({
   loader: () => import('../pages/SimpleCube'),                                  // Import three.js simple cube page component
-  loading: () => <div>Loading...</div>
-})
-const LoaderSTL = Loadable({
-  loader: () => import('../pages/LoaderSTL'),                                   // Import three.js stl loader page component
   loading: () => <div>Loading...</div>
 })
 const LoaderOBJMTL = Loadable({
@@ -61,12 +45,8 @@ const App = () => (                                                             
     { /* Page Routes */ }
     <Route exact path = "/" component = { Welcome } />
     <Route path = "/home" component = { Home } />
-    <Route path = "/tictactoe" component = { TicTacToe } />
-    <Route path = "/todolist" component = { TodoList } />
-    <Route path = "/reddit" component = { Reddit } />
     <Route path = "/subreddits" component = { Subreddits } />
     <Route path = "/simplecube" component = { SimpleCube } />
-    <Route path = "/loaderstl" component = { LoaderSTL } />
     <Route path = "/loaderobjmtl" component = { LoaderOBJMTL } />
     <Route path = "/about" component = { About } />
   </div>

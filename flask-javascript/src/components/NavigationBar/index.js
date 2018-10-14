@@ -44,25 +44,9 @@ const NavigationBar = () => (
           { /* Dropdown Links */ }
           <div className="dropdown-menu" aria-labelledby="navbarDropdown">
 
-            { /* React Examples Divider */ }
-            <h5 className="col">React</h5>
-            <div className="dropdown-divider"></div>
-
-            <NavLink className = "dropdown-item" to = "/tictactoe">
-              Tic Tac Toe
-            </NavLink>
-
             { /* Redux Examples Divider */ }
             <h5 className="col">Redux</h5>
             <div className="dropdown-divider"></div>
-
-            <NavLink className = "dropdown-item" to = "/todolist">
-              Todo List
-            </NavLink>
-
-            <NavLink className = "dropdown-item" to = "/reddit">
-              Reddit
-            </NavLink>
 
             <NavLink className = "dropdown-item" to = "/subreddits">
               Subreddits
@@ -74,10 +58,6 @@ const NavigationBar = () => (
 
             <NavLink className = "dropdown-item" to = "/simplecube">
               Simple Cube
-            </NavLink>
-
-            <NavLink className = "dropdown-item" to = "/loaderstl">
-              STL Loader
             </NavLink>
 
             <NavLink className = "dropdown-item" to = "/loaderobjmtl">
