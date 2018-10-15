@@ -19,7 +19,7 @@ import MultiSubreddits from '../containers/MultiSubreddits';
 
 // Redux Todo Page ------------------------------------------------------------
 const Subreddits = () => (
-  <div className = "col">
+  <div className = "col page">
     <AddSubreddit />
     <VisibleSubredditList />
     <SubredditFilter />

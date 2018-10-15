@@ -14,7 +14,7 @@ import WelcomeContent from '../components/WelcomeContent';
 
 // Welcome Page ---------------------------------------------------------------
 const Welcome = () => (
-  <div className = "col">
+  <div className = "col page">
     <WelcomeHeader />
     <WelcomeContent />
   </div>
