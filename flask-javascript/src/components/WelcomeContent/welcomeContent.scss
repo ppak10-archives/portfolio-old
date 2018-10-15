@@ -1,15 +1,11 @@
 // ----------------------------------------------------------------------------
 // File Developrer: Peter Pak
-// Description: Custom scss precompiler file for css elements
+// Description: Custom scss classes for welcome content component
 // ----------------------------------------------------------------------------
 
-// Hover ----------------------------------------------------------------------
-a:hover {
+// Welcome Page Content Style -------------------------------------------------
+.btn-link:hover {
   color: blue;
   text-decoration: none;
-}
-::-webkit-scrollbar {
-  width: 0px;
-  background: transparent;
 }
 // ----------------------------------------------------------------------------

@@ -9,7 +9,7 @@ import React from 'react';
 
 // Footer Component -----------------------------------------------------------
 const Footer = () => (
-  <div className = "text-center">
+  <div className = "text-center footer">
     <h3>
       <a target = "_blank" rel="noopener noreferrer"
         href = "https://www.github.com/ppak10">
