@@ -6,6 +6,7 @@
 
 // Module Imports -------------------------------------------------------------
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // ----------------------------------------------------------------------------
 
 // Component Imports ----------------------------------------------------------
@@ -21,17 +22,15 @@ const WelcomeContent = () => (
 
     <div className="card">
 
-      <div className="card-header" id="headingOne">
-        <h3 className="mb-0">
-          <button className="btn btn-link"
-            type="button"
-            data-toggle="collapse"
-            data-target="#collapseOne"
-            aria-expanded="true"
-            aria-controls="collapseOne">
-            Programming
-          </button>
-        </h3>
+      <div className="card-header collapse-header" id="headingOne">
+        <a className="btn btn-link"
+          data-toggle="collapse"
+          data-target="#collapseOne"
+          aria-expanded="true"
+          aria-controls="collapseOne">
+          <FontAwesomeIcon icon = "code" />
+          &nbsp;Programming
+        </a>
       </div>
 
       <div id="collapseOne" className="collapse show"
@@ -46,17 +45,15 @@ const WelcomeContent = () => (
 
     <div className="card">
 
-      <div className="card-header" id="headingTwo">
-        <h3 className="mb-0">
-          <button className="btn btn-link collapsed"
-            type="button"
-            data-toggle="collapse"
-            data-target="#collapseTwo"
-            aria-expanded="false"
-            aria-controls="collapseTwo">
-            Materials Science and Engineering
-          </button>
-        </h3>
+      <div className="card-header collapse-header" id="headingTwo">
+        <a className="btn btn-link collapsed"
+          data-toggle="collapse"
+          data-target="#collapseTwo"
+          aria-expanded="false"
+          aria-controls="collapseTwo">
+          <FontAwesomeIcon icon = "atom" />
+          &nbsp;Materials Science and Engineering
+        </a>
       </div>
 
       <div id="collapseTwo" className="collapse"
@@ -71,17 +68,15 @@ const WelcomeContent = () => (
 
     <div className="card">
 
-      <div className="card-header" id="headingThree">
-        <h5 className="mb-0">
-          <button className="btn btn-link collapsed"
-            type="button"
-            data-toggle="collapse"
-            data-target="#collapseThree"
-            aria-expanded="false"
-            aria-controls="collapseThree">
-            Front-end Development
-          </button>
-        </h5>
+      <div className="card-header collapse-header" id="headingThree">
+        <a className="btn btn-link collapsed"
+          data-toggle="collapse"
+          data-target="#collapseThree"
+          aria-expanded="false"
+          aria-controls="collapseThree">
+          <FontAwesomeIcon icon = "object-group" />
+          &nbsp;Front-end Development
+        </a>
       </div>
 
       <div id="collapseThree" className="collapse"
@@ -97,17 +92,15 @@ const WelcomeContent = () => (
 
     <div className="card">
 
-      <div className="card-header" id="headingFour">
-        <h5 className="mb-0">
-          <button className="btn btn-link collapsed"
-            type="button"
-            data-toggle="collapse"
-            data-target="#collapseFour"
-            aria-expanded="false"
-            aria-controls="collapseFour">
-            Full-stack Development
-          </button>
-        </h5>
+      <div className="card-header collapse-header" id="headingFour">
+        <a className="btn btn-link collapsed"
+          data-toggle="collapse"
+          data-target="#collapseFour"
+          aria-expanded="false"
+          aria-controls="collapseFour">
+          <FontAwesomeIcon icon = "server" />
+          &nbsp;Full-stack Development
+        </a>
       </div>
 
       <div id="collapseFour" className="collapse"

@@ -5,6 +5,7 @@
 
 // Module Imports -------------------------------------------------------------
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // ----------------------------------------------------------------------------
 
 // Footer Component -----------------------------------------------------------
@@ -13,12 +14,12 @@ const Footer = () => (
     <h3>
       <a target = "_blank" rel="noopener noreferrer"
         href = "https://www.github.com/ppak10">
-        GitHub
+        <FontAwesomeIcon icon = {['fab', 'github']} />
       </a>
       &nbsp;-&nbsp;
       <a target = "_blank" rel="noopener noreferrer"
         href = "http://www.linkedin.com/in/ppak10">
-        LinkedIn
+        <FontAwesomeIcon icon = {['fab', 'linkedin']} />
       </a>
     </h3>
   </div>
