@@ -12,6 +12,7 @@ import Loadable from 'react-loadable';                                          
 
 // Component Imports ----------------------------------------------------------
 import NavigationBar from './NavigationBar';                                    // Import navigation bar component
+import Footer from './Footer';                                                  // Import footer component
 // ----------------------------------------------------------------------------
 
 // Page Imports ---------------------------------------------------------------
@@ -38,7 +39,6 @@ const LoaderOBJMTL = Loadable({
 // App Component --------------------------------------------------------------
 const App = () => (                                                             // Component for routes in react application
   <div>
-
     { /* Navigation Bar */ }
     <NavigationBar />
 
@@ -49,6 +49,9 @@ const App = () => (                                                             
     <Route path = "/simplecube" component = { SimpleCube } />
     <Route path = "/loaderobjmtl" component = { LoaderOBJMTL } />
     <Route path = "/about" component = { About } />
+
+    { /* Footer */ }
+    <Footer />
   </div>
 );
 // ----------------------------------------------------------------------------

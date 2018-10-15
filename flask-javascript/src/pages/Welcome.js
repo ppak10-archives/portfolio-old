@@ -7,11 +7,16 @@
 import React from 'react';
 // ----------------------------------------------------------------------------
 
+// Component Imports ----------------------------------------------------------
+import WelcomeHeader from '../components/WelcomeHeader';
+import WelcomeContent from '../components/WelcomeContent';
+// ----------------------------------------------------------------------------
+
 // Welcome Page ---------------------------------------------------------------
 const Welcome = () => (
   <div className = "col">
-    <h1>Welcome</h1>
-    <p>Congratulations on successfully running the server!</p>
+    <WelcomeHeader />
+    <WelcomeContent />
   </div>
 )
 // ----------------------------------------------------------------------------

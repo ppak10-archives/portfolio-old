@@ -17,7 +17,7 @@ function developmentConfiguration(configDirs) {
   // Plugins ------------------------------------------------------------------
   devConfig.plugins.push(new BundleAnalyzerPlugin());                           // Plugin to analyze bundle file sizes
   devConfig.plugins.push(new CopyWebpackPlugin([{                               // Plugin to test static files in development
-    from : 'server/static/models', to: 'models'                                 // Sets static outputs to models folder
+    from : 'server/static/', to: ''                                             // Sets static outputs to models folder
   }]))
 
   // Webpack Development Server Configuration ---------------------------------

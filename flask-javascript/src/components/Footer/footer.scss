@@ -1,15 +1,10 @@
 // ----------------------------------------------------------------------------
 // File Developrer: Peter Pak
-// Description: Custom scss precompiler file for css elements
+// Description: Custom scss class for footer component
 // ----------------------------------------------------------------------------
 
-// Hover ----------------------------------------------------------------------
-a:hover {
-  color: blue;
-  text-decoration: none;
-}
-::-webkit-scrollbar {
-  width: 0px;
-  background: transparent;
+// Footer Style ---------------------------------------------------------------
+.footer {
+  margin: 1em;
 }
 // ----------------------------------------------------------------------------

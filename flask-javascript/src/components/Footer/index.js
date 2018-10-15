@@ -1,44 +1,30 @@
 // ----------------------------------------------------------------------------
-// Original Creator: Redux
 // File Developer: Peter Pak
-// Description: Component for todo list footer
+// Description: Footer component
 // ----------------------------------------------------------------------------
 
-// Module Import --------------------------------------------------------------
-import React from 'react';                                                      // Import react for component
-// ----------------------------------------------------------------------------
-
-// Container Import -----------------------------------------------------------
-import FilterLink from '../../containers/FilterLink';                           // Import filter link container
-// ----------------------------------------------------------------------------
-
-// Action Import --------------------------------------------------------------
-import { VisibilityFilters } from '../../actions';                              // Import visibility filter types
+// Module Imports -------------------------------------------------------------
+import React from 'react';
 // ----------------------------------------------------------------------------
 
 // Footer Component -----------------------------------------------------------
-const Footer = () => (                                                          // Create stateless filter component
-  <div>
-    <span>Show: </span>
-
-    { /* Show All Todos Filter */ }
-    <FilterLink filter = { VisibilityFilters.SHOW_ALL}>
-      All
-    </FilterLink>
-
-    { /* Show Active Todos Filter */ }
-    <FilterLink filter = { VisibilityFilters.SHOW_ACTIVE}>
-      Active
-    </FilterLink>
-
-    { /* Show Completed Todos Filter */ }
-    <FilterLink filter = { VisibilityFilters.SHOW_COMPLETED}>
-      Completed
-    </FilterLink>
+const Footer = () => (
+  <div className = "text-center footer">
+    <h3>
+      <a target = "_blank" rel="noopener noreferrer"
+        href = "https://www.github.com/ppak10">
+        GitHub
+      </a>
+      &nbsp;-&nbsp;
+      <a target = "_blank" rel="noopener noreferrer"
+        href = "http://www.linkedin.com/in/ppak10">
+        LinkedIn
+      </a>
+    </h3>
   </div>
 )
 // ----------------------------------------------------------------------------
 
 // Component Export -----------------------------------------------------------
-export default Footer                                                           // Export footer component
+export default Footer
 // ----------------------------------------------------------------------------
