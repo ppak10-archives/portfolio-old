@@ -11,7 +11,7 @@ import React from 'react';
 const WelcomeHeader = () => (
   <div className = "text-center">
     <img className = "rounded-circle profile-border"
-      src = "./static/images/morty_helmet.png"
+      src = "./static/images/welcome.png"
     />
     <h1 className = "profile-name">Peter Pak</h1>
   </div>

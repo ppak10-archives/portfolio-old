@@ -14,7 +14,11 @@ const NavigationBar = () => (
   <nav className = "navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
 
     { /* Welcome Page Link */ }
-    <NavLink to = "/" className = "navbar-brand">Peter Pak</NavLink>
+    <NavLink to = "/" className = "navbar-brand">
+      <img className = "rounded-circle brand-border"
+        src = "./static/images/navbar.png"
+      />
+    </NavLink>
 
     { /* Navigation Bar Collapse Button */ }
     <button className = "navbar-toggler" type = "button"
@@ -27,11 +31,6 @@ const NavigationBar = () => (
     { /* Navigation Bar Collapsable Content */ }
     <div className = "collapse navbar-collapse" id="navbarSupportedContent">
       <ul className = "navbar-nav mr-auto">
-
-        { /* Home Page Link */ }
-        <li className = "nav-item">
-          <NavLink className = "nav-link" to = "/home">Home</NavLink>
-        </li>
 
         { /* Examples Dropdown Link */ }
         <li className = "nav-item dropdown">
@@ -66,10 +65,6 @@ const NavigationBar = () => (
           </div>
         </li>
 
-        { /* About Page */ }
-        <li className = "nav-item">
-          <NavLink className = "nav-link" to = "/about">About</NavLink>
-        </li>
       </ul>
     </div>
   </nav>
