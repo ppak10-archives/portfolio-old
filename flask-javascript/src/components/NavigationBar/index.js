@@ -11,7 +11,7 @@ import { NavLink } from 'react-router-dom';
 
 // Navigation Bar Component ---------------------------------------------------
 const NavigationBar = () => (
-  <nav className = "navbar navbar-expand-lg navbar-light bg-light">
+  <nav className = "navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
 
     { /* Welcome Page Link */ }
     <NavLink to = "/" className = "navbar-brand">Peter Pak</NavLink>

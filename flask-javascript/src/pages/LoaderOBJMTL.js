@@ -13,7 +13,7 @@ import LoaderOBJMTLExample from '../components/LoaderOBJMTL';                   
 
 // STL loader Example Page ----------------------------------------------------
 const LoaderOBJMTL = () => (                                                    // OBJ & MTL loader example page component
-  <div className = "col">
+  <div className = "col page">
     <h1>Three.js: OBJ and MTL Loader Example</h1>
     <p>Example use of a&nbsp;
       <span>

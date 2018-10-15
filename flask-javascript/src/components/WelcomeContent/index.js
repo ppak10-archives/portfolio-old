@@ -6,6 +6,7 @@
 
 // Module Imports -------------------------------------------------------------
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // ----------------------------------------------------------------------------
 
 // Component Imports ----------------------------------------------------------
@@ -19,19 +20,19 @@ import Fullstack from './Fullstack';
 const WelcomeContent = () => (
   <div className="accordion" id="welcomeAccordion">
 
-    <div className="card">
+    <div className="card text-white bg-secondary">
 
-      <div className="card-header" id="headingOne">
-        <h3 className="mb-0">
-          <button className="btn btn-link"
-            type="button"
-            data-toggle="collapse"
-            data-target="#collapseOne"
-            aria-expanded="true"
-            aria-controls="collapseOne">
-            Programming
-          </button>
-        </h3>
+      <div className="card-header collapse-header btn btn-link"
+        id="headingOne"
+        data-toggle="collapse"
+        data-target="#collapseOne"
+        aria-expanded="true"
+        aria-controls="collapseOne">
+        <h2>
+          <FontAwesomeIcon icon = "code" />
+          &nbsp;Programming
+        </h2>
+
       </div>
 
       <div id="collapseOne" className="collapse show"
@@ -44,19 +45,18 @@ const WelcomeContent = () => (
 
     </div>
 
-    <div className="card">
+    <div className="card text-white bg-secondary">
 
-      <div className="card-header" id="headingTwo">
-        <h3 className="mb-0">
-          <button className="btn btn-link collapsed"
-            type="button"
-            data-toggle="collapse"
-            data-target="#collapseTwo"
-            aria-expanded="false"
-            aria-controls="collapseTwo">
-            Materials Science and Engineering
-          </button>
-        </h3>
+      <div className="card-header collapse-header btn btn-link collapsed"
+        id="headingTwo"
+        data-toggle="collapse"
+        data-target="#collapseTwo"
+        aria-expanded="false"
+        aria-controls="collapseTwo">
+        <h2>
+          <FontAwesomeIcon icon = "atom" />
+          &nbsp;Materials Science and Engineering
+        </h2>
       </div>
 
       <div id="collapseTwo" className="collapse"
@@ -69,19 +69,18 @@ const WelcomeContent = () => (
 
     </div>
 
-    <div className="card">
+    <div className="card text-white bg-secondary">
 
-      <div className="card-header" id="headingThree">
-        <h5 className="mb-0">
-          <button className="btn btn-link collapsed"
-            type="button"
-            data-toggle="collapse"
-            data-target="#collapseThree"
-            aria-expanded="false"
-            aria-controls="collapseThree">
-            Front-end Development
-          </button>
-        </h5>
+      <div className="card-header collapse-header btn btn-link collapsed"
+        id="headingThree"
+        data-toggle="collapse"
+        data-target="#collapseThree"
+        aria-expanded="false"
+        aria-controls="collapseThree">
+        <h2>
+          <FontAwesomeIcon icon = "object-group" />
+          &nbsp;Front-end Development
+        </h2>
       </div>
 
       <div id="collapseThree" className="collapse"
@@ -95,19 +94,18 @@ const WelcomeContent = () => (
     </div>
 
 
-    <div className="card">
+    <div className="card text-white bg-secondary">
 
-      <div className="card-header" id="headingFour">
-        <h5 className="mb-0">
-          <button className="btn btn-link collapsed"
-            type="button"
-            data-toggle="collapse"
-            data-target="#collapseFour"
-            aria-expanded="false"
-            aria-controls="collapseFour">
-            Full-stack Development
-          </button>
-        </h5>
+      <div className="card-header collapse-header btn btn-link collapsed"
+        id="headingFour"
+        data-toggle="collapse"
+        data-target="#collapseFour"
+        aria-expanded="false"
+        aria-controls="collapseFour">
+        <h2>
+          <FontAwesomeIcon icon = "server" />
+          &nbsp;Full-stack Development
+        </h2>
       </div>
 
       <div id="collapseFour" className="collapse"

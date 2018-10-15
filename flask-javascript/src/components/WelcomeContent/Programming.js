@@ -5,6 +5,7 @@
 
 // Module Imports -------------------------------------------------------------
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // ----------------------------------------------------------------------------
 
 // Programming Skills ---------------------------------------------------------
@@ -18,7 +19,8 @@ const Programming = () => (
           <p>
             <a target = "_blank" rel="noopener noreferrer"
               href = "https://www.python.org/">
-              Python
+              <FontAwesomeIcon icon = {['fab', 'python']} />
+              &nbsp;Python
             </a>
           </p>
         </li>
@@ -27,7 +29,8 @@ const Programming = () => (
           <p>
             <a target = "_blank" rel="noopener noreferrer"
               href = "https://developer.mozilla.org/en-US/docs/Web/JavaScript">
-              JavaScript
+              <FontAwesomeIcon icon = {['fab', 'js-square']} />
+              &nbsp;JavaScript
             </a>
           </p>
         </li>
@@ -36,7 +39,8 @@ const Programming = () => (
           <p>
             <a target = "_blank" rel="noopener noreferrer"
               href = "https://www.mathworks.com/products/matlab.html">
-              MATLAB
+              <FontAwesomeIcon icon = {['fab', 'empire']} />
+              &nbsp;MATLAB
             </a>
           </p>
         </li>
@@ -45,7 +49,8 @@ const Programming = () => (
           <p>
             <a target = "_blank" rel="noopener noreferrer"
               href = "http://www.php.net/">
-              PHP
+              <FontAwesomeIcon icon = {['fab', 'php']} />
+              &nbsp;PHP
             </a>
           </p>
         </li>
@@ -54,7 +59,8 @@ const Programming = () => (
           <p>
             <a target = "_blank" rel="noopener noreferrer"
               href = "https://developer.mozilla.org/en-US/docs/Web/HTML">
-              HTML
+              <FontAwesomeIcon icon = {['fab', 'html5']} />
+              &nbsp;HTML
             </a>
           </p>
         </li>
@@ -63,7 +69,8 @@ const Programming = () => (
           <p>
             <a target = "_blank" rel="noopener noreferrer"
               href = "https://developer.mozilla.org/en-US/docs/Web/CSS">
-              CSS
+              <FontAwesomeIcon icon = {['fab', 'css3']} />
+              &nbsp;CSS
             </a>
           </p>
         </li>

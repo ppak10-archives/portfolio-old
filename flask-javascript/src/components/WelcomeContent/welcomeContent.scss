@@ -4,8 +4,14 @@
 // ----------------------------------------------------------------------------
 
 // Welcome Page Content Style -------------------------------------------------
-.btn-link:hover {
-  color: blue;
+.collapse-header {
+  margin: 0em;
+  color: white;
+  text-decoration: none;
+}
+
+.collapse-header:hover {
+  color: #007bff;
   text-decoration: none;
 }
 // ----------------------------------------------------------------------------

@@ -13,7 +13,7 @@ import SimpleCubeExample from '../components/SimpleCube';                       
 
 // Simple Cube Example Page ---------------------------------------------------
 const SimpleCube = () => (                                                      // Simple cube page component
-  <div className = "col">
+  <div className = "col page">
     <h1>Three.js: Simple Cube Example</h1>
     <p>Example of a&nbsp;
       <span>

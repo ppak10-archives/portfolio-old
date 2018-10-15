@@ -5,60 +5,101 @@
 
 // Module Imports -------------------------------------------------------------
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // ----------------------------------------------------------------------------
 
 // Full-stack Development Skills -----------------------------------------------
 const Fullstack = () => (
-  <ul className = "list-group">
+  <div className = "row">
 
-    <li className = "list-group-item list-group-item-light">
-      <p>
-        Frameworks –
-        <span>
-          <a target = "_blank" rel="noopener noreferrer"
-            href = "https://nodejs.org/en/">
-            &nbsp;NodeJS
-          </a>,
-          <a target = "_blank" rel="noopener noreferrer"
-            href = "https://webpack.js.org/">
-            &nbsp;Webpack
-          </a>,
-          <a target = "_blank" rel="noopener noreferrer"
-            href = "http://flask.pocoo.org/">
-            &nbsp;Flask
-          </a>,
-          <a target = "_blank" rel="noopener noreferrer"
-            href = "https://electronjs.org/">
-            &nbsp;Electron
-          </a>,
-          <a target = "_blank" rel="noopener noreferrer"
-            href = "https://www.meteor.com/">
-            &nbsp;Meteor
-          </a>
-        </span>
-      </p>
-    </li>
+    <div className = "col-6">
+      <h4>Web Frameworks</h4>
+      <ul className = "list-group">
+        <li className = "list-group-item list-group-item-light">
+          <p>
+            <a target = "_blank" rel="noopener noreferrer"
+              href = "https://nodejs.org/en/">
+              <FontAwesomeIcon icon = {['fab', 'node']} />
+              &nbsp;NodeJS
+            </a>
+          </p>
+        </li>
+        <li className = "list-group-item list-group-item-light">
+          <p>
+            <a target = "_blank" rel="noopener noreferrer"
+              href = "https://webpack.js.org/">
+              <FontAwesomeIcon icon = "dice-d6" />
+              &nbsp;Webpack
+            </a>
+          </p>
+        </li>
+        <li className = "list-group-item list-group-item-light">
+          <p>
+            <a target = "_blank" rel="noopener noreferrer"
+              href = "http://flask.pocoo.org/">
+              Flask
+            </a>
+          </p>
+        </li>
+        <li className = "list-group-item list-group-item-light">
+          <p>
+            <a target = "_blank" rel="noopener noreferrer"
+              href = "https://electronjs.org/">
+              <FontAwesomeIcon icon = {['fab', 'react']} />
+              &nbsp;Electron
+            </a>
+          </p>
+        </li>
+        <li className = "list-group-item list-group-item-light">
+          <p>
+            <a target = "_blank" rel="noopener noreferrer"
+              href = "https://www.meteor.com/">
+              Meteor
+            </a>
+          </p>
+        </li>
+      </ul>
+    </div>
 
-    <li className = "list-group-item list-group-item-light">
-      <p>
-        UI – HTML5, CSS, Bootstrap, React, Redux, Sass, D3, WebGL, PHP7,
-        Jinja2, Kivy, Tkinter
-      </p>
-    </li>
+    <div className = "col-6">
+      <h4>Database Packages</h4>
+      <ul className = "list-group">
+        <li className = "list-group-item list-group-item-light">
+          <p>
+            <a target = "_blank" rel="noopener noreferrer"
+              href = "https://www.mysql.com/">
+              MySQL
+            </a>
+          </p>
+        </li>
+        <li className = "list-group-item list-group-item-light">
+          <p>
+            <a target = "_blank" rel="noopener noreferrer"
+              href = "https://www.sqlite.org/index.html">
+              SQLite
+            </a>
+          </p>
+        </li>
+        <li className = "list-group-item list-group-item-light">
+          <p>
+            <a target = "_blank" rel="noopener noreferrer"
+              href = "https://www.postgresql.org/">
+              PostgreSQL
+            </a>
+          </p>
+        </li>
+        <li className = "list-group-item list-group-item-light">
+          <p>
+            <a target = "_blank" rel="noopener noreferrer"
+              href = "https://www.mongodb.com/">
+              MongoDB
+            </a>
+          </p>
+        </li>
+      </ul>
+    </div>
 
-    <li className = "list-group-item list-group-item-light">
-      <p>
-        Database Packages – MySQL, SQLite3, PostgreSQL, MongoDB
-      </p>
-    </li>
-
-    <li className = "list-group-item list-group-item-light">
-      <p>
-        Other Unmentioned Languages – C, C#, C++, MATLAB, Visual Basic
-      </p>
-    </li>
-
-  </ul>
+  </div>
 )
 // ----------------------------------------------------------------------------
 
