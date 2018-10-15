@@ -1,0 +1,16 @@
+// ----------------------------------------------------------------------------
+// File Developrer: Peter Pak
+// Description: Custom scss classes for navigation bar component
+// ----------------------------------------------------------------------------
+
+// Navigation Bar Component ---------------------------------------------------
+.brand-border {
+  height: 2em;
+  width: 2em;
+  border: 0.1em solid black;
+}
+
+.brand-border:hover{
+  border: 0.1em solid #007bff;
+}
+// ----------------------------------------------------------------------------
