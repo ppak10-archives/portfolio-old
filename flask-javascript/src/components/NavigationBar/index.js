@@ -14,7 +14,7 @@ const NavigationBar = () => (
   <nav className = "navbar navbar-expand-lg navbar-light bg-light">
 
     { /* Welcome Page Link */ }
-    <NavLink to = "/" className = "navbar-brand">Welcome</NavLink>
+    <NavLink to = "/" className = "navbar-brand">Peter Pak</NavLink>
 
     { /* Navigation Bar Collapse Button */ }
     <button className = "navbar-toggler" type = "button"
