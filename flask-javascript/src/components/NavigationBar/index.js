@@ -16,7 +16,7 @@ const NavigationBar = () => (
     { /* Welcome Page Link */ }
     <NavLink to = "/" className = "navbar-brand">
       <img className = "rounded-circle brand-border"
-        src = "./static/images/navbar.png"
+        src = "./static/images/navbar.jpg"
       />
     </NavLink>
 
@@ -31,6 +31,16 @@ const NavigationBar = () => (
     { /* Navigation Bar Collapsable Content */ }
     <div className = "collapse navbar-collapse" id="navbarSupportedContent">
       <ul className = "navbar-nav mr-auto">
+
+        { /* Skills Page Link */ }
+        <li className = "nav-item">
+          <NavLink className = "nav-link" to = "/skills">Skills</NavLink>
+        </li>
+
+        { /* Education Page Link */ }
+        <li className = "nav-item">
+          <NavLink className = "nav-link" to = "/education">Education</NavLink>
+        </li>
 
         { /* Examples Dropdown Link */ }
         <li className = "nav-item dropdown">

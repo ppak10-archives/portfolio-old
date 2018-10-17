@@ -1,21 +1,23 @@
 // ----------------------------------------------------------------------------
 // File Developer: Peter Pak
-// Description: Component layout for home page
+// Description: Component layout for education page
 // ----------------------------------------------------------------------------
 
 // Module Imports -------------------------------------------------------------
 import React from 'react';                                                      // Import react for component
 // ----------------------------------------------------------------------------
 
-// Home Page ------------------------------------------------------------------
-const Home = () => (                                                            // Home page component
+// Component Imports ----------------------------------------------------------
+// ----------------------------------------------------------------------------
+
+// Education Page -------------------------------------------------------------
+const Education = () => (                                                       // Education page component
   <div className = "col page">
-    <h1>Home</h1>
-    <p>Home page uses React</p>
+    <h1 className = "text-center">Education</h1>
   </div>
 )
 // ----------------------------------------------------------------------------
 
 // Component Export -----------------------------------------------------------
-export default Home                                                             // Export home page component
+export default Education                                                        // Export education page component
 // ----------------------------------------------------------------------------

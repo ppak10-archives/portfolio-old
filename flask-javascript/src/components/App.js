@@ -17,11 +17,18 @@ import Footer from './Footer';                                                  
 
 // Page Imports ---------------------------------------------------------------
 import Welcome from '../pages/Welcome';                                         // Import welcome page component
-import Home from '../pages/Home';                                               // Import home page component
 import About from '../pages/About';                                             // Import about page component
 // ----------------------------------------------------------------------------
 
 // Dynamic Page Imports -------------------------------------------------------
+const Skills = Loadable({
+  loader: () => import('../pages/Skills'),                                      // Import skills page component
+  loading: () => <div>Loading...</div>
+});
+const Education = Loadable({
+  loader: () => import('../pages/Education'),                                   // Import skills page component
+  loading: () => <div>Loading...</div>
+});
 const Subreddits = Loadable({
   loader: () => import('../pages/Subreddits'),                                  // Import redux subreddits page component
   loading: () => <div>Loading...</div>
@@ -44,7 +51,8 @@ const App = () => (                                                             
 
     { /* Page Routes */ }
     <Route exact path = "/" component = { Welcome } />
-    <Route path = "/home" component = { Home } />
+    <Route path = "/skills" component = { Skills } />
+    <Route path = "/education" component = { Education }/>
     <Route path = "/subreddits" component = { Subreddits } />
     <Route path = "/simplecube" component = { SimpleCube } />
     <Route path = "/loaderobjmtl" component = { LoaderOBJMTL } />
