@@ -1,30 +1,25 @@
 // ----------------------------------------------------------------------------
-// Original Creator: Bootstrap
 // File Developer: Peter Pak
-// Description: Component for skills page content
+// Description: Component layout for skills page
 // ----------------------------------------------------------------------------
 
 // Module Imports -------------------------------------------------------------
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react';                                                      // Import react for component
 // ----------------------------------------------------------------------------
 
 // Component Imports ----------------------------------------------------------
+import SkillsContent from '../components/SkillsContent';
 // ----------------------------------------------------------------------------
 
-// Subreddit Posts Component --------------------------------------------------
-const SkillsContent = () => (
-  <div className = "text-center">
-    <h3>
-      <a target = "_blank" rel="noopener noreferrer"
-        href = "http://www.whatispeterdoingrightnow.com">
-        WhatIsPeterDoingRightNow.com
-      </a>
-    </h3>
+// Skills Page ----------------------------------------------------------------
+const Skills = () => (                                                          // Skills page component
+  <div className = "col page">
+    <h1 className = "text-center">Skills</h1>
+    <SkillsContent />
   </div>
 )
 // ----------------------------------------------------------------------------
 
 // Component Export -----------------------------------------------------------
-export default SkillsContent
+export default Skills                                                           // Export skills page component
 // ----------------------------------------------------------------------------

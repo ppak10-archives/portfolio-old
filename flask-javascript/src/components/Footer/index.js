@@ -21,11 +21,6 @@ const Footer = () => (
         href = "http://www.linkedin.com/in/ppak10">
         <FontAwesomeIcon icon = {['fab', 'linkedin']} />
       </a>
-      &nbsp;-&nbsp;
-      <a target = "_blank" rel="noopener noreferrer"
-        href = "http://www.whatispeterdoingrightnow.com">
-        WhatIsPeterDoingRightNow.com
-      </a>
     </h1>
   </div>
 )
