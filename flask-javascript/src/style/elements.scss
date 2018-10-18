@@ -3,13 +3,30 @@
 // Description: Custom scss precompiler file for css elements
 // ----------------------------------------------------------------------------
 
-// Hover ----------------------------------------------------------------------
-a:hover {
-  color: blue;
-  text-decoration: none;
+// Document -------------------------------------------------------------------
+body {
+  font-family: "DS-DIGII";
+  background-color: $bg-color;
+  background-image: linear-gradient(to bottom, $bg-color, black);
+  background-attachment: fixed;
 }
+
 ::-webkit-scrollbar {
   width: 0px;
   background: transparent;
+}
+// ----------------------------------------------------------------------------
+
+// Text -----------------------------------------------------------------------
+a {
+  color: $gen-color;
+  text-decoration: none;
+}
+a:hover {
+  color: $hov-color;
+  text-decoration: none;
+}
+h1 {
+  color: $pri-color;
 }
 // ----------------------------------------------------------------------------

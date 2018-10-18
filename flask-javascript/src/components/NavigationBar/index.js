@@ -11,7 +11,7 @@ import { NavLink } from 'react-router-dom';
 
 // Navigation Bar Component ---------------------------------------------------
 const NavigationBar = () => (
-  <nav className = "navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <nav className = "navbar navbar-expand-lg navbar-outrun">
 
     { /* Welcome Page Link */ }
     <NavLink to = "/" className = "navbar-brand">

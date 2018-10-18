@@ -8,7 +8,11 @@
   margin: 1em;
   height: 25em;
   width: 25em;
-  border: 1em solid #343a40;
+  border: 1em solid $gen-color;
+}
+
+.profile-border:hover{
+  border: 1em solid $hov-color;
 }
 
 .profile-name {
