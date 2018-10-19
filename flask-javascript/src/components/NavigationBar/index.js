@@ -42,12 +42,17 @@ const NavigationBar = () => (
           <NavLink className = "nav-link" to = "/education">Education</NavLink>
         </li>
 
+        { /* Work Page Link */ }
+        <li className = "nav-item">
+          <NavLink className = "nav-link" to = "/work">Work</NavLink>
+        </li>
+
         { /* Examples Dropdown Link */ }
         <li className = "nav-item dropdown">
           <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown"
             role="button" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">
-            Examples
+            Gallery
           </a>
 
           { /* Dropdown Links */ }
@@ -73,6 +78,11 @@ const NavigationBar = () => (
               OBJ & MTL Loader
             </NavLink>
           </div>
+        </li>
+
+        { /* About Page Link */ }
+        <li className = "nav-item">
+          <NavLink className = "nav-link" to = "/about">About</NavLink>
         </li>
 
       </ul>

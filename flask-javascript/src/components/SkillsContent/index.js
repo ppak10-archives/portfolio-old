@@ -20,7 +20,7 @@ import Fullstack from './Fullstack';
 const SkillsContent = () => (
   <div className="accordion" id="welcomeAccordion">
 
-    <div className="card text-white bg-secondary">
+    <div className="card text-white skills-bg">
 
       <div className="card-header collapse-header btn btn-link"
         id="headingOne"
@@ -45,7 +45,7 @@ const SkillsContent = () => (
 
     </div>
 
-    <div className="card text-white bg-secondary">
+    <div className="card text-white skills-bg">
 
       <div className="card-header collapse-header btn btn-link collapsed"
         id="headingTwo"
@@ -69,7 +69,7 @@ const SkillsContent = () => (
 
     </div>
 
-    <div className="card text-white bg-secondary">
+    <div className="card text-white skills-bg">
 
       <div className="card-header collapse-header btn btn-link collapsed"
         id="headingThree"
@@ -94,7 +94,7 @@ const SkillsContent = () => (
     </div>
 
 
-    <div className="card text-white bg-secondary">
+    <div className="card text-white skills-bg">
 
       <div className="card-header collapse-header btn btn-link collapsed"
         id="headingFour"

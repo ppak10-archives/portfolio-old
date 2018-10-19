@@ -4,14 +4,22 @@
 // ----------------------------------------------------------------------------
 
 // Skills Page Content Style --------------------------------------------------
+.skills-bg{
+  background-color: $ter-color;
+  border-color: $sec-color;
+}
+
 .collapse-header {
   margin: 0em;
-  color: white;
+  color: $sec-color;
+  border-bottom-color: $sec-color;
+
   text-decoration: none;
 }
 
 .collapse-header:hover {
-  color: #007bff;
+  color: $hov-color;
+  border-bottom-color: $sec-color;
   text-decoration: none;
 }
 // ----------------------------------------------------------------------------
