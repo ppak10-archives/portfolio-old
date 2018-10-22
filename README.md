@@ -1,6 +1,4 @@
-## Getting Started
-If you haven't installed Python or Flask, refer to the [wiki](https://github.com/ppak10/Flask-JavaScript-Notes/wiki) page [here](https://github.com/ppak10/Flask-JavaScript-Notes/wiki/Getting-Started) to get started.
-Clone repository and cd into ```Full-Stack-Notes``` directory and install Node modules with command:
+## Portfolio
 ```
 ./install.sh
 ```
