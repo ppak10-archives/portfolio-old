@@ -1,4 +1,5 @@
 ## Portfolio
+Repository contains the files used in the [portfolio page](http://www.ppak10.com)
 ```
 ./install.sh
 ```
