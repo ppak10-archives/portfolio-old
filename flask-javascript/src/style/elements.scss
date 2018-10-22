@@ -5,7 +5,7 @@
 
 // Document -------------------------------------------------------------------
 body {
-  font-family: "DS-DIGII";
+  font-family: "Quicksand", sans-serif;
   background-color: $bg-color;
   background-image: linear-gradient(to bottom, $bg-color, $ter-color);
   background-attachment: fixed;
@@ -27,6 +27,7 @@ a:hover {
   text-decoration: none;
 }
 h1 {
+  font-family: "DS-DIGII";
   color: $pri-color;
 }
 // ----------------------------------------------------------------------------
