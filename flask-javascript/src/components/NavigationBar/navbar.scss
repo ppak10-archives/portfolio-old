@@ -4,13 +4,17 @@
 // ----------------------------------------------------------------------------
 
 // Navigation Bar Component ---------------------------------------------------
+.navbar-outrun {
+  background-color: $ter-color;
+}
+
 .brand-border {
   height: 2em;
   width: 2em;
-  border: 0.1em solid black;
+  border: 0.1em solid $gen-color;
 }
 
 .brand-border:hover{
-  border: 0.1em solid #007bff;
+  border: 0.1em solid $hov-color;
 }
 // ----------------------------------------------------------------------------

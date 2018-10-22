@@ -26,7 +26,11 @@ const Skills = Loadable({
   loading: () => <div>Loading...</div>
 });
 const Education = Loadable({
-  loader: () => import('../pages/Education'),                                   // Import skills page component
+  loader: () => import('../pages/Education'),                                   // Import education page component
+  loading: () => <div>Loading...</div>
+});
+const Work = Loadable({
+  loader: () => import('../pages/Work'),                                        // Import work page component
   loading: () => <div>Loading...</div>
 });
 const Subreddits = Loadable({
@@ -53,6 +57,7 @@ const App = () => (                                                             
     <Route exact path = "/" component = { Welcome } />
     <Route path = "/skills" component = { Skills } />
     <Route path = "/education" component = { Education }/>
+    <Route path = "/work" component = { Work }/>
     <Route path = "/subreddits" component = { Subreddits } />
     <Route path = "/simplecube" component = { SimpleCube } />
     <Route path = "/loaderobjmtl" component = { LoaderOBJMTL } />
