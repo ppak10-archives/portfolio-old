@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 ## Portfolio
->>>>>>> d3192c2b9abc54d5835f5845c1469f5555af07ea
 ```
 ./install.sh
 ```
