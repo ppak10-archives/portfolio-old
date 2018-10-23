@@ -8,12 +8,14 @@ import React from 'react';                                                      
 // ----------------------------------------------------------------------------
 
 // Component Imports ----------------------------------------------------------
+import EducationContent from '../components/EducationContent';
 // ----------------------------------------------------------------------------
 
 // Education Page -------------------------------------------------------------
 const Education = () => (                                                       // Education page component
   <div className = "col page">
-    <h1 className = "text-center">Education</h1>
+    <h1>Education</h1>
+    <EducationContent />
   </div>
 )
 // ----------------------------------------------------------------------------
