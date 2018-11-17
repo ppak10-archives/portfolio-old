@@ -1,0 +1,19 @@
+{
+  "name": "docker-node-notes",
+  "version": "1.0.0",
+  "description": "main entry file to hold start scripts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ppak10/Docker-Node-Notes.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ppak10/Docker-Node-Notes/issues"
+  },
+  "homepage": "https://github.com/ppak10/Docker-Node-Notes#readme"
+}
