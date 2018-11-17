@@ -1,0 +1,23 @@
+{
+  "name": "docker-node-notes",
+  "version": "1.0.0",
+  "description": "Node.js on Docker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ppak10/Docker-Node-Notes.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ppak10/Docker-Node-Notes/issues"
+  },
+  "homepage": "https://github.com/ppak10/Docker-Node-Notes#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
