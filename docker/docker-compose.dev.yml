@@ -1,0 +1,13 @@
+version: '3'
+services:
+  app:
+    build:
+      context: ../.
+      dockerfile: docker/app/Dockerfile.dev
+    image: micro-app
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./../app:/usr/src/app
+    ports:
+      - '3000:3000'

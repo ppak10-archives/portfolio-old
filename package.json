@@ -4,7 +4,9 @@
   "description": "main entry file to hold start scripts",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev:install": "./install-dev.sh",
+    "dev:up": "docker-compose -f docker/docker-compose.dev.yml up"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,6 @@
   "bugs": {
     "url": "https://github.com/ppak10/Docker-Node-Notes/issues"
   },
-  "homepage": "https://github.com/ppak10/Docker-Node-Notes#readme"
+  "homepage": "https://github.com/ppak10/Docker-Node-Notes#readme",
+  "dependencies": {}
 }

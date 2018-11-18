@@ -36,15 +36,12 @@ function webpackCommonConfig(configDirs) {
           },
         },
         {
-          test: /\.(scss)$/,
-          use: [
-            {
+          test: /\.(less)$/,
+          use: [{
               loader: 'style-loader',
-            },
-            {
+            }, {
               loader: 'css-loader',
-            },
-            {
+            }, {
               loader: 'postcss-loader',
               options: {
                 plugins: function() {
@@ -54,9 +51,8 @@ function webpackCommonConfig(configDirs) {
                   ];
                 },
               },
-            },
-            {
-              loader: 'sass-loader'
+            }, {
+              loader: 'less-loader'
             },
           ],
         },
