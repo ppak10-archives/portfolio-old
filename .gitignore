@@ -1,6 +1,9 @@
-# app
-app/node_modules
-app/dist
+# Repository
+node_modules
 
-# api
+# Portal Client
+client/node_modules
+client/dist
+
+# Portal API
 api/node_modules

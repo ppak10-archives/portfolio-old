@@ -18,5 +18,10 @@
     "url": "https://github.com/ppak10/Docker-Node-Notes/issues"
   },
   "homepage": "https://github.com/ppak10/Docker-Node-Notes#readme",
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^5.9.0",
+    "eslint-config-google": "^0.11.0",
+    "eslint-plugin-react": "^7.11.1"
+  }
 }

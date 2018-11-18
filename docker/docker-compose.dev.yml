@@ -1,13 +1,13 @@
 version: '3'
 services:
-  app:
+  client:
     build:
       context: ../.
-      dockerfile: docker/app/Dockerfile.dev
-    image: micro-app
+      dockerfile: docker/client/Dockerfile.dev
+    image: portal-client
     environment:
       - NODE_ENV=development
     volumes:
-      - ./../app:/usr/src/app
+      - ./../client:/usr/src/client
     ports:
       - '3000:3000'

@@ -8,4 +8,7 @@ const HOST = '0.0.0.0';
 
 app.get('/', (req, res) => res.send('hello world'));
 
+app.get('/api/todos', todosController.list);
+
 app.listen(PORT, HOST);
+console.info('Express Server is up')
