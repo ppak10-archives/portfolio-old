@@ -1,0 +1,10 @@
+{
+  "development": {
+    "username": "myclientuser",
+    "password": "myclientpassword",
+    "database": "myclientdb",
+    "host": "db",
+    "port": 5432,
+    "dialect": "postgres"
+  }
+}

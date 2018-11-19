@@ -1,5 +1,23 @@
 version: '3'
 services:
+  server:
+    build:
+      context: ../.
+      dockerfile: docker/server/Dockerfile.dev
+    image: portal-server
+    deploy:
+      resources:
+        limits:
+          cpus: '0.001'
+          memory: 50M
+        reservations:
+          cpus: '0.0001'
+          memory: 20M
+    ports:
+      - '80:80'
+    links:
+      - api:api
+      - client:client
   client:
     build:
       context: ../.
@@ -11,3 +29,40 @@ services:
       - ./../client:/usr/src/client
     ports:
       - '3000:3000'
+  api:
+    deploy:
+      resources:
+        limits:
+          cpus: '0.001'
+          memory: 50M
+        reservations:
+          cpus: '0.0001'
+          memory: 20M
+    build:
+      context: ../.
+      dockerfile: docker/api/Dockerfile.dev
+    image: portal-api
+    environment:
+      - DB_NAME=myclientdb
+      - DB_USER=myclientuser
+      - DB_PASSWORD=myclientpassword
+      - DB_HOST="db"
+      - DB_PORT=5432
+      - NODE_ENV=development
+    links:
+      - db:db
+    volumes:
+      - ./../api:/usr/src/api
+    ports:
+      - '8080'
+    depends_on:
+      - "db"
+  db:
+    build:
+      context: ../.
+      dockerfile: docker/db/Dockerfile.dev
+    env_file: db/psql.env
+    image: portal-db
+    env_file: ../docker/db/psql.env
+    ports:
+      - '5431:5432'
