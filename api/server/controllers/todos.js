@@ -4,9 +4,10 @@ module.exports = {
   async list(req, res) {
     try {
       const result = await Todo.all();
-      res.status(200).send(result)
+      return res.status(200).send(result)
     } catch (err) {
-      res.status(400).send(err);
+      console.log(err);
+      return res.status(400).send(err);
     }
   }
 };

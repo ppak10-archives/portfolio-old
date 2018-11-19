@@ -19,11 +19,11 @@ export default class App extends Component {
     try {
       const results = await this.getTodoItems();
       let done = [];
-      result.forEach(element => done.push({
+      results.forEach(element => done.push({
         id: element.id, 
         checked: false
       }));
-      this.setState({todoitems: result, done});
+      this.setState({todoitems: results, done});
     } catch (err) {
       console.log(err);
     }
