@@ -1,0 +1,27 @@
+/* Navigation Bar Styles */
+
+.navbar {
+  margin: 0px;
+  width: 100%;
+  background-color: @bs-cyan-dark;
+}
+
+.navbar-item {
+  display:inline-block;
+  border-radius: 1em;
+  background-color: @bs-magenta;
+  padding: 0.5em;
+  margin: 0.25rem;
+  cursor: pointer;
+}
+
+.navbar-link {
+  text-decoration: none;
+}
+
+.navbar-item:hover {
+  background-color: @bs-magenta-dark;
+  .navbar-link {
+    color: @bs-white;
+  }
+}
