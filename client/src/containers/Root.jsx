@@ -2,6 +2,23 @@ import React, {Component} from 'react';
 import {BrowserRouter, Switch} from 'react-router-dom';
 import {Provider} from 'react-redux';
 
+/**
+ * Font Awesome Icons
+ */
+import {library} from '@fortawesome/fontawesome-svg-core';
+import {fab} from '@fortawesome/free-brands-svg-icons';
+import {
+  faDiceD6,
+  faObjectGroup,
+  faCode,
+  faServer,
+  faAtom,
+} from '@fortawesome/free-solid-svg-icons';
+library.add( fab, faDiceD6, faObjectGroup, faCode, faServer, faAtom);
+
+/**
+ * App Component
+ */
 import App from '../components/App';
 
 import configureStore from '../store';

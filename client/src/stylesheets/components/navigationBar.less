@@ -1,27 +1,53 @@
+/* Navigation Bar Constants */
+
+@navbar-color: @rgba-white;
+@navbar-item-color: @bs-cyan;
+@navbar-link-color: @bs-white;
+@navbar-link-color-hover: @bs-black;
+
+@navbar-height: 3rem;
+@navbar-list-margin: 0.5em;
+
 /* Navigation Bar Styles */
 
 .navbar {
+  min-width: @width-sm;
   margin: 0px;
+  height: @navbar-height;
   width: 100%;
-  background-color: @bs-cyan-dark;
+  background-color: @navbar-color;
+  position: fixed;
+  top: 0;
+}
+
+.navbar-list {
+  float: right;
+  margin: @navbar-list-margin;
 }
 
 .navbar-item {
   display:inline-block;
   border-radius: 1em;
-  background-color: @bs-magenta;
+  background-color: @navbar-item-color;
+  margin-right: 0.5em;
+  margin-left: 0.5em;
   padding: 0.5em;
-  margin: 0.25rem;
   cursor: pointer;
 }
 
 .navbar-link {
+  color: @navbar-link-color;
   text-decoration: none;
 }
 
+.navbar-text {
+  margin-right: 0.5em;
+  margin-left: 0.5em;
+}
+
 .navbar-item:hover {
-  background-color: @bs-magenta-dark;
+  opacity: 0.8;
   .navbar-link {
-    color: @bs-white;
+    color: @navbar-link-color-hover;
   }
 }

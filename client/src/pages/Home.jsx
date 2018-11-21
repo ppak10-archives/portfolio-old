@@ -70,7 +70,7 @@ export default class App extends Component {
 
   render () {
     return (
-      <div>
+      <div className = "page-wrapper">
         <h1>React Todo List</h1>
         <ul>
           {this.state.todoitems.map((element, index) => {
