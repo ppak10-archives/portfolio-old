@@ -6,13 +6,18 @@
 @navbar-link-color-hover: @bs-black;
 
 @navbar-height: 3rem;
+@navbar-border-radius: 1em;
 @navbar-list-margin: 0.5em;
+@navbar-item-padding: 0.5em;
+@navbar-item-margin: 0.5em;
+@navbar-text-margin: 0.25em;
+@navbar-icon-margin: 0.25em;
 
 /* Navigation Bar Styles */
 
 .navbar {
   min-width: @width-sm;
-  margin: 0px;
+  margin: 0;
   height: @navbar-height;
   width: 100%;
   background-color: @navbar-color;
@@ -20,34 +25,107 @@
   top: 0;
 }
 
+.navbar-brand {
+  display: inline-block;
+  border-radius: @navbar-border-radius;
+  background-color: @navbar-item-color;
+  color: @navbar-link-color;
+  text-decoration: none;
+  padding: @navbar-item-padding;
+  margin: @navbar-item-margin;
+}
+
 .navbar-list {
   float: right;
   margin: @navbar-list-margin;
+  list-style-type: none;
+  overflow: hidden;
 }
 
-.navbar-item {
-  display:inline-block;
-  border-radius: 1em;
+.navbar-list-item {
+  float: left;
   background-color: @navbar-item-color;
-  margin-right: 0.5em;
-  margin-left: 0.5em;
-  padding: 0.5em;
+  border-radius: @navbar-border-radius;
+  
   cursor: pointer;
+  margin-left: @navbar-item-margin;
+  margin-right: @navbar-item-margin;
+  padding: @navbar-item-padding;
+  text-decoration: none;
+  .navbar-link {
+    color: @navbar-link-color;
+  }
 }
 
-.navbar-link {
-  color: @navbar-link-color;
-  text-decoration: none;
+.navbar-icon {
+  margin-left: @navbar-icon-margin;
 }
 
 .navbar-text {
-  margin-right: 0.5em;
-  margin-left: 0.5em;
+  margin-right: @navbar-text-margin;
+  margin-left: @navbar-text-margin;
 }
 
-.navbar-item:hover {
+.navbar-brand:hover,
+.navbar-list-item:hover {
   opacity: 0.8;
+  color: @navbar-link-color-hover;
   .navbar-link {
+    color: inherit;
+  }
+}
+
+/* Dropdown */
+
+.navbar-dropdown-button {
+  background-color: @navbar-item-color;
+  border-radius: @navbar-border-radius;
+  color: @navbar-link-color;
+  cursor: pointer;
+  display:inline-block;
+  margin: 0;
+  padding: @navbar-item-padding;
+  text-decoration: none;
+}
+
+
+
+.navbar-dropdown {
+  display: inline-block;
+  float: left;
+}
+
+.navbar-dropdown-content {
+  background-color: @navbar-color;
+  border-bottom-left-radius: @navbar-border-radius;
+  border-bottom-right-radius: @navbar-border-radius;
+  display: none;
+  padding: @navbar-item-padding;
+  position: absolute;
+  z-index: 1;
+}
+
+.navbar-dropdown:hover {
+  display: block;
+  .navbar-dropdown-button {
+    opacity: 0.8;
     color: @navbar-link-color-hover;
+  }
+  .navbar-dropdown-content {
+    display: inherit;
+    .navbar-link {
+      background-color: @navbar-item-color;
+      border-radius: @navbar-border-radius;
+      color: @navbar-link-color;
+      display: inherit;
+      margin-bottom: @navbar-item-margin;
+      margin-top: @navbar-item-margin;
+      padding: @navbar-item-padding;
+      text-align: center;
+    }
+    .navbar-link:hover {
+      opacity: 0.8;
+      color: @navbar-link-color-hover;
+    }
   }
 }

@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Welcome = () => (
+const Work = () => (
   <div className = "page-wrapper">
-    <h1>Welcome</h1>
+    <h1>Work</h1>
     <p>React router is working correctly</p>
     <button className="btn">Test button</button>
     <button>Test</button>
@@ -63,4 +63,4 @@ const Welcome = () => (
   </div>
 );
 
-export default Welcome;
+export default Work;

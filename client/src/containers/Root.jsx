@@ -13,8 +13,21 @@ import {
   faCode,
   faServer,
   faAtom,
+  faHome,
+  faBriefcase,
+  faFlask,
 } from '@fortawesome/free-solid-svg-icons';
-library.add( fab, faDiceD6, faObjectGroup, faCode, faServer, faAtom);
+
+library.add(
+    fab, 
+    faDiceD6, 
+    faObjectGroup, 
+    faCode, 
+    faServer, 
+    faAtom,
+    faHome,
+    faBriefcase,
+    faFlask);
 
 /**
  * App Component

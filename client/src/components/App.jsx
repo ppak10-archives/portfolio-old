@@ -4,8 +4,9 @@ import {Route} from 'react-router-dom';
 /**
  * Page Components
  */
-import Welcome from '../pages/Welcome';
 import Home from '../pages/Home';
+import Work from '../pages/Work';
+import Research from '../pages/Research';
 
 /**
  * Components
@@ -25,8 +26,9 @@ export default class App extends Component {
     return(
       <div>
         <NavBar />
-        <Route exact path = '/' component = {Welcome}/>
-        <Route path = '/home' component = {Home}/>
+        <Route exact path = "/" component = {Home}/>
+        <Route path = "/work" component = {Work}/>
+        <Route path = "/research" component = {Research}/>
       </div>
     )
   }

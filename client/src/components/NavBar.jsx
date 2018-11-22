@@ -4,21 +4,40 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
 const NavBar = () => (
   <div className = "navbar">
+    <NavLink className = "navbar-brand" to = "/">
+      <FontAwesomeIcon className = "navbar-icon" icon = "home" />
+      <span className = "navbar-text">Home</span>
+    </NavLink>
     <ul className = "navbar-list">
-      <li className = "navbar-item">
-        <NavLink className = "navbar-link" to = "/home">
-          <FontAwesomeIcon icon = "code" />
+      <li className = "navbar-dropdown">
+        <button className = "navbar-dropdown-button"
+          to = "/experience">
+          <FontAwesomeIcon className = "navbar-icon" icon = "briefcase" />
           <span className = "navbar-text">Experience</span>
-        </NavLink>
+        </button>
+        <div className = "navbar-dropdown-content">
+          <NavLink className = "navbar-link" to = "/work">
+            <FontAwesomeIcon className = "navbar-icon" icon = "code" />
+            <span className = "navbar-text">Work</span>
+          </NavLink>
+          <NavLink className = "navbar-link" to = "/research">
+            <FontAwesomeIcon className = "navbar-icon" icon = "flask" />
+            <span className = "navbar-text">Research</span>
+          </NavLink>
+        </div>
       </li>
-      <li className = "navbar-item">
-        <a className = "navbar-link" target = "_blank" rel="noopener noreferrer"
+      <li className = "navbar-list-item">
+        <a className = "navbar-link"
+          target = "_blank"
+          rel = "noopener noreferrer"
           href = "https://www.github.com/ppak10">
           <FontAwesomeIcon icon = {['fab', 'github']} />
         </a>
       </li>
-      <li className = "navbar-item">
-        <a className = "navbar-link" target = "_blank" rel="noopener noreferrer"
+      <li className = "navbar-list-item">
+        <a className = "navbar-link"
+          target = "_blank"
+          rel = "noopener noreferrer"
           href = "http://www.linkedin.com/in/ppak10">
           <FontAwesomeIcon icon = {['fab', 'linkedin']} />
         </a>
