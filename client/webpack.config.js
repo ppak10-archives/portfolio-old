@@ -1,8 +1,10 @@
 const path = require('path');
+const PUBLIC_DIR = path.resolve(__dirname, 'public');
 const BUILD_DIR = path.resolve(__dirname, 'dist');
 const APP_DIR = path.resolve(__dirname, './src');
 
 const configDirs = {
+  PUBLIC_DIR: PUBLIC_DIR,
   BUILD_DIR: BUILD_DIR,
   APP_DIR: APP_DIR,
   PATH: path,

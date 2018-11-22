@@ -1,3 +1,6 @@
+
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
 /**
  * webpack development configuration function
  * @param  {[type]} configDirs [description]
@@ -8,6 +11,10 @@ function webpackDevConfig(configDirs) {
     Object.assign({},require('./webpack.config.common.js')(configDirs));
 
   devConfig.mode = 'development';
+  devConfig.plugins.push(new CopyWebpackPlugin([{
+    from: configDirs.PUBLIC_DIR,
+    to: 'public',
+  }]));
   devConfig["devServer"] = {
     contentBase: configDirs.BUILD_DIR,
     publicPath: '/',

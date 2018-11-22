@@ -5,7 +5,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 const NavBar = () => (
   <div className = "navbar">
     <NavLink className = "navbar-brand" to = "/">
-      <FontAwesomeIcon className = "navbar-icon" icon = "home" />
+      <img className = "navbar-brand-icon" src = "public/morty.jpeg"/>
       <span className = "navbar-text">Home</span>
     </NavLink>
     <ul className = "navbar-list">
