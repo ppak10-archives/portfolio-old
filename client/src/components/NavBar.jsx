@@ -2,10 +2,10 @@ import React from 'react';
 import {NavLink} from 'react-router-dom';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
-const NavBar = () => (
+const Navbar = () => (
   <div className = "navbar">
     <NavLink className = "navbar-brand" to = "/">
-      <img className = "navbar-brand-icon" src = "public/morty.jpeg"/>
+      <img className = "navbar-brand-icon" src = "public/images/morty.jpeg"/>
       <span className = "navbar-text">Home</span>
     </NavLink>
     <ul className = "navbar-list">
@@ -23,6 +23,12 @@ const NavBar = () => (
           <NavLink className = "navbar-link" to = "/research">
             <FontAwesomeIcon className = "navbar-icon" icon = "flask" />
             <span className = "navbar-text">Research</span>
+          </NavLink>
+          <NavLink className = "navbar-link" to = "/education">
+            <FontAwesomeIcon
+              className = "navbar-icon"
+              icon = "graduation-cap" />
+            <span className = "navbar-text">Education</span>
           </NavLink>
         </div>
       </li>
@@ -46,4 +52,4 @@ const NavBar = () => (
   </div>
 );
 
-export default NavBar;
+export default Navbar;

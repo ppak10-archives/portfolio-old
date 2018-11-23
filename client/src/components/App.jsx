@@ -7,11 +7,13 @@ import {Route} from 'react-router-dom';
 import Home from '../pages/Home';
 import Work from '../pages/Work';
 import Research from '../pages/Research';
+import Education from '../pages/Education';
 
 /**
  * Components
  */
-import NavBar from './NavBar';
+import Navbar from './Navbar';
+import Footer from './Footer';
 
 /**
  * React App class
@@ -25,10 +27,12 @@ export default class App extends Component {
   render() {
     return(
       <div>
-        <NavBar />
+        <Navbar />
         <Route exact path = "/" component = {Home}/>
         <Route path = "/work" component = {Work}/>
         <Route path = "/research" component = {Research}/>
+        <Route path = "/education" component = {Education}/>
+        <Footer />
       </div>
     )
   }

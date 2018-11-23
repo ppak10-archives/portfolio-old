@@ -16,6 +16,7 @@ import {
   faHome,
   faBriefcase,
   faFlask,
+  faGraduationCap,
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(
@@ -27,7 +28,8 @@ library.add(
     faAtom,
     faHome,
     faBriefcase,
-    faFlask);
+    faFlask,
+    faGraduationCap);
 
 /**
  * App Component

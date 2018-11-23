@@ -1,7 +1,7 @@
 /* Navigation Bar Constants */
 
 @navbar-top-color: rgba(255, 255, 255, 1);
-@navbar-middle-bottom-color: rgba(225, 225, 225, 0.8);
+@navbar-middle-bottom-color: rgba(245, 245, 245, 0.8);
 @navbar-middle-top-color: rgba(200, 200, 200, 0.7);
 @navbar-bottom-color: rgba(150, 150, 150, 0.6);
 
@@ -19,6 +19,7 @@
 @navbar-brand-icon-size: 0.8em;
 
 @navbar-transition-time: 0.3s;
+@navbar-opacity: 0.85;
 @navbar-box-shadow: 0em 1em 1em rgba(200,200,200,0.8);
 @navbar-item-box-shadow: 0.1em 0.1em 0.2em;
 
@@ -33,6 +34,7 @@
   position: fixed;
   top: 0;
   transition: @navbar-transition-time;
+  z-index: 2;
 }
 
 .navbar:hover {
@@ -53,7 +55,7 @@
 .navbar-brand-icon {
   border-radius: @navbar-border-radius;
   height: @navbar-brand-icon-size;
-  opacity: 0.8;
+  opacity: @navbar-opacity;
   width: @navbar-brand-icon-size;
 }
 
@@ -68,7 +70,7 @@
   float: left;
   background-color: @navbar-item-color;
   border-radius: @navbar-border-radius;
-  opacity: 0.8;
+  opacity: @navbar-opacity;
   transition: @navbar-transition-time;
   
   cursor: pointer;
@@ -109,8 +111,9 @@
   cursor: pointer;
   display:inline-block;
   margin: 0;
+  margin-bottom: 0.4em;
   padding: @navbar-item-padding;
-  opacity: 0.8;
+  opacity: @navbar-opacity;
   text-decoration: none;
   transition: @navbar-transition-time;
 }
@@ -138,13 +141,12 @@
     opacity: 1;
     box-shadow: @navbar-item-box-shadow;
     color: @navbar-link-color-hover;
-    margin-bottom: 0.4em;
   }
   .navbar-dropdown-content {
     box-shadow: @navbar-box-shadow;
     display: inherit;
     .navbar-link {
-      opacity: 0.8;
+      opacity: @navbar-opacity;
       background-color: @navbar-item-color;
       border-radius: @navbar-border-radius;
       color: @navbar-link-color;

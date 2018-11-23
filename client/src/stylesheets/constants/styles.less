@@ -7,19 +7,36 @@
 @width-lg: 900px;
 @width-xlg: 1080px;
 
-@page-padding: 10rem;
+@page-side-padding: 10rem;
+@page-top-padding: 3rem;
+
+@footer-padding: 2rem;
 
 /* Id Constants */
 
-#root {
-}
+#root {}
 
 /* Class Constants */
 
 .page-wrapper {
-  box-sizing: border-box;
+  text-align: center;
   min-width: @width-sm;
   margin-top: @navbar-height;
-  padding-left: @page-padding;
-  padding-right: @page-padding;
+  padding-top: @page-top-padding;
+}
+
+.page-side-padding {
+  box-sizing: border-box;
+  padding-left: @page-side-padding;
+  padding-right: @page-side-padding;
+}
+
+.footer {
+  text-align: center;
+  box-sizing: border-box;
+  min-width: @width-sm;
+  padding-bottom: @footer-padding;
+  padding-left: @page-side-padding;
+  padding-right: @page-side-padding;
+  padding-top: @footer-padding;
 }
