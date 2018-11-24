@@ -1,12 +1,18 @@
-/* Elements */
+/* Element Constants */
+
+@default-border-radius: 1em;
+@button-padding: 0.5em;
+@button-margin: 0.25rem;
 
 /* Scrollbar */
+
 ::-webkit-scrollbar {
   width: 0px;
   background: transparent;
 }
 
 /* Body */
+
 body { 
   background-color: @background-color;
   font-family: "Quicksand", sans-serif;
@@ -17,17 +23,20 @@ body {
 }
 
 /* Button */
+
 button {
   border: none;
-  background-color: @bs-cyan;
-  border-radius: 1em;
+  background-color: @primary-button-color;
+  border-radius: @default-border-radius;
   font-size: 1rem;
-  margin: 0.25rem;
-  padding: 0.5em;
+  margin: @button-margin;
+  padding: @button-padding;
   outline: none;
+  transition: @default-transition-time;
 }
 button:hover {
-  opacity: 0.8;
+  opacity: 1;
+  box-shadow: 0.1em 0.1em 0.2em;
   cursor: pointer;
 }
 

@@ -10,18 +10,12 @@
 @navbar-link-color-hover: @bs-black;
 
 @navbar-height: 3rem;
-@navbar-border-radius: 1em;
-@navbar-list-margin: 0.5em;
-@navbar-item-padding: 0.5em;
-@navbar-item-margin: 0.5em;
+@navbar-margin: 0.5em;
 @navbar-text-margin: 0.25em;
 @navbar-icon-margin: 0.25em;
 @navbar-brand-icon-size: 0.8em;
 
-@navbar-transition-time: 0.3s;
-@navbar-opacity: 0.85;
 @navbar-box-shadow: 0em 0.5em 1em rgba(100,100,100,0.8);
-@navbar-item-box-shadow: 0.1em 0.1em 0.2em;
 
 /* Navigation Bar Styles */
 
@@ -33,7 +27,7 @@
   width: 100%;
   position: fixed;
   top: 0;
-  transition: @navbar-transition-time;
+  transition: @default-transition-time;
   z-index: 2;
 }
 
@@ -43,25 +37,25 @@
 
 .navbar-brand {
   display: inline-block;
-  border-radius: @navbar-border-radius;
+  border-radius: @default-border-radius;
   background-color: @navbar-item-color;
   color: @navbar-link-color;
   text-decoration: none;
-  transition: @navbar-transition-time;
-  padding: @navbar-item-padding;
-  margin: @navbar-item-margin;
+  transition: @default-transition-time;
+  padding: @button-padding;
+  margin: @navbar-margin;
 }
 
 .navbar-brand-icon {
-  border-radius: @navbar-border-radius;
+  border-radius: @default-border-radius;
   height: @navbar-brand-icon-size;
-  opacity: @navbar-opacity;
+  opacity: @default-opacity;
   width: @navbar-brand-icon-size;
 }
 
 .navbar-list {
   float: right;
-  margin: @navbar-list-margin;
+  margin: @navbar-margin;
   list-style-type: none;
   overflow: hidden;
 }
@@ -69,14 +63,14 @@
 .navbar-list-item {
   float: left;
   background-color: @navbar-item-color;
-  border-radius: @navbar-border-radius;
-  opacity: @navbar-opacity;
-  transition: @navbar-transition-time;
+  border-radius: @default-border-radius;
+  opacity: @default-opacity;
+  transition: @default-transition-time;
   
   cursor: pointer;
-  margin-left: @navbar-item-margin;
-  margin-right: @navbar-item-margin;
-  padding: @navbar-item-padding;
+  margin-left: @navbar-margin;
+  margin-right: @navbar-margin;
+  padding: @button-padding;
   text-decoration: none;
   .navbar-link {
     color: @navbar-link-color;
@@ -95,7 +89,7 @@
 .navbar-brand:hover,
 .navbar-list-item:hover {
   opacity: 1;
-  box-shadow: @navbar-item-box-shadow;
+  box-shadow: @default-box-shadow;
   color: @navbar-link-color-hover;
   .navbar-link {
     color: inherit;
@@ -106,31 +100,31 @@
 
 .navbar-dropdown-button {
   background-color: @navbar-item-color;
-  border-radius: @navbar-border-radius;
+  border-radius: @default-border-radius;
   color: @navbar-link-color;
   cursor: pointer;
   display:inline-block;
   margin: 0;
   margin-bottom: 0.4em;
-  padding: @navbar-item-padding;
-  opacity: @navbar-opacity;
+  padding: @button-padding;
+  opacity: @default-opacity;
   text-decoration: none;
-  transition: @navbar-transition-time;
+  transition: @default-transition-time;
 }
 
 .navbar-dropdown {
   display: inline-block;
   float: left;
-  margin-left: @navbar-item-margin;
-  margin-right: @navbar-item-margin;
+  margin-left: @navbar-margin;
+  margin-right: @navbar-margin;
 }
 
 .navbar-dropdown-content {
   background: linear-gradient(@navbar-middle-top-color, @navbar-bottom-color);
-  border-bottom-left-radius: @navbar-border-radius;
-  border-bottom-right-radius: @navbar-border-radius;
+  border-bottom-left-radius: @default-border-radius;
+  border-bottom-right-radius: @default-border-radius;
   display: none;
-  padding: @navbar-item-padding;
+  padding: @button-padding;
   position: absolute;
   z-index: 1;
 }
@@ -139,28 +133,28 @@
   display: block;
   .navbar-dropdown-button {
     opacity: 1;
-    box-shadow: @navbar-item-box-shadow;
+    box-shadow: @default-box-shadow;
     color: @navbar-link-color-hover;
   }
   .navbar-dropdown-content {
     box-shadow: @navbar-box-shadow;
     display: inherit;
     .navbar-link {
-      opacity: @navbar-opacity;
+      opacity: @default-opacity;
       background-color: @navbar-item-color;
-      border-radius: @navbar-border-radius;
+      border-radius: @default-border-radius;
       color: @navbar-link-color;
       display: inherit;
-      margin-bottom: @navbar-item-margin;
-      margin-top: @navbar-item-margin;
-      padding: @navbar-item-padding;
+      margin-bottom: @navbar-margin;
+      margin-top: @navbar-margin;
+      padding: @button-padding;
       text-align: center;
       text-decoration: none;
-      transition: @navbar-transition-time;
+      transition: @default-transition-time;
     }
     .navbar-link:hover {
       opacity: 1;
-      box-shadow: @navbar-item-box-shadow;
+      box-shadow: @default-box-shadow;
       color: @navbar-link-color-hover;
     }
   }
