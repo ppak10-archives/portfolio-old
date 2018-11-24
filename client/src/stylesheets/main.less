@@ -1,19 +1,23 @@
+/* Page URL */
+
+@base-url: 'http://localhost';
 
 /* Fonts */
+
 @import (css) url('https://fonts.googleapis.com/css?family=Quicksand');
 
 /* Constants */
-@import "constants/styles.less";
+
 @import "constants/colors.less";
-@import "constants/elements.less";
 @import "constants/defaults.less";
+@import "constants/effects.less";
+@import "constants/elements.less";
+@import "constants/styles.less";
 
 /* Components */
+
 @import "components/navbar.less";
 
 /* Pages */
-@import "pages/education.less";
 
-.btn {
-  background-color: @bs-green;
-}
+@import "pages/education.less";

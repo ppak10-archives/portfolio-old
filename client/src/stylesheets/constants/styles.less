@@ -7,8 +7,8 @@
 @width-lg: 900px;
 @width-xlg: 1080px;
 
-@page-side-padding: 10rem;
-@page-top-padding: 3rem;
+@page-horizontal-padding: 10rem;
+@page-vertical-padding: 1.5rem;
 
 @footer-padding: 2rem;
 
@@ -16,19 +16,24 @@
 
 #root {}
 
-/* Class Constants */
+/* Page Constants */
 
 .page-wrapper {
   text-align: center;
   min-width: @width-sm;
   margin-top: @navbar-height;
-  padding-top: @page-top-padding;
+}
+
+.page-header {
+  box-sizing: border-box;
+  padding-bottom: @page-vertical-padding;
+  padding-top: @page-vertical-padding;
 }
 
 .page-side-padding {
   box-sizing: border-box;
-  padding-left: @page-side-padding;
-  padding-right: @page-side-padding;
+  padding-left: @page-horizontal-padding;
+  padding-right: @page-horizontal-padding;
 }
 
 .footer {
@@ -36,7 +41,7 @@
   box-sizing: border-box;
   min-width: @width-sm;
   padding-bottom: @footer-padding;
-  padding-left: @page-side-padding;
-  padding-right: @page-side-padding;
+  padding-left: @page-horizontal-padding;
+  padding-right: @page-horizontal-padding;
   padding-top: @footer-padding;
 }

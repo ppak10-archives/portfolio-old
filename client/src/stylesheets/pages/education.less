@@ -2,16 +2,17 @@
 
 @department-icon-height: 3rem;
 
-/* Education Page Styles */
+/* Image Ids */
 
-.parallax {
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: block;
-  height: 100%;
+#campus {
+  background-image: url('@{base-url}/public/images/campus.jpg');
 }
+
+#graduation {
+  background-image: url('@{base-url}/public/images/graduation.jpg');
+}
+
+/* Education Page Styles */
 
 .department-icon {
   height: @department-icon-height;
@@ -20,6 +21,7 @@
 }
 
 .icons {
-  height: 50em;
+  height: 5em;
   background-color: red;
+  transform: translateZ(0);
 }
