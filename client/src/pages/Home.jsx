@@ -1,18 +1,57 @@
 import React from 'react';
 
+/**
+ * Components
+ */
+import Footer from '../components/Footer';
+
 const Home = () => (
-  <div className = "page-wrapper">
-    <div className = "page-header">
+  <div className = "parallax">
+    <div className = "parallax-group" id="group1">
+      <div className = "parallax-layer parallax-base">
+        <div className = "title">Base Layer</div>
+      </div>
+    </div>
+    <div className = "parallax-group" id="group2">
+      <div className = "parallax-layer parallax-base">
+        <div className = "title">Base Layer</div>
+      </div>
+      <div className = "parallax-layer parallax-back">
+        <div className = "title">Background Layer</div>
+      </div>
+    </div>
+    <div className = "parallax-group" id="group3">
+      <div className = "parallax-layer parallax-fore">
+        <div className = "title">Foreground Layer</div>
+      </div>
+      <div className = "parallax-layer parallax-base">
+        <div className = "title">Base Layer</div>
+      </div>
+    </div>
+    <div className = "parallax-group" id="group4">
+      <div className = "parallax-layer parallax-base">
+        <div className = "title">Base Layer</div>
+      </div>
+      <div className = "parallax-layer parallax-back">
+        <div className = "title">Background Layer</div>
+      </div>
+      <div className = "parallax-layer parallax-deep">
+        <div className = "title">Deep Background Layer</div>
+      </div>
+    </div>
+    <div className = "parallax-group" id="group1">
+      <div className = "parallax-layer parallax-base">
+        <div className = "title">Base Layer</div>
+      </div>
+    </div>
+    {/* <div>
       <h1>Peter Pak</h1>
       <div>
         <button className="btn">Biography</button>
         <button className="btn">Contact Information</button>
         <button>Download Resume</button>
       </div>
-    </div>
-    <div className = "parallax-bg" id = "morty-full"></div>
-    <h2>Page Content</h2>
-    <div className = "parallax-bg" id = "morty-full"></div>
+    </div> */}
   </div>
 );
 

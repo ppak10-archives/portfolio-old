@@ -13,7 +13,6 @@ import Education from '../pages/Education';
  * Components
  */
 import Navbar from './Navbar';
-import Footer from './Footer';
 
 /**
  * React App class
@@ -32,7 +31,6 @@ export default class App extends Component {
         <Route path = "/work" component = {Work}/>
         <Route path = "/research" component = {Research}/>
         <Route path = "/education" component = {Education}/>
-        <Footer />
       </div>
     )
   }
