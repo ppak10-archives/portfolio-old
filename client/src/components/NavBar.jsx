@@ -6,29 +6,29 @@ const Navbar = () => (
   <div className = "navbar">
     <NavLink className = "navbar-brand" to = "/">
       <img className = "navbar-brand-icon" src = "public/images/morty.jpeg"/>
-      <span className = "navbar-text">Home</span>
+      <span className = "button-text">Home</span>
     </NavLink>
     <ul className = "navbar-list">
       <li className = "navbar-dropdown">
         <button className = "navbar-dropdown-button"
           to = "/experience">
-          <FontAwesomeIcon className = "navbar-icon" icon = "briefcase" />
-          <span className = "navbar-text">Experience</span>
+          <FontAwesomeIcon className = "button-icon" icon = "briefcase" />
+          <span className = "button-text">Experience</span>
         </button>
         <div className = "navbar-dropdown-content">
           <NavLink className = "navbar-link" to = "/work">
-            <FontAwesomeIcon className = "navbar-icon" icon = "code" />
-            <span className = "navbar-text">Work</span>
+            <FontAwesomeIcon className = "button-icon" icon = "code" />
+            <span className = "button-text">Work</span>
           </NavLink>
           <NavLink className = "navbar-link" to = "/research">
-            <FontAwesomeIcon className = "navbar-icon" icon = "flask" />
-            <span className = "navbar-text">Research</span>
+            <FontAwesomeIcon className = "button-icon" icon = "flask" />
+            <span className = "button-text">Research</span>
           </NavLink>
           <NavLink className = "navbar-link" to = "/education">
             <FontAwesomeIcon
-              className = "navbar-icon"
+              className = "button-icon"
               icon = "graduation-cap" />
-            <span className = "navbar-text">Education</span>
+            <span className = "button-text">Education</span>
           </NavLink>
         </div>
       </li>

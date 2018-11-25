@@ -2,46 +2,44 @@
 
 /* Background Image Ids */
 
-#morty-full {
-  background-image: url('@{base-url}/public/images/morty-full.png');
-}
-
-#group1 {
-  z-index: 5;
-  .parallax-base {
-    background: red;
-  }
-}
-
-#group2 {
+#home1 {
   z-index: 3;
   .parallax-base {
-    background: rgba(255,255,0,0.1);
+
   }
   .parallax-back {
-    background: green;
+    background-image: url('@{base-url}/public/images/morty-full.png');
+    background-size: cover;
   }
 }
 
-#group3 {
-  z-index: 4;
+#home2 {
+  z-index: 5;
+  height: 100vh;
   .parallax-base {
-    background: blue;
-  }
-  .parallax-fore {
-    background: rgba(255, 0, 0, 0.1);
+    background: @background-color;
   }
 }
 
-#group4 {
+#home3 {
   z-index: 2;
   .parallax-base {
     background: rgba(0, 255, 255, 0.1);
   }
   .parallax-back {
-    background: rgba(255, 255, 255, 0.1);
+    background-image: url('@{base-url}/public/images/cmu-emblem.png');
+    background-size: 75vh;
   }
   .parallax-deep {
-    background: purple;
+    background-image: url('@{base-url}/public/images/campus.jpg');
+    background-size: cover;
+  }
+}
+
+#home4 {
+  z-index: 5;
+  height: 100vh;
+  .parallax-base {
+    background: @background-color;
   }
 }

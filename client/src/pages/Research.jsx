@@ -3,69 +3,49 @@ import React from 'react';
 /**
  * Components
  */
-import Footer from '../components/Footer';
+import ParallaxFooter from '../components/ParallaxFooter';
 
 const Research = () => (
-  <div className = "page-wrapper">
-    <h1>Research</h1>
-    <p>React router is working correctly</p>
-    <button className="btn">Test button</button>
-    <button>Test</button>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero ratione ab suscipit atque quae, repudiandae praesentium, amet, dignissimos aut accusantium vel dicta iure qui expedita culpa corporis perferendis error architecto!</p>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero ratione ab suscipit atque quae, repudiandae praesentium, amet, dignissimos aut accusantium vel dicta iure qui expedita culpa corporis perferendis error architecto!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, fuga. Velit perspiciatis odio necessitatibus exercitationem repudiandae non ducimus recusandae, facere eius enim rem eligendi praesentium corrupti, ipsa dolorum ab doloribus!</p>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero ratione ab suscipit atque quae, repudiandae praesentium, amet, dignissimos aut accusantium vel dicta iure qui expedita culpa corporis perferendis error architecto!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, fuga. Velit perspiciatis odio necessitatibus exercitationem repudiandae non ducimus recusandae, facere eius enim rem eligendi praesentium corrupti, ipsa dolorum ab doloribus!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, fuga. Velit perspiciatis odio necessitatibus exercitationem repudiandae non ducimus recusandae, facere eius enim rem eligendi praesentium corrupti, ipsa dolorum ab doloribus!</p>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero ratione ab suscipit atque quae, repudiandae praesentium, amet, dignissimos aut accusantium vel dicta iure qui expedita culpa corporis perferendis error architecto!</p>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero ratione ab suscipit atque quae, repudiandae praesentium, amet, dignissimos aut accusantium vel dicta iure qui expedita culpa corporis perferendis error architecto!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, fuga. Velit perspiciatis odio necessitatibus exercitationem repudiandae non ducimus recusandae, facere eius enim rem eligendi praesentium corrupti, ipsa dolorum ab doloribus!</p>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero ratione ab suscipit atque quae, repudiandae praesentium, amet, dignissimos aut accusantium vel dicta iure qui expedita culpa corporis perferendis error architecto!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, fuga. Velit perspiciatis odio necessitatibus exercitationem repudiandae non ducimus recusandae, facere eius enim rem eligendi praesentium corrupti, ipsa dolorum ab doloribus!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, fuga. Velit perspiciatis odio necessitatibus exercitationem repudiandae non ducimus recusandae, facere eius enim rem eligendi praesentium corrupti, ipsa dolorum ab doloribus!</p>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero ratione ab suscipit atque quae, repudiandae praesentium, amet, dignissimos aut accusantium vel dicta iure qui expedita culpa corporis perferendis error architecto!</p>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero ratione ab suscipit atque quae, repudiandae praesentium, amet, dignissimos aut accusantium vel dicta iure qui expedita culpa corporis perferendis error architecto!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, fuga. Velit perspiciatis odio necessitatibus exercitationem repudiandae non ducimus recusandae, facere eius enim rem eligendi praesentium corrupti, ipsa dolorum ab doloribus!</p>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero ratione ab suscipit atque quae, repudiandae praesentium, amet, dignissimos aut accusantium vel dicta iure qui expedita culpa corporis perferendis error architecto!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, fuga. Velit perspiciatis odio necessitatibus exercitationem repudiandae non ducimus recusandae, facere eius enim rem eligendi praesentium corrupti, ipsa dolorum ab doloribus!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, fuga. Velit perspiciatis odio necessitatibus exercitationem repudiandae non ducimus recusandae, facere eius enim rem eligendi praesentium corrupti, ipsa dolorum ab doloribus!</p>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero ratione ab suscipit atque quae, repudiandae praesentium, amet, dignissimos aut accusantium vel dicta iure qui expedita culpa corporis perferendis error architecto!</p>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero ratione ab suscipit atque quae, repudiandae praesentium, amet, dignissimos aut accusantium vel dicta iure qui expedita culpa corporis perferendis error architecto!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, fuga. Velit perspiciatis odio necessitatibus exercitationem repudiandae non ducimus recusandae, facere eius enim rem eligendi praesentium corrupti, ipsa dolorum ab doloribus!</p>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero ratione ab suscipit atque quae, repudiandae praesentium, amet, dignissimos aut accusantium vel dicta iure qui expedita culpa corporis perferendis error architecto!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, fuga. Velit perspiciatis odio necessitatibus exercitationem repudiandae non ducimus recusandae, facere eius enim rem eligendi praesentium corrupti, ipsa dolorum ab doloribus!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, fuga. Velit perspiciatis odio necessitatibus exercitationem repudiandae non ducimus recusandae, facere eius enim rem eligendi praesentium corrupti, ipsa dolorum ab doloribus!</p>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero ratione ab suscipit atque quae, repudiandae praesentium, amet, dignissimos aut accusantium vel dicta iure qui expedita culpa corporis perferendis error architecto!</p>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero ratione ab suscipit atque quae, repudiandae praesentium, amet, dignissimos aut accusantium vel dicta iure qui expedita culpa corporis perferendis error architecto!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, fuga. Velit perspiciatis odio necessitatibus exercitationem repudiandae non ducimus recusandae, facere eius enim rem eligendi praesentium corrupti, ipsa dolorum ab doloribus!</p>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero ratione ab suscipit atque quae, repudiandae praesentium, amet, dignissimos aut accusantium vel dicta iure qui expedita culpa corporis perferendis error architecto!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, fuga. Velit perspiciatis odio necessitatibus exercitationem repudiandae non ducimus recusandae, facere eius enim rem eligendi praesentium corrupti, ipsa dolorum ab doloribus!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, fuga. Velit perspiciatis odio necessitatibus exercitationem repudiandae non ducimus recusandae, facere eius enim rem eligendi praesentium corrupti, ipsa dolorum ab doloribus!</p>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero ratione ab suscipit atque quae, repudiandae praesentium, amet, dignissimos aut accusantium vel dicta iure qui expedita culpa corporis perferendis error architecto!</p>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero ratione ab suscipit atque quae, repudiandae praesentium, amet, dignissimos aut accusantium vel dicta iure qui expedita culpa corporis perferendis error architecto!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, fuga. Velit perspiciatis odio necessitatibus exercitationem repudiandae non ducimus recusandae, facere eius enim rem eligendi praesentium corrupti, ipsa dolorum ab doloribus!</p>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero ratione ab suscipit atque quae, repudiandae praesentium, amet, dignissimos aut accusantium vel dicta iure qui expedita culpa corporis perferendis error architecto!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, fuga. Velit perspiciatis odio necessitatibus exercitationem repudiandae non ducimus recusandae, facere eius enim rem eligendi praesentium corrupti, ipsa dolorum ab doloribus!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, fuga. Velit perspiciatis odio necessitatibus exercitationem repudiandae non ducimus recusandae, facere eius enim rem eligendi praesentium corrupti, ipsa dolorum ab doloribus!</p>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero ratione ab suscipit atque quae, repudiandae praesentium, amet, dignissimos aut accusantium vel dicta iure qui expedita culpa corporis perferendis error architecto!</p>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero ratione ab suscipit atque quae, repudiandae praesentium, amet, dignissimos aut accusantium vel dicta iure qui expedita culpa corporis perferendis error architecto!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, fuga. Velit perspiciatis odio necessitatibus exercitationem repudiandae non ducimus recusandae, facere eius enim rem eligendi praesentium corrupti, ipsa dolorum ab doloribus!</p>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero ratione ab suscipit atque quae, repudiandae praesentium, amet, dignissimos aut accusantium vel dicta iure qui expedita culpa corporis perferendis error architecto!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, fuga. Velit perspiciatis odio necessitatibus exercitationem repudiandae non ducimus recusandae, facere eius enim rem eligendi praesentium corrupti, ipsa dolorum ab doloribus!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, fuga. Velit perspiciatis odio necessitatibus exercitationem repudiandae non ducimus recusandae, facere eius enim rem eligendi praesentium corrupti, ipsa dolorum ab doloribus!</p>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero ratione ab suscipit atque quae, repudiandae praesentium, amet, dignissimos aut accusantium vel dicta iure qui expedita culpa corporis perferendis error architecto!</p>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero ratione ab suscipit atque quae, repudiandae praesentium, amet, dignissimos aut accusantium vel dicta iure qui expedita culpa corporis perferendis error architecto!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, fuga. Velit perspiciatis odio necessitatibus exercitationem repudiandae non ducimus recusandae, facere eius enim rem eligendi praesentium corrupti, ipsa dolorum ab doloribus!</p>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero ratione ab suscipit atque quae, repudiandae praesentium, amet, dignissimos aut accusantium vel dicta iure qui expedita culpa corporis perferendis error architecto!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, fuga. Velit perspiciatis odio necessitatibus exercitationem repudiandae non ducimus recusandae, facere eius enim rem eligendi praesentium corrupti, ipsa dolorum ab doloribus!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, fuga. Velit perspiciatis odio necessitatibus exercitationem repudiandae non ducimus recusandae, facere eius enim rem eligendi praesentium corrupti, ipsa dolorum ab doloribus!</p>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero ratione ab suscipit atque quae, repudiandae praesentium, amet, dignissimos aut accusantium vel dicta iure qui expedita culpa corporis perferendis error architecto!</p>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero ratione ab suscipit atque quae, repudiandae praesentium, amet, dignissimos aut accusantium vel dicta iure qui expedita culpa corporis perferendis error architecto!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, fuga. Velit perspiciatis odio necessitatibus exercitationem repudiandae non ducimus recusandae, facere eius enim rem eligendi praesentium corrupti, ipsa dolorum ab doloribus!</p>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero ratione ab suscipit atque quae, repudiandae praesentium, amet, dignissimos aut accusantium vel dicta iure qui expedita culpa corporis perferendis error architecto!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, fuga. Velit perspiciatis odio necessitatibus exercitationem repudiandae non ducimus recusandae, facere eius enim rem eligendi praesentium corrupti, ipsa dolorum ab doloribus!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, fuga. Velit perspiciatis odio necessitatibus exercitationem repudiandae non ducimus recusandae, facere eius enim rem eligendi praesentium corrupti, ipsa dolorum ab doloribus!</p>
-    <Footer />
+  <div className = "parallax">
+    <div className = "parallax-group" id="research1">
+      <div className = "parallax-layer parallax-base">
+        <div className = "title">Base Layer</div>
+      </div>
+      <div className = "parallax-layer parallax-back"></div>
+    </div>
+    <div className = "parallax-group" id="group3">
+      <div className = "parallax-layer parallax-fore">
+        <div className = "title">Foreground Layer</div>
+      </div>
+      <div className = "parallax-layer parallax-base">
+        <div className = "title">Base Layer</div>
+      </div>
+    </div>
+    <div className = "parallax-group" id="group4">
+      <div className = "parallax-layer parallax-base">
+        <div className = "title">Base Layer</div>
+      </div>
+      <div className = "parallax-layer parallax-back">
+        <div className = "title">Background Layer</div>
+      </div>
+      <div className = "parallax-layer parallax-deep">
+        <div className = "title">Deep Background Layer</div>
+      </div>
+    </div>
+    <div className = "parallax-group" id="group1">
+      <div className = "parallax-layer parallax-base">
+        <div className = "title">Base Layer</div>
+      </div>
+    </div>
+    <ParallaxFooter />
+    {/* <div>
+      <h1>Peter Pak</h1>
+      <div>
+        <button className="btn">Biography</button>
+        <button className="btn">Contact Information</button>
+        <button>Download Resume</button>
+      </div>
+    </div> */}
   </div>
 );
 

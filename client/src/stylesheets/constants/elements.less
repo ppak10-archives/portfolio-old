@@ -1,8 +1,6 @@
 /* Element Constants */
 
 @default-border-radius: 1em;
-@button-padding: 0.5em;
-@button-margin: 0.25rem;
 
 /* Scrollbar */
 
@@ -27,18 +25,24 @@ body {
 
 button {
   border: none;
-  background-color: @primary-button-color;
+  background-color: @button-primary-color;
   border-radius: @default-border-radius;
   font-size: 1rem;
   margin: @button-margin;
-  padding: @button-padding;
+  opacity: @default-opacity;
   outline: none;
+  padding: @button-padding;
   transition: @default-transition-time;
 }
+
 button:hover {
   opacity: 1;
   box-shadow: 0.1em 0.1em 0.2em;
   cursor: pointer;
+}
+
+button:active {
+  background-color: @button-primary-active-color;
 }
 
 /* Unordered List */

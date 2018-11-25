@@ -10,6 +10,13 @@
 @page-horizontal-padding: 10rem;
 @page-vertical-padding: 1.5rem;
 
+@button-primary-color: @bs-green;
+@button-primary-active-color: @bs-green-dark;
+@button-text-margin: 0.25em;
+@button-icon-margin: 0.25em;
+@button-padding: 0.5em;
+@button-margin: 0.25rem;
+
 @footer-padding: 2rem;
 
 /* Page Constants */
@@ -32,6 +39,21 @@
   box-sizing: border-box;
   padding-left: @page-horizontal-padding;
   padding-right: @page-horizontal-padding;
+}
+
+/* Button Styles */
+
+.button-icon {
+  margin-left: @button-icon-margin;
+}
+
+.button-text {
+  margin-right: @button-text-margin;
+  margin-left: @button-text-margin;
+}
+
+.button-lg {
+  font-size: 25%;
 }
 
 /* Footer */

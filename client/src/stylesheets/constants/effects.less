@@ -21,6 +21,7 @@
   overflow-x: hidden;
   overflow-y: auto;
   perspective: 300px;
+  scroll-behavior: smooth;
 }
 
 .parallax-group {
@@ -35,6 +36,8 @@
   right: 0;
   bottom: 0;
   position: absolute;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .parallax-back {
@@ -57,7 +60,17 @@
   z-index: 2;
 }
 
+/* Parallax Ids */
+
+#parallax-footer {
+  height: 15vh;
+  .parallax-base {
+    background: @background-color;
+  }
+}
+
 .title {
+  font-size: 10vh;
   text-align: center;
   position: absolute;
   left: 50%;

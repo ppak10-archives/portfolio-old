@@ -6,13 +6,12 @@
 @navbar-bottom-color: rgba(150, 150, 150, 0.6);
 
 @navbar-item-color: @bs-cyan;
+@navbar-item-active-color: @bs-cyan-dark;
 @navbar-link-color: @bs-white;
 @navbar-link-color-hover: @bs-black;
 
 @navbar-height: 3rem;
 @navbar-margin: 0.5em;
-@navbar-text-margin: 0.25em;
-@navbar-icon-margin: 0.25em;
 @navbar-brand-icon-size: 0.8em;
 
 @navbar-box-shadow: 0em 0.5em 1em rgba(100,100,100,0.8);
@@ -77,15 +76,6 @@
   }
 }
 
-.navbar-icon {
-  margin-left: @navbar-icon-margin;
-}
-
-.navbar-text {
-  margin-right: @navbar-text-margin;
-  margin-left: @navbar-text-margin;
-}
-
 .navbar-brand:hover,
 .navbar-list-item:hover {
   opacity: 1;
@@ -94,6 +84,11 @@
   .navbar-link {
     color: inherit;
   }
+}
+
+.navbar-brand:active,
+.navbar-list-item:active {
+  background-color: @navbar-item-active-color;
 }
 
 /* Dropdown */
@@ -105,6 +100,7 @@
   cursor: pointer;
   display:inline-block;
   margin: 0;
+  margin-left: 0.25em;
   margin-bottom: 0.4em;
   padding: @button-padding;
   opacity: @default-opacity;
@@ -156,6 +152,9 @@
       opacity: 1;
       box-shadow: @default-box-shadow;
       color: @navbar-link-color-hover;
+    }
+    .navbar-link:active {
+      background-color: @navbar-item-active-color;
     }
   }
 }
