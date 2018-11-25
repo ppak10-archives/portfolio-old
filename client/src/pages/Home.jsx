@@ -54,14 +54,6 @@ const Home = () => (
       </div>
     </div>
     <ParallaxFooter />
-    {/* <div>
-      <h1>Peter Pak</h1>
-      <div>
-        <button className="btn">Biography</button>
-        <button className="btn">Contact Information</button>
-        <button>Download Resume</button>
-      </div>
-    </div> */}
   </div>
 );
 

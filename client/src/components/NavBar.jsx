@@ -9,40 +9,47 @@ const Navbar = () => (
       <span className = "button-text">Home</span>
     </NavLink>
     <ul className = "navbar-list">
+      <li className = "navbar-button">
+        <NavLink className = "navbar-link" to = "/work">
+          <FontAwesomeIcon icon = {['fab', 'github']} />
+          <span className = "button-text">Projects</span>
+        </NavLink>
+      </li>
       <li className = "navbar-dropdown">
-        <button className = "navbar-dropdown-button"
-          to = "/experience">
+        <a className = "navbar-button">
           <FontAwesomeIcon className = "button-icon" icon = "briefcase" />
           <span className = "button-text">Experience</span>
-        </button>
-        <div className = "navbar-dropdown-content">
-          <NavLink className = "navbar-link" to = "/work">
-            <FontAwesomeIcon className = "button-icon" icon = "code" />
-            <span className = "button-text">Work</span>
-          </NavLink>
-          <NavLink className = "navbar-link" to = "/research">
-            <FontAwesomeIcon className = "button-icon" icon = "flask" />
-            <span className = "button-text">Research</span>
-          </NavLink>
-          <NavLink className = "navbar-link" to = "/education">
-            <FontAwesomeIcon
-              className = "button-icon"
-              icon = "graduation-cap" />
-            <span className = "button-text">Education</span>
-          </NavLink>
-        </div>
+        </a>
+        <ul className = "navbar-dropdown-content">
+          <li className = "navbar-button">
+            <NavLink className = "navbar-link" to = "/work">
+              <FontAwesomeIcon icon = "code" />
+              <span className = "button-text">Work</span>
+            </NavLink>
+          </li>
+          <li className = "navbar-button">
+            <NavLink className = "navbar-link" to = "/research">
+              <FontAwesomeIcon icon = "flask"  />
+              <span className = "button-text">Research</span>
+            </NavLink>
+          </li>
+          <li className = "navbar-button">
+            <NavLink className = "navbar-link" to = "/education">
+              <FontAwesomeIcon icon = "graduation-cap" />
+              <span className = "button-text">Education</span>
+            </NavLink>
+          </li>
+        </ul>
       </li>
-      <li className = "navbar-list-item">
-        <a className = "navbar-link"
-          target = "_blank"
+      <li className = "navbar-button">
+        <a className = "navbar-link" target = "_blank"
           rel = "noopener noreferrer"
           href = "https://www.github.com/ppak10">
           <FontAwesomeIcon icon = {['fab', 'github']} />
         </a>
       </li>
-      <li className = "navbar-list-item">
-        <a className = "navbar-link"
-          target = "_blank"
+      <li className = "navbar-button">
+        <a className = "navbar-link" target = "_blank"
           rel = "noopener noreferrer"
           href = "http://www.linkedin.com/in/ppak10">
           <FontAwesomeIcon icon = {['fab', 'linkedin']} />

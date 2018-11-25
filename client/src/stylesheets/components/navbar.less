@@ -1,14 +1,14 @@
 /* Navigation Bar Constants */
 
 @navbar-top-color: rgba(255, 255, 255, 1);
-@navbar-middle-bottom-color: rgba(245, 245, 245, 0.8);
+@navbar-middle-bottom-color: rgba(245, 245, 245, 1);
 @navbar-middle-top-color: rgba(200, 200, 200, 0.7);
 @navbar-bottom-color: rgba(150, 150, 150, 0.6);
 
 @navbar-item-color: @bs-cyan;
 @navbar-item-active-color: @bs-cyan-dark;
-@navbar-link-color: @bs-white;
-@navbar-link-color-hover: @bs-black;
+@navbar-button-color: @bs-white;
+@navbar-button-color-hover: @bs-black;
 
 @navbar-height: 3rem;
 @navbar-margin: 0.5em;
@@ -27,7 +27,7 @@
   position: fixed;
   top: 0;
   transition: @default-transition-time;
-  z-index: 2;
+  z-index: 999;
 }
 
 .navbar:hover {
@@ -35,14 +35,14 @@
 }
 
 .navbar-brand {
-  display: inline-block;
-  border-radius: @default-border-radius;
   background-color: @navbar-item-color;
-  color: @navbar-link-color;
+  border-radius: @default-border-radius;
+  color: @navbar-button-color;
+  display: inline-block;
+  margin: @navbar-margin;
+  padding: @button-padding;
   text-decoration: none;
   transition: @default-transition-time;
-  padding: @button-padding;
-  margin: @navbar-margin;
 }
 
 .navbar-brand-icon {
@@ -54,65 +54,53 @@
 
 .navbar-list {
   float: right;
-  margin: @navbar-margin;
   list-style-type: none;
-  overflow: hidden;
+  margin: 0;
+  margin-top: @navbar-margin;
 }
 
-.navbar-list-item {
-  float: left;
+.navbar-button {
   background-color: @navbar-item-color;
   border-radius: @default-border-radius;
-  opacity: @default-opacity;
-  transition: @default-transition-time;
-  
+  box-sizing: content-box;
   cursor: pointer;
+  float: left;
+  margin: 0;
   margin-left: @navbar-margin;
   margin-right: @navbar-margin;
+  opacity: @default-opacity;
   padding: @button-padding;
+  font-size: 1rem;
+  transition: @default-transition-time;
+}
+
+.navbar-link {
+  color: @navbar-button-color;
   text-decoration: none;
-  .navbar-link {
-    color: @navbar-link-color;
-  }
 }
 
 .navbar-brand:hover,
-.navbar-list-item:hover {
+.navbar-button:hover {
   opacity: 1;
   box-shadow: @default-box-shadow;
-  color: @navbar-link-color-hover;
-  .navbar-link {
-    color: inherit;
-  }
+  color: @navbar-button-color-hover;
 }
 
 .navbar-brand:active,
-.navbar-list-item:active {
+.navbar-button:active {
   background-color: @navbar-item-active-color;
 }
 
 /* Dropdown */
 
-.navbar-dropdown-button {
-  background-color: @navbar-item-color;
-  border-radius: @default-border-radius;
-  color: @navbar-link-color;
-  cursor: pointer;
-  display:inline-block;
-  margin: 0;
-  margin-left: 0.25em;
-  margin-bottom: 0.4em;
-  padding: @button-padding;
-  opacity: @default-opacity;
-  text-decoration: none;
-  transition: @default-transition-time;
-}
-
 .navbar-dropdown {
+  box-sizing: border-box;
   display: inline-block;
   float: left;
-  margin-left: @navbar-margin;
-  margin-right: @navbar-margin;
+  position: relative;
+  .navbar-button {
+    color: @navbar-button-color;
+  }
 }
 
 .navbar-dropdown-content {
@@ -120,40 +108,39 @@
   border-bottom-left-radius: @default-border-radius;
   border-bottom-right-radius: @default-border-radius;
   display: none;
-  padding: @button-padding;
   position: absolute;
-  z-index: 1;
+  top: 100%;
 }
 
 .navbar-dropdown:hover {
-  display: block;
-  .navbar-dropdown-button {
+  .navbar-button {
     opacity: 1;
     box-shadow: @default-box-shadow;
-    color: @navbar-link-color-hover;
+    color: @navbar-button-color-hover;
+    margin-bottom: @navbar-margin;
   }
   .navbar-dropdown-content {
     box-shadow: @navbar-box-shadow;
-    display: inherit;
-    .navbar-link {
+    display: block;
+    .navbar-button {
       opacity: @default-opacity;
       background-color: @navbar-item-color;
       border-radius: @default-border-radius;
-      color: @navbar-link-color;
+      box-shadow: none;
+      color: @navbar-button-color;
       display: inherit;
       margin-bottom: @navbar-margin;
       margin-top: @navbar-margin;
       padding: @button-padding;
       text-align: center;
-      text-decoration: none;
       transition: @default-transition-time;
     }
-    .navbar-link:hover {
+    .navbar-button:hover {
       opacity: 1;
       box-shadow: @default-box-shadow;
-      color: @navbar-link-color-hover;
+      color: @navbar-button-color-hover;
     }
-    .navbar-link:active {
+    .navbar-button:active {
       background-color: @navbar-item-active-color;
     }
   }
