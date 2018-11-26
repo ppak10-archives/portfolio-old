@@ -5,6 +5,7 @@ import {Route} from 'react-router-dom';
  * Page Components
  */
 import Home from '../pages/Home';
+import Projects from '../pages/Projects';
 import Work from '../pages/Work';
 import Research from '../pages/Research';
 import Education from '../pages/Education';
@@ -28,6 +29,7 @@ export default class App extends Component {
       <div>
         <Navbar />
         <Route exact path = "/" component = {Home}/>
+        <Route path = "/projects" component = {Projects}/>
         <Route path = "/work" component = {Work}/>
         <Route path = "/research" component = {Research}/>
         <Route path = "/education" component = {Education}/>

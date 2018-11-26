@@ -1,7 +1,7 @@
 /* Navigation Bar Constants */
 
 @navbar-top-color: rgba(255, 255, 255, 1);
-@navbar-middle-bottom-color: rgba(245, 245, 245, 1);
+@navbar-middle-bottom-color: rgba(245, 245, 245, 0.8);
 @navbar-middle-top-color: rgba(200, 200, 200, 0.7);
 @navbar-bottom-color: rgba(150, 150, 150, 0.6);
 
@@ -24,28 +24,26 @@
   margin: 0;
   height: @navbar-height;
   width: 100%;
-  position: fixed;
+  position: absolute;
   top: 0;
   transition: @default-transition-time;
   z-index: 999;
-}
 
-.navbar:hover {
-  box-shadow: @navbar-box-shadow;
+  &:hover {
+    box-shadow: @navbar-box-shadow;
+  }
 }
 
 .navbar-brand {
-  background-color: @navbar-item-color;
-  border-radius: @default-border-radius;
+  &:extend(.navbar-button all);
   color: @navbar-button-color;
   display: inline-block;
-  margin: @navbar-margin;
-  padding: @button-padding;
+  margin: @navbar-margin !important;
   text-decoration: none;
-  transition: @default-transition-time;
 }
 
 .navbar-brand-icon {
+  &:extend(.button-icon);
   border-radius: @default-border-radius;
   height: @navbar-brand-icon-size;
   opacity: @default-opacity;
@@ -72,23 +70,21 @@
   padding: @button-padding;
   font-size: 1rem;
   transition: @default-transition-time;
+
+  &:hover {
+    opacity: 1;
+    box-shadow: @default-box-shadow;
+    color: @navbar-button-color-hover;
+  }
+
+  &:active {
+    background-color: @navbar-item-active-color;
+  }
 }
 
 .navbar-link {
   color: @navbar-button-color;
   text-decoration: none;
-}
-
-.navbar-brand:hover,
-.navbar-button:hover {
-  opacity: 1;
-  box-shadow: @default-box-shadow;
-  color: @navbar-button-color-hover;
-}
-
-.navbar-brand:active,
-.navbar-button:active {
-  background-color: @navbar-item-active-color;
 }
 
 /* Dropdown */
@@ -108,40 +104,31 @@
   border-bottom-left-radius: @default-border-radius;
   border-bottom-right-radius: @default-border-radius;
   display: none;
+  padding: @button-padding;
   position: absolute;
   top: 100%;
+  z-index: 998; // doesn't seem to work right now
 }
 
 .navbar-dropdown:hover {
   .navbar-button {
-    opacity: 1;
-    box-shadow: @default-box-shadow;
-    color: @navbar-button-color-hover;
+    &:extend(.navbar-button:hover);
     margin-bottom: @navbar-margin;
   }
   .navbar-dropdown-content {
     box-shadow: @navbar-box-shadow;
     display: block;
     .navbar-button {
-      opacity: @default-opacity;
-      background-color: @navbar-item-color;
-      border-radius: @default-border-radius;
+      &:extend(.navbar-button all);
       box-shadow: none;
+      box-sizing: border-box;
       color: @navbar-button-color;
       display: inherit;
+      margin:0;
       margin-bottom: @navbar-margin;
       margin-top: @navbar-margin;
-      padding: @button-padding;
       text-align: center;
-      transition: @default-transition-time;
-    }
-    .navbar-button:hover {
-      opacity: 1;
-      box-shadow: @default-box-shadow;
-      color: @navbar-button-color-hover;
-    }
-    .navbar-button:active {
-      background-color: @navbar-item-active-color;
+      width: 100%;
     }
   }
 }

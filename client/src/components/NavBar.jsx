@@ -10,8 +10,8 @@ const Navbar = () => (
     </NavLink>
     <ul className = "navbar-list">
       <li className = "navbar-button">
-        <NavLink className = "navbar-link" to = "/work">
-          <FontAwesomeIcon icon = {['fab', 'github']} />
+        <NavLink className = "navbar-link" to = "/projects">
+          <FontAwesomeIcon className = "button-icon" icon = "sitemap" />
           <span className = "button-text">Projects</span>
         </NavLink>
       </li>
@@ -23,33 +23,37 @@ const Navbar = () => (
         <ul className = "navbar-dropdown-content">
           <li className = "navbar-button">
             <NavLink className = "navbar-link" to = "/work">
-              <FontAwesomeIcon icon = "code" />
+              <FontAwesomeIcon className = "button-icon" icon = "code" />
               <span className = "button-text">Work</span>
             </NavLink>
           </li>
           <li className = "navbar-button">
             <NavLink className = "navbar-link" to = "/research">
-              <FontAwesomeIcon icon = "flask"  />
+              <FontAwesomeIcon className = "button-icon" icon = "flask" />
               <span className = "button-text">Research</span>
             </NavLink>
           </li>
           <li className = "navbar-button">
             <NavLink className = "navbar-link" to = "/education">
-              <FontAwesomeIcon icon = "graduation-cap" />
+              <FontAwesomeIcon
+                className = "button-icon"
+                icon = "graduation-cap" />
               <span className = "button-text">Education</span>
             </NavLink>
           </li>
         </ul>
       </li>
       <li className = "navbar-button">
-        <a className = "navbar-link" target = "_blank"
+        <a className = "navbar-link" 
+          target = "_blank"
           rel = "noopener noreferrer"
           href = "https://www.github.com/ppak10">
           <FontAwesomeIcon icon = {['fab', 'github']} />
         </a>
       </li>
       <li className = "navbar-button">
-        <a className = "navbar-link" target = "_blank"
+        <a className = "navbar-link" 
+          target = "_blank"
           rel = "noopener noreferrer"
           href = "http://www.linkedin.com/in/ppak10">
           <FontAwesomeIcon icon = {['fab', 'linkedin']} />

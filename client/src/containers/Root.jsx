@@ -20,6 +20,7 @@ import {
   faDownload,
   faUserCircle,
   faAddressCard,
+  faSitemap,
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(
@@ -35,7 +36,8 @@ library.add(
     faGraduationCap,
     faDownload,
     faUserCircle,
-    faAddressCard);
+    faAddressCard,
+    faSitemap);
 
 /**
  * App Component
