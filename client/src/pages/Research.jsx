@@ -3,7 +3,7 @@ import React from 'react';
 /**
  * Components
  */
-import ParallaxFooter from '../components/ParallaxFooter';
+import {ParallaxFooter} from '../components/Footer';
 
 const Research = () => (
   <div className = "parallax">

@@ -3,7 +3,7 @@ import React from 'react';
 /**
  * Components
  */
-import Footer from '../components/Footer';
+import {Footer} from '../components/Footer';
 
 const Education = () => (
   <div className = "page-wrapper">

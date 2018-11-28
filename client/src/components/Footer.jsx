@@ -14,4 +14,12 @@ const Footer = () => (
   </div>
 );
 
-export default Footer;
+const ParallaxFooter = () => (
+  <div className = "parallax-group" id = "parallax-footer">
+    <div className = "parallax-layer parallax-base">
+      <Footer />
+    </div>
+  </div>
+);
+
+export {Footer, ParallaxFooter};

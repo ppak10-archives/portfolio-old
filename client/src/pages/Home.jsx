@@ -4,7 +4,8 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 /**
  * Components
  */
-import ParallaxFooter from '../components/ParallaxFooter';
+import {ParallaxFooter} from '../components/Footer';
+import {Info, Navigation} from '../components/Displays';
 
 const Home = () => (
   <div className = "parallax">
@@ -43,15 +44,16 @@ const Home = () => (
     </div>
     <div className = "parallax-group" id="home3">
       <div className = "parallax-layer parallax-base">
-        <div className = "title">Base Layer</div>
+        <Navigation display = "parallax-small" />
       </div>
       <div className = "parallax-layer parallax-back"></div>
       <div className = "parallax-layer parallax-deep"></div>
     </div>
     <div className = "parallax-group" id="home4">
-      <div className = "parallax-layer parallax-base">
-        <div className = "title">Base Layer</div>
+      <div className = "parallax-layer parallax-fore">
+        <Info display = "parallax-large" title = "Contact Information"/>
       </div>
+      <div className = "parallax-layer parallax-base"></div>
     </div>
     <ParallaxFooter />
   </div>

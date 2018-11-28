@@ -1,0 +1,33 @@
+/* Parallax Displays */
+
+.parallax-large {
+  &:extend(.parallax-display all);
+  height: 80%;
+  width: 80%;
+}
+
+.parallax-medium {
+  &:extend(.parallax-display all);
+  height: 60%;
+  width: 60%
+}
+
+.parallax-small {
+  &:extend(.parallax-display all);
+  height: 40%;
+  width: 40%;
+}
+
+.parallax-display {
+  background-color: fade(@background-color-primary, 80%);
+  border-radius: @default-border-radius;
+  left: 50%;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: @default-transition-time;
+  &:hover {
+    box-shadow: @default-box-shadow;
+  }
+}
