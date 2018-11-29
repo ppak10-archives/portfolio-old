@@ -1,39 +1,33 @@
-import React, {Component} from 'react';
-import {Route} from 'react-router-dom';
+import React, {lazy, Suspense} from 'react';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 /**
  * Page Components
  */
-import Home from '../pages/Home';
-import Projects from '../pages/Projects';
-import Work from '../pages/Work';
-import Research from '../pages/Research';
-import Education from '../pages/Education';
+const Home = lazy(() => import('../pages/Home'));
+const Projects = lazy(() => import('../pages/Projects'));
+const Work = lazy(() => import('../pages/Work'));
+const Research = lazy (() => import('../pages/Research'));
+const Education = lazy (() => import('../pages/Education'));
 
 /**
  * Components
  */
 import Navbar from './Navbar';
 
-/**
- * React App class
- */
-export default class App extends Component {
-
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return(
-      <div>
-        <Navbar />
+const App = () => (
+  <Router>
+    <Suspense fallback = {<div>Loading...</div>}>
+      <Navbar />
+      <Switch>
         <Route exact path = "/" component = {Home}/>
         <Route path = "/projects" component = {Projects}/>
         <Route path = "/work" component = {Work}/>
         <Route path = "/research" component = {Research}/>
         <Route path = "/education" component = {Education}/>
-      </div>
-    )
-  }
-}
+      </Switch>
+    </Suspense>
+  </Router>
+);
+
+export default App;

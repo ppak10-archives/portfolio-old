@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {BrowserRouter, Switch} from 'react-router-dom';
 import {Provider} from 'react-redux';
 
 /**
@@ -24,11 +23,11 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(
-    fab, 
-    faDiceD6, 
-    faObjectGroup, 
-    faCode, 
-    faServer, 
+    fab,
+    faDiceD6,
+    faObjectGroup,
+    faCode,
+    faServer,
     faAtom,
     faHome,
     faBriefcase,
@@ -58,13 +57,9 @@ export default class Root extends Component {
    */
   render() {
     return (
-      <BrowserRouter>
-        <Switch>
-          <Provider store={store}>
-            <App />
-          </Provider>
-        </Switch>
-      </BrowserRouter>
+      <Provider store={store}>
+        <App />
+      </Provider>
     );
   }
 }
