@@ -2,7 +2,7 @@ import React from 'react';
 
 const Work = () => (
   <div className = "page-wrapper">
-    <h1>Work</h1>
+    <h1 className = "page-header">Work</h1>
     <p>React router is working correctly</p>
     <button className="btn">Test button</button>
     <button>Test</button>

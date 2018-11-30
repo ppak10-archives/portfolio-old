@@ -17,16 +17,18 @@ import Navbar from './Navbar';
 
 const App = () => (
   <Router>
-    <Suspense fallback = {<div>Loading...</div>}>
+    <div>
       <Navbar />
-      <Switch>
-        <Route exact path = "/" component = {Home}/>
-        <Route path = "/projects" component = {Projects}/>
-        <Route path = "/work" component = {Work}/>
-        <Route path = "/research" component = {Research}/>
-        <Route path = "/education" component = {Education}/>
-      </Switch>
-    </Suspense>
+      <Suspense fallback = {<div>Loading...</div>}>
+        <Switch>
+          <Route exact path = "/" component = {Home}/>
+          <Route path = "/projects" component = {Projects}/>
+          <Route path = "/work" component = {Work}/>
+          <Route path = "/research" component = {Research}/>
+          <Route path = "/education" component = {Education}/>
+        </Switch>
+      </Suspense>
+    </div>
   </Router>
 );
 
