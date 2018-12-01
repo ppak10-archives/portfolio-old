@@ -4,6 +4,41 @@
 @default-opacity: 0.85;
 @default-box-shadow: 0.1em 0.1em 0.2em;
 
+/* Slide Text Transition */
+
+.slide-text(@direction) {
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+  }
+  
+  overflow: hidden;
+
+  &:hover:before {
+    opacity: 1;
+    transform: translate(0,0);
+  }
+
+  :before {
+    content: attr(data-hover);
+    position: absolute;
+    transform: translate(-100%, 0);
+    transition: @default-transition-time;
+  }
+
+  :hover span {
+    opacity: 0;
+    transform: translate(100%, 0)
+  }
+
+  span {
+    transition: @default-transition-time;
+  }
+}
 /* Simple Parallax */
 
 .parallax-simple {
@@ -60,14 +95,6 @@
   z-index: 2;
 }
 
-/* Parallax Ids */
-
-#parallax-footer {
-  height: 15vh;
-  .parallax-base {
-    background: @background-color-primary;
-  }
-}
 
 .title {
   font-size: 10vh;

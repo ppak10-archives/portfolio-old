@@ -1,0 +1,45 @@
+/* Footer */
+
+.footer {
+  text-align: center;
+  box-sizing: border-box;
+  min-width: @width-sm;
+  padding-bottom: @footer-padding;
+  padding-left: @page-horizontal-padding;
+  padding-right: @page-horizontal-padding;
+  padding-top: @footer-padding;
+}
+
+.footer-login {
+  &:extend(.footer);
+  .footer-input {
+    margin: 1em;
+  }
+  input {
+    background: transparent;
+    border: none;
+    caret-color: transparent;
+    font-size: 1rem;
+    font-weight: lighter;
+    outline: none;
+    width: 4.5rem;
+  }
+  input::placeholder {
+    color: inherit;
+    opacity: 1;
+  }
+  #un {
+    padding-left: 2rem;
+    padding-right: 0.025em;
+    text-align: right;
+  }
+}
+
+/* Parallax Ids */
+
+#parallax-footer {
+  height: 15vh;
+  .parallax-base {
+    background: @background-color-primary;
+  }
+}
