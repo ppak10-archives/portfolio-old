@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
 import TodoItem from '../components/TodoItem';
-import {Route} from 'react-router-dom';
 
 const API_URL = '/api';
 
-export default class App extends Component {
+export default class DbTest extends Component {
 
   constructor(props) {
     super(props);

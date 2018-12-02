@@ -27,7 +27,7 @@ const LoginFooter = () => (
     <div className = "footer-input">
       {/* un and ps to prevent notifying password managers */}
       <input id = "un" type = "text" name = "un" placeholder = "Peter Pak"/>
-      <input id = "ps" type = "text" name = "pw" placeholder = " 2018"/>
+      <input id = "ps" type = "text" name = "pw" placeholder = "2018"/>
     </div>
     <div>
       <span>

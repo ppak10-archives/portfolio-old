@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev:install": "./install-dev.sh",
     "dev:up": "docker-compose -f docker/docker-compose.dev.yml up",
+    "dev:down": "docker-compose -f docker/docker-compose.dev.yml down",
     "dev:connect:api": "docker exec -it target_api_1 /bin/sh",
     "dev:connect:db": "psql -h localhost -p 5431 -U myclientuser -d myclientdb"
   },

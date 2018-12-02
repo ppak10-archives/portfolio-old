@@ -10,6 +10,8 @@ const Work = lazy(() => import('../pages/Work'));
 const Research = lazy (() => import('../pages/Research'));
 const Education = lazy (() => import('../pages/Education'));
 
+import DbTest from '../pages/DbTest';
+
 /**
  * Components
  */
@@ -26,6 +28,7 @@ const App = () => (
           <Route path = "/work" component = {Work}/>
           <Route path = "/research" component = {Research}/>
           <Route path = "/education" component = {Education}/>
+          <Route path = "/dbtest" component = {DbTest}/>
         </Switch>
       </Suspense>
     </div>
