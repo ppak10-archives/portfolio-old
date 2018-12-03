@@ -1,19 +1,27 @@
 {
   "name": "api",
   "version": "1.0.0",
-  "description": "",
+  "description": "api server for database requests",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:dev": "nodemon index.js",
     "serve": "sequelize db:migrate && sequelize db:seed:all && nodemon index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ppak10/Docker-Node-Notes.git"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
     "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
     "pg": "^7.6.1",
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.41.2",
