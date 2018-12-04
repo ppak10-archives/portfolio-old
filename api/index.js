@@ -14,7 +14,6 @@ const session  = require('express-session');
 
 const todosController = require('./server/controllers/todos');
 const projectsController = require('./server/controllers/projects');
-const models = require('./server/models');
 
 /**
  * Server Config
@@ -28,13 +27,13 @@ const HOST = '0.0.0.0';
  * Routes
  */
 
-//const authRoute = require('./server/routes/auth.js')(app, passport);
+const authRoutes = require('./server/routes/auth');
 
 /**
  * Passport Strategies
  */
 
-require('./server/config/passport/local.js')(passport, models.user);
+//require('./server/config/passport/local.js')(passport, models.user);
 
 app.use(cors());
 
@@ -53,6 +52,8 @@ app.get('/', (req, res) => res.send('hello world'));
 
 app.get('/api/todos', todosController.list);
 app.get('/api/projects', projectsController.list);
+
+app.use('/auth', authRoutes);
 
 app.listen(PORT, HOST);
 console.info('Express Server is up');
