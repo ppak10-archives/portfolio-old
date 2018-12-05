@@ -1,9 +1,20 @@
+/**
+ * App Component
+ * Component for React App
+ */
+
+/**
+ * Node Modules
+ */
+
 import React, {lazy, Suspense} from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import createHistory from 'history/createBrowserHistory';
 
 /**
  * Page Components
  */
+
 const Home = lazy(() => import('../pages/Home'));
 const Projects = lazy(() => import('../pages/Projects'));
 const Work = lazy(() => import('../pages/Work'));
@@ -15,10 +26,11 @@ import DbTest from '../pages/DbTest';
 /**
  * Components
  */
+
 import Navbar from './Navbar';
 
 const App = () => (
-  <Router>
+  <Router history = {history}>
     <div>
       <Navbar />
       <Suspense fallback = {<div>Loading...</div>}>
