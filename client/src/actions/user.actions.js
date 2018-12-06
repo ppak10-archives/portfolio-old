@@ -7,32 +7,37 @@ export const userActions = {
 }
 
 function register(user) {
-  return async (dispatch) => {
+  
+  return (dispatch) => {
     dispatch(request(user));
-    const user = await userService.register(user);
-    try {
-      dispatch(success());
-      dispatch(alertActions.success('Registration successful'));
-    } catch (err) {
-      dispatch(failure(error.toString()));
-      dispatch(alertActions.error(error.toString()));
-    }
-  }
-  const request = user => {
+    userService.register(user)
+      .then(
+        user => { 
+          dispatch(success());
+          history.push('/login');
+          dispatch(alertActions.success('Registration successful'));
+        },
+        error => {
+          dispatch(failure(error.toString()));
+          dispatch(alertActions.error(error.toString()));
+        }
+    );
+  };
+  function request(user) {
     return {
       type: userActionsConstants.REGISTER_REQUEST,
       user
     }
   }
 
-  const success = user => {
+  function success(user) {
     return {
       type: userActionsConstants.REGISTER_SUCCESS,
       user
     }
   }
 
-  const failure = error => {
+  function failure(error) {
     return {
       type: userActionsConstants.REGISTER_FAILURE,
       error

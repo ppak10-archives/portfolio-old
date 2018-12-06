@@ -17,23 +17,32 @@ function comparePassword(password, hash) {
 async function createUser(req, res) {
   try {
     if (req.body.username.length < USERNAME_MIN) {
+      console.log('username too short');
       return res.status(400).json({
         status: `Username must be longer than ${USERNAME_MIN} characters`
       });
     } else if (req.body.password.length < PASSWORD_MIN) {
+      console.log('username too long');
       return res.status(400).json({
         status: `Password must be longer than ${PASSWORD_MIN} characters`
       });
     } else {
+      console.log('creating user')
       const salt = bcrypt.genSaltSync();
+      console.log('salted');
       const hash = bcrypt.hashSync(req.body.password, salt);
+      console.log('hashed')
       const data = {
         username: req.body.username,
         password: hash
       }
-      return await User.create(data);
+      console.log(req.body.username)
+      //console.log(models)
+      const newUser = await User.create(data);
+      console.log(newUser);
     }
   } catch (err) {
+    console.log(err)
     return res.status(400).json({
       status: `Error with message: ${err.message}`
     });

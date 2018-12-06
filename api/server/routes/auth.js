@@ -4,17 +4,18 @@ const router = express.Router();
 const authHelpers = require('../config/passport/helpers');
 const localPassport = require('../config/passport/local');
 
-router.post('/register', authHelpers.loginRedirect, async (req, res, next) => {
+router.post('/users/register', authHelpers.loginRedirect, async (req, res, next) => {
   try {
+    console.log('called');
     const newUser = await authHelpers.createUser(req, res)
     localPassport.authenticate('local', (err, user, info) => {
       if (user) {
-        return res.status(200).json({status: 'success'});
+        res.status(200).json({status: 'success'});
       }
     }) (req, res, next);
     return newUser;
   } catch (err) {
-    return res.status(500).json({status:'error'});
+    res.status(500).json({status:'error'});
   }
 });
 

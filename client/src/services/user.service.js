@@ -1,4 +1,4 @@
-const API_URL = 'apiurl';
+const API_URL = 'api/auth';
 
 export const userService = {
   login,
@@ -16,7 +16,7 @@ async function login(username, password) {
     headers: { 'Content-Type': 'application/json'},
     body: JSON.stringify({username, password})
   };
-
+  console.log(API_URL);
   const result = await fetch(`${API_URL}/users/authenticate`, requestOptions);
   const user = await handleResponse(result);
   if (user.token) {
