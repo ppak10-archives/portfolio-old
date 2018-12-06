@@ -8,7 +8,7 @@
  */
 
 import React, {Component} from 'react';
-import {Provider} from 'react-redux';
+import {Provider, connect} from 'react-redux';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 /**
@@ -28,6 +28,7 @@ import Home from '../pages/Home';
 import Projects from '../pages/Projects';
 import Research from '../pages/Research';
 import Work from '../pages/Work';
+import {RegisterPage} from '../pages/RegisterPage';
 
 /**
  * Components
@@ -43,10 +44,10 @@ import {PrivateRoute} from '../components';
 import {alertActions} from '../actions';
 
 /**
- * Root class to load React component
+ * App class to load React component
  * @type {Object}
  */
-export default class Root extends Component {
+export default class App extends Component {
 
   constructor(props) {
     super(props);
@@ -76,6 +77,7 @@ export default class Root extends Component {
               <Route path = "/research" component = {Research}/>
               <Route path = "/education" component = {Education}/>
               <Route path = "/dbtest" component = {DbTest}/>
+              <Route path = "/register" component = {RegisterPage} />
             </Switch>
           </div>
         </Router>
@@ -83,3 +85,13 @@ export default class Root extends Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  const {alert} = state;
+  return {
+    alert
+  };
+}
+
+const connectedApp = connect(mapStateToProps)(App);
+export { connectedApp as App };
