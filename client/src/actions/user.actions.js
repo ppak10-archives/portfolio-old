@@ -8,20 +8,16 @@ export const userActions = {
 
 function register(user) {
   
-  return (dispatch) => {
+  return async (dispatch) => {
     dispatch(request(user));
-    userService.register(user)
-      .then(
-        user => { 
-          dispatch(success());
-          history.push('/login');
-          dispatch(alertActions.success('Registration successful'));
-        },
-        error => {
-          dispatch(failure(error.toString()));
-          dispatch(alertActions.error(error.toString()));
-        }
-    );
+    try {
+      await userService.register(user);
+      dispatch(success());
+      dispatch(alertActions.success('Registration successful'));
+    } catch (err) {
+      dispatch(failure(err.toString()));
+      dispatch(alertActions.error(err.toString()));
+    }
   };
   function request(user) {
     return {
@@ -37,10 +33,10 @@ function register(user) {
     }
   }
 
-  function failure(error) {
+  function failure(err) {
     return {
       type: userActionsConstants.REGISTER_FAILURE,
-      error
+      err
     }
   }
 }

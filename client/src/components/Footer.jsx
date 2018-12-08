@@ -1,5 +1,18 @@
-import React from 'react';
+/**
+ * Footer.jsx
+ * Different footer components for specific page layouts
+ */
+
+/**
+ * Node Modules
+ */
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import React from 'react';
+import {NavLink} from 'react-router-dom';
+
+/**
+ * Simple Footer Component
+ */
 
 const Footer = () => (
   <div className = "footer">
@@ -14,6 +27,10 @@ const Footer = () => (
   </div>
 );
 
+/**
+ * Parallax Footer Component Wrapper
+ */
+
 const ParallaxFooter = () => (
   <div className = "parallax-group" id = "parallax-footer">
     <div className = "parallax-layer parallax-base">
@@ -22,17 +39,23 @@ const ParallaxFooter = () => (
   </div>
 );
 
+/**
+ * Hidden Login Footer Component
+ */
+
 const LoginFooter = () => (
   <form className = "footer-login">
     <div className = "footer-input">
       {/* un and ps to prevent notifying password managers */}
       <input id = "un" type = "text" name = "un" placeholder = "Peter Pak"/>
-      <input id = "ps" type = "text" name = "pw" placeholder = "2018"/>
+      <input id = "ps" type = "text" name = "pw" placeholder = " 2018"/>
     </div>
     <div>
       <span>
         Icons borrowed from&nbsp;
-        <FontAwesomeIcon icon = {['fab', 'font-awesome-flag']} />
+        <NavLink to = "/register">
+          <FontAwesomeIcon icon = {['fab', 'font-awesome-flag']} />
+        </NavLink>
         &nbsp;Font Awesome
       </span>
     </div>

@@ -58,6 +58,7 @@ async function register(user) {
   };
 
   const result = await fetch(`${API_URL}/users/register`, requestOptions);
+  console.log(result);
   return handleResponse(result);
 }
 
@@ -83,8 +84,8 @@ async function deleteUser(id) {
 }
 
 async function handleResponse(response) {
-  const text = response.text();
-  const data = text && JSON.parse(test);
+  const text = await response.text();
+  const data = text && JSON.parse(text);
   if (!response.ok) {
     if (response.status === 401) {
       // auto logout if 401 response returned from api

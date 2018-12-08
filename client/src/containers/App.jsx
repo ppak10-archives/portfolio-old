@@ -28,7 +28,7 @@ import Home from '../pages/Home';
 import Projects from '../pages/Projects';
 import Research from '../pages/Research';
 import Work from '../pages/Work';
-import {RegisterPage} from '../pages/RegisterPage';
+import RegisterUser from '../pages/RegisterPage';
 
 /**
  * Components
@@ -77,7 +77,7 @@ export default class App extends Component {
               <Route path = "/research" component = {Research}/>
               <Route path = "/education" component = {Education}/>
               <Route path = "/dbtest" component = {DbTest}/>
-              <Route path = "/register" component = {RegisterPage} />
+              <Route path = "/register" component = {RegisterUser} />
             </Switch>
           </div>
         </Router>

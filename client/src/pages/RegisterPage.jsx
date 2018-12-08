@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 
 import {userActions} from '../actions';
 
-class RegisterPage extends Component {
+class RegisterUser extends Component {
   constructor(props) {
     super(props);
 
@@ -39,9 +39,9 @@ class RegisterPage extends Component {
       submitted: true,
     });
     const {user} = this.state;
-    const {dispatch} = this.props;
-    if(user.firstName && user.lastName && user.password) {
-      dispatch(userActions.register(user));
+    const {register} = this.props;
+    if(user.username && user.password) {
+      register(user);
     }
   }
 
@@ -49,43 +49,46 @@ class RegisterPage extends Component {
     const {registering} = this.props;
     const {user, submitted} = this.state;
     return (
-      <div>
-        <h2>Register</h2>
+      <div className = "page-wrapper">
+        <h1 className = "page-header">Register</h1>
         <form name = "form" onSubmit = {this.handleSubmit}>
-          <div className = {'form-group' + (submitted && !user.firstName ? 'has-error' : '')}>
+          <div>
             <label>First Name</label>
-            <input type = "text" className = "form-control" name = "firstName" value = {user.firstName} onChange = {this.handleChange} />
-            {submitted && !user.firstName && 
-              <div>First Name is Required</div>
-            }
+            <input type = "text" 
+              className = "form-control" 
+              name = "firstName" 
+              value = {user.firstName} 
+              onChange = {this.handleChange} />
           </div>
-          <div className = {'form-group' + (submitted && !user.lastName ? 'has-error' : '')}>
+          <div>
             <label>Last Name</label>
-            <input type = "text" className = "form-control" name = "lastName" value = {user.lastName} onChange = {this.handleChange} />
-            {submitted && !user.lastName && 
-              <div>Last Name is Required</div>
-            }
+            <input type = "text"
+              className = "form-control"
+              name = "lastName" 
+              value = {user.lastName}
+              onChange = {this.handleChange} />
           </div>
-          <div className = {'form-group' + (submitted && !user.username ? 'has-error' : '')}>
+          <div>
             <label>Username</label>
-            <input type = "text" className = "form-control" name = "username" value = {user.username} onChange = {this.handleChange} />
-            {submitted && !user.username && 
-              <div>Username is Required</div>
-            }
+            <input type = "text"
+              className = "form-control"
+              name = "username"
+              value = {user.username}
+              onChange = {this.handleChange} />
+            {submitted && !user.username && <div>Username is Required</div>}
           </div>
-          <div className = {'form-group' + (submitted && !user.password ? 'has-error' : '')}>
+          <div>
             <label>Password</label>
-            <input type = "password" className = "form-control" name = "password" value = {user.password} onChange = {this.handleChange} />
-            {submitted && !user.password && 
-              <div>Password is Required</div>
-            }
+            <input type = "password"
+              className = "form-control"
+              name = "password"
+              value = {user.password}
+              onChange = {this.handleChange} />
+            {submitted && !user.password && <div>Password is Required</div>}
           </div>
           <div className = "form-group">
             <button>Register</button>
-            {
-              registering &&
-              <img src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
-            }
+            {registering && <div>Registering...</div>}
             <Link to = "/login">Cancel</Link>
           </div>
         </form>
@@ -94,12 +97,12 @@ class RegisterPage extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  const {registering} = state.registration;
-  return {
-    registering
-  };
-}
+const mapStateToProps = (state) => ({
+  registering: state.registration.registering
+});
 
-const connectedRegisterPage = connect(mapStateToProps)(RegisterPage);
-export {connectedRegisterPage as RegisterPage};
+const mapDispatchToProps = (dispatch) => ({
+  register: (user) => dispatch(userActions.register(user))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(RegisterUser);

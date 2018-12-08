@@ -1,6 +1,18 @@
+/**
+ * Navbar.jsx
+ * Navigation bar component to route and display pages
+ */
+
+/**
+ * Node Modules
+ */
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+
+/**
+ * Navbar Component
+ */
 
 const Navbar = () => (
   <div className = "navbar">
