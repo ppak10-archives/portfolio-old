@@ -5,7 +5,7 @@ const API_URL = '/api';
 /**
  * Components
  */
-import {LoginFooter, Footer} from '../components/Footer';
+import {AlertHeader, LoginFooter} from '../components';
 
 /**
  * Projects Page
@@ -57,7 +57,7 @@ export default class Projects extends Component {
   render() {
     return (
       <div className = "page-wrapper">
-        <h1 className = "page-header">Projects</h1>
+        <AlertHeader pageTitle = "Projects" />
         {this.state.projects.map((element) => {
           return(
             <p key = {element.id}>{element.text}</p>

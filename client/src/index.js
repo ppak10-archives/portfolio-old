@@ -5,6 +5,7 @@
 
 import React from 'react';
 import {render} from 'react-dom';
+import {Provider} from 'react-redux';
 
 /**
  * CSS Styles
@@ -16,7 +17,14 @@ import './stylesheets/main.less';
  * App Container
  */
 
-import App from './containers/App';
+import {App} from './containers/App';
+
+/**
+ * Redux Store
+ */
+
+import configureStore from './store';
+const store = configureStore();
 
 /**
  * Font Awesome Icons
@@ -60,4 +68,8 @@ library.add(
  * Document Element
  */
 
-render(<App />, document.getElementById('root'));
+render(
+  <Provider store = {store}>
+    <App />
+  </Provider>, document.getElementById('root')
+);

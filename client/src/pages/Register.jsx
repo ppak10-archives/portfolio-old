@@ -1,8 +1,27 @@
+/**
+ * Register.jsx
+ * Page to register an account for user 
+ */
+
+/**
+ * Node Modules
+ */
+
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 
+/**
+ * Actions
+ */
+
 import {userActions} from '../actions';
+
+/**
+ * Components
+ */
+
+import {AlertHeader} from '../components';
 
 class RegisterUser extends Component {
   constructor(props) {
@@ -50,7 +69,7 @@ class RegisterUser extends Component {
     const {user, submitted} = this.state;
     return (
       <div className = "page-wrapper">
-        <h1 className = "page-header">Register</h1>
+        <AlertHeader pageTitle = "Register"/>
         <form name = "form" onSubmit = {this.handleSubmit}>
           <div>
             <label>First Name</label>

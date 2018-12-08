@@ -8,15 +8,10 @@
  */
 
 import React, {Component} from 'react';
-import {Provider, connect} from 'react-redux';
+import {connect} from 'react-redux';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
-/**
- * Redux Store
- */
 
-import configureStore from '../store';
-const store = configureStore();
 
 /**
  * Page Componenets
@@ -28,7 +23,7 @@ import Home from '../pages/Home';
 import Projects from '../pages/Projects';
 import Research from '../pages/Research';
 import Work from '../pages/Work';
-import RegisterUser from '../pages/RegisterPage';
+import Register from '../pages/Register';
 
 /**
  * Components
@@ -47,7 +42,7 @@ import {alertActions} from '../actions';
  * App class to load React component
  * @type {Object}
  */
-export default class App extends Component {
+class App extends Component {
 
   constructor(props) {
     super(props);
@@ -61,37 +56,33 @@ export default class App extends Component {
    */
   render() {
     const {alert} = this.props;
+    console.log( alert, this.props);
     return (
-      <Provider store={store}>
-        <Router>
-          <div>
-            <Navbar />
-            {alert &&
-              <div className = {`alert ${alert.type}`}>
-                {alert.message}
-              </div>}
-            <Switch>
-              <Route exact path = "/" component = {Home} />
-              <Route path = "/projects" component = {Projects}/>
-              <Route path = "/work" component = {Work}/>
-              <Route path = "/research" component = {Research}/>
-              <Route path = "/education" component = {Education}/>
-              <Route path = "/dbtest" component = {DbTest}/>
-              <Route path = "/register" component = {RegisterUser} />
-            </Switch>
-          </div>
-        </Router>
-      </Provider>
+      <Router>
+        <div>
+          <Navbar />
+          {alert &&
+            <div className = {`alert ${alert.type}`}>
+              {alert.message}
+            </div>}
+          <Switch>
+            <Route exact path = "/" component = {Home} />
+            <Route path = "/projects" component = {Projects}/>
+            <Route path = "/work" component = {Work}/>
+            <Route path = "/research" component = {Research}/>
+            <Route path = "/education" component = {Education}/>
+            <Route path = "/dbtest" component = {DbTest}/>
+            <Route path = "/register" component = {Register} />
+          </Switch>
+        </div>
+      </Router>
     );
   }
 }
 
-function mapStateToProps(state) {
-  const {alert} = state;
-  return {
-    alert
-  };
-}
+const mapStateToProps = (state) => ({
+  alert: state.alert,
+});
 
 const connectedApp = connect(mapStateToProps)(App);
 export { connectedApp as App };
