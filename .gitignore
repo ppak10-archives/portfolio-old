@@ -4,9 +4,9 @@
 # Repository
 node_modules
 
-# Portal Client
-client/node_modules
-client/dist
+# Portal app
+app/node_modules
+app/dist
 
 # Portal API
 api/node_modules

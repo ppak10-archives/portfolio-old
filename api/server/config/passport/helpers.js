@@ -1,14 +1,20 @@
 /**
+ * helpers.js
+ * Authentication helper functions currently used with passport-local
+ */
+
+/**
  * Node Modules
  */
 
 const bcrypt = require('bcryptjs');
 
 const models = require('../../models');
-
 const User = models.user;
-const USERNAME_MIN = 6;
-const PASSWORD_MIN = 8;
+
+const authConstants = require('../../constants/auth.constants');
+const USERNAME_MIN = authConstants.USERNAME_MIN;
+const PASSWORD_MIN = authConstants.PASSWORD_MIN;
 
 function comparePassword(password, hash) {
   return bcrypt.compareSync(password, hash);

@@ -17,16 +17,16 @@ services:
       - '80:80'
     links:
       - api:api
-      - client:client
-  client:
+      - app:app
+  app:
     build:
       context: ../.
-      dockerfile: docker/client/Dockerfile.dev
-    image: portal-client
+      dockerfile: docker/app/Dockerfile.dev
+    image: portal-app
     environment:
       - NODE_ENV=development
     volumes:
-      - ./../client:/usr/src/client
+      - ./../app:/usr/src/app
     ports:
       - '3000:3000'
   api:
@@ -43,9 +43,9 @@ services:
       dockerfile: docker/api/Dockerfile.dev
     image: portal-api
     environment:
-      - DB_NAME=myclientdb
-      - DB_USER=myclientuser
-      - DB_PASSWORD=myclientpassword
+      - DB_NAME=myappdb
+      - DB_USER=myappuser
+      - DB_PASSWORD=myapppassword
       - DB_HOST="db"
       - DB_PORT=5432
       - NODE_ENV=development
