@@ -7,7 +7,7 @@
  * Constants
  */
 
- const responseConstants = require('../constants/response.constants');
+const message = require('../constants/response.constants').message;
 
 /**
  * Handle Response
@@ -17,20 +17,10 @@
  * @param {*} value
  */
 function handleResponse(res, code, status, value) {
-  switch (status) {
-    case responseConstants.status.REQUEST_SUCCESS:
-      res.status(code).json({
-        status: status,
-        message: responseConstants.message.REGISTER_SUCCESS(value),
-      });
-      break;
-    default:
-      res.status(code).json({
-        status: status,
-        message: request,
-      });
-      break;
-  }
+  res.status(code).json({
+    status: status,
+    message: message(status, value),
+  });
 }
 
 module.exports = {

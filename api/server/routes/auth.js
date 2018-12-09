@@ -31,10 +31,10 @@ router.post('/register', authHelpers.loginRedirect, async (req, res, next) => {
   try {
     const newUser = await authHelpers.createUser(req, res);
     if (newUser) {
-      handleRes(res, 200, 'REQUEST_SUCCESS', newUser.dataValues.username);
+      handleRes(res, 200, 'REGISTER_SUCCESS', newUser.dataValues.username);
     }
   } catch (err) {
-    handleRes(res, 500, 'error', req);
+    handleRes(res, 500, 'REGISTER_SERVER_ERROR', err);
   }
 });
 

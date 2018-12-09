@@ -34,22 +34,19 @@ function comparePassword(password, hash) {
   return bcrypt.compareSync(password, hash);
 }
 
-async function createUser(req, res) {
+/**
+ * Create New User
+ * @param {*} req 
+ * @param {*} res 
+ */
+const createUser = async(req, res) => {
   try {
     if (req.body.username.length < USERNAME_MIN) {
-      res.status(400).json({
-        message: `Username must be longer than ${USERNAME_MIN} characters`
-      });
+      handleRes(res, 400, 'REGISTER_USERNAME_LENGTH_ERROR', USERNAME_MIN);
     } else if (req.body.password.length < PASSWORD_MIN) {
-      res.status(400).json({
-        message: `Password must be longer than ${PASSWORD_MIN} characters`
-      });
-    } else if (await User.findOne({where: {
-      username: req.body.username
-    }})) {
-      res.status(400).json({
-        message: `Username ${req.body.username} is already taken`
-      });
+      handleRes(res, 400, 'REGISTER_PASSWORD_LENGTH_ERROR', PASSWORD_MIN);
+    } else if (await User.findOne({where: {username: req.body.username}})) {
+      handleRes(res, 400, 'REGISTER_USERNAME_TAKEN_ERROR', req.body.username);
     } else {
       const salt = bcrypt.genSaltSync();
       const hash = bcrypt.hashSync(req.body.password, salt);
@@ -62,9 +59,7 @@ async function createUser(req, res) {
       return await User.create(data);
     }
   } catch (err) {
-    res.status(400).json({
-      message: `Error with message: ${err.message}`
-    });
+    handleRes(res, 500, 'REGISTER_SERVER_ERROR', err)
   }
 }
 
