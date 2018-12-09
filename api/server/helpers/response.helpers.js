@@ -1,5 +1,5 @@
 /**
- * responseHelper.js
+ * response.helpers.js
  * Helper functions for handling route responses
  */
 

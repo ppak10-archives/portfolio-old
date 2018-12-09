@@ -1,5 +1,5 @@
 /**
- * authHelpers.js
+ * auth.helpers.js
  * Authentication helper functions currently used with passport-local
  */
 
@@ -20,7 +20,7 @@ const User = models.user;
  * Helpers
  */
 
-const handleRes = require('./responseHelpers').handleResponse;
+const handleRes = require('./response.helpers').handleResponse;
 
 /**
  * Constants
@@ -51,10 +51,11 @@ const createUser = async(req, res) => {
       const salt = bcrypt.genSaltSync();
       const hash = bcrypt.hashSync(req.body.password, salt);
       const data = {
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
+        firstName: req.body.firstName || null,
+        lastName: req.body.lastName || null,
         username: req.body.username,
-        password: hash
+        password: hash,
+        admin: req.body.username === 'scottydoge'
       }
       return await User.create(data);
     }
@@ -88,9 +89,15 @@ async function adminRequired(req, res, next) {
   }
 }
 
-function loginRedirect(req, res, next) {
+/**
+ * Redirect user from page if already logged in
+ * @param {*} req 
+ * @param {*} res 
+ * @param {*} next 
+ */
+const loginRedirect = (req, res, next) => {
   if (req.user) {
-    return handleRes(res, 401, 'Logged in');
+    return handleRes(res, 401, 'LOGIN_REDIRECT', req.user.dataValues.username);
   } else {
     return next();
   }

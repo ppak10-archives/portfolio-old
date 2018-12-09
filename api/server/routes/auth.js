@@ -11,17 +11,11 @@ const express = require('express');
 const router = express.Router();
 
 /**
- * Passport Config
- */
-
-const localPassport = require('../config/passport/local');
-
-/**
  * Helpers
  */
 
-const authHelpers = require('../helpers/authHelpers');
-const handleRes = require('../helpers/responseHelpers').handleResponse;
+const authHelpers = require('../helpers/auth.helpers');
+const handleRes = require('../helpers/response.helpers').handleResponse;
 
 /**
  * Register Route
@@ -41,26 +35,6 @@ router.post('/register', authHelpers.loginRedirect, async (req, res, next) => {
 /**
  * Login Route
  */
-
-router.post ('/login', authHelpers.loginRedirect, (req, res, next) => {
-  localPassport.authenticate('local',(err, user, info) => {
-    if (err) {
-      res.status(500).json({status: 'error'});
-    }
-    if (!user) {
-      res.status(404).json({status: 'not found'});
-    }
-    if (user) {
-      req.logIn(user, (err) => {
-        if (err) {
-          return res.status(500).json({status: 'error'});
-        } else {
-          return res.status(200).json({status: 'status'});
-        }
-      })
-    }
-  }) (req, res, next);
-});
 
 router.get('logout', authHelpers.loginRequired, (req, res, next) => {
   req.logout();

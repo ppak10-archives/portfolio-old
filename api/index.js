@@ -5,7 +5,6 @@
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const express = require('express');
-const passport = require('passport');
 const session  = require('express-session');
 
 /**
@@ -23,6 +22,7 @@ const app = express();
 const PORT = 8080;
 const HOST = '0.0.0.0';
 
+
 /**
  * Routes
  */
@@ -30,23 +30,29 @@ const HOST = '0.0.0.0';
 const authRoutes = require('./server/routes/auth');
 
 /**
- * Passport Strategies
+ * Middleware
  */
 
-//require('./server/config/passport/local.js')(passport, models.user);
-
 app.use(cors());
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(session({
+  key: 'user_sid',
   secret: 'keyboard cat', //process.env.SECRET_KEY,
   resave: false,
-  saveUninitialized: true,
+  saveUninitialized: false,
+  cookie: {
+    expires: 600000,
+  },
 }));
 
-app.use(passport.initialize());
-app.use(passport.session());
+// // Logs out user and clears cookie if cookie is still saved within the browser
+// app.use((req, res, next) => {
+//   if (req.cookies.user_sid && !req.session.user) {
+//     res.clearCookie('user_sid');
+//   }
+//   next();
+// });
 
 app.get('/', (req, res) => res.send('hello world'));
 
