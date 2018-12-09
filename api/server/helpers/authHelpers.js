@@ -17,6 +17,12 @@ const models = require('../models');
 const User = models.user;
 
 /**
+ * Helpers
+ */
+
+const handleRes = require('./responseHelpers').handleResponse;
+
+/**
  * Constants
  */
 
@@ -53,11 +59,9 @@ async function createUser(req, res) {
         username: req.body.username,
         password: hash
       }
-      console.log(req.body.username)
-      const newUser = await User.create(data);
+      return await User.create(data);
     }
   } catch (err) {
-    console.log(err)
     res.status(400).json({
       message: `Error with message: ${err.message}`
     });
@@ -91,7 +95,7 @@ async function adminRequired(req, res, next) {
 
 function loginRedirect(req, res, next) {
   if (req.user) {
-    return res.status(401).json({status: 'Already logged in'});
+    return handleRes(res, 401, 'Logged in');
   } else {
     return next();
   }

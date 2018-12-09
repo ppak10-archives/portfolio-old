@@ -29,17 +29,12 @@ const handleRes = require('../helpers/responseHelpers').handleResponse;
 
 router.post('/register', authHelpers.loginRedirect, async (req, res, next) => {
   try {
-    const newUser = await authHelpers.createUser(req, res)
-    localPassport.authenticate('local', (err, user, info) => {
-      if (user) {
-        handleRes(res, 200, 'success');
-        // res.status(200).json({status: 'success'});
-      }
-    }) (req, res, next);
-    return newUser;
+    const newUser = await authHelpers.createUser(req, res);
+    if (newUser) {
+      handleRes(res, 200, 'REQUEST_SUCCESS', newUser.dataValues.username);
+    }
   } catch (err) {
-    handleRes(res, 500, 'error');
-    // res.status(500).json({status:'error'});
+    handleRes(res, 500, 'error', req);
   }
 });
 

@@ -46,7 +46,8 @@ function register(user) {
   return async (dispatch) => {
     dispatch(request(user));
     try {
-      await userService.register(user);
+      const newUser = await userService.register(user);
+      console.log(newUser);
       dispatch(success());
       dispatch(alertActions.success('Registration successful'));
     } catch (err) {

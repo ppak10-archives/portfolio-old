@@ -16,7 +16,6 @@ async function login(username, password) {
     headers: { 'Content-Type': 'application/json'},
     body: JSON.stringify({username, password})
   };
-  console.log(API_URL);
   const result = await fetch(`${API_URL}/login`, requestOptions);
   const user = await handleResponse(result);
   if (user.token) {
