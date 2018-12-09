@@ -11,8 +11,6 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
-
-
 /**
  * Page Componenets
  */
@@ -24,6 +22,7 @@ import Projects from '../pages/Projects';
 import Research from '../pages/Research';
 import Work from '../pages/Work';
 import Register from '../pages/Register';
+import Login from '../pages/Login';
 
 /**
  * Components
@@ -56,7 +55,6 @@ class App extends Component {
    */
   render() {
     const {alert} = this.props;
-    console.log( alert, this.props);
     return (
       <Router>
         <div>
@@ -73,6 +71,7 @@ class App extends Component {
             <Route path = "/education" component = {Education}/>
             <Route path = "/dbtest" component = {DbTest}/>
             <Route path = "/register" component = {Register} />
+            <Route path = "/login" component = {Login} />
           </Switch>
         </div>
       </Router>

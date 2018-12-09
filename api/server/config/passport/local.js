@@ -1,21 +1,29 @@
 /**
+ * local.js
+ * Local passport request authentication strategy
+ */
+
+/**
  * Node Modules
  */
 
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 
-const init = require('./init');
-const models = require('../../models');
-const authHelpers = require('./helpers');
-
-const User = models.user;
-const options = {};
-
 /**
- * Initialize Passport
+ * Helpers
  */
 
+const authHelpers = require('../../helpers/authHelpers');
+
+/**
+ * Config
+ */
+
+const init = require('./init');
+const models = require('../../models');
+const User = models.user;
+const options = {};
 init();
 
 /**

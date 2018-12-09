@@ -17,7 +17,7 @@ async function login(username, password) {
     body: JSON.stringify({username, password})
   };
   console.log(API_URL);
-  const result = await fetch(`${API_URL}/users/authenticate`, requestOptions);
+  const result = await fetch(`${API_URL}/login`, requestOptions);
   const user = await handleResponse(result);
   if (user.token) {
     localStorage.setItem('user', JSON.stringify(user));
@@ -57,7 +57,7 @@ async function register(user) {
     body: JSON.stringify(user)
   };
 
-  const result = await fetch(`${API_URL}/users/register`, requestOptions);
+  const result = await fetch(`${API_URL}/register`, requestOptions);
   console.log(result);
   return handleResponse(result);
 }

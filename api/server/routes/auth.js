@@ -1,31 +1,59 @@
+/**
+ * auth.js
+ * Routes for user authentication
+ */
+
+/**
+ * Node Modules
+ */
+
 const express = require('express');
 const router = express.Router();
 
-const authHelpers = require('../config/passport/helpers');
+/**
+ * Passport Config
+ */
+
 const localPassport = require('../config/passport/local');
 
-router.post('/users/register', authHelpers.loginRedirect, async (req, res, next) => {
+/**
+ * Helpers
+ */
+
+const authHelpers = require('../helpers/authHelpers');
+const handleRes = require('../helpers/responseHelpers').handleResponse;
+
+/**
+ * Register Route
+ */
+
+router.post('/register', authHelpers.loginRedirect, async (req, res, next) => {
   try {
-    console.log('called');
     const newUser = await authHelpers.createUser(req, res)
     localPassport.authenticate('local', (err, user, info) => {
       if (user) {
-        res.status(200).json({status: 'success'});
+        handleRes(res, 200, 'success');
+        // res.status(200).json({status: 'success'});
       }
     }) (req, res, next);
     return newUser;
   } catch (err) {
-    res.status(500).json({status:'error'});
+    handleRes(res, 500, 'error');
+    // res.status(500).json({status:'error'});
   }
 });
+
+/**
+ * Login Route
+ */
 
 router.post ('/login', authHelpers.loginRedirect, (req, res, next) => {
   localPassport.authenticate('local',(err, user, info) => {
     if (err) {
-      return res.status(500).json({status: 'error'});
+      res.status(500).json({status: 'error'});
     }
     if (!user) {
-      return res.status(404).json({status: 'not found'});
+      res.status(404).json({status: 'not found'});
     }
     if (user) {
       req.logIn(user, (err) => {
