@@ -21,7 +21,7 @@ const handleRes = require('../helpers/response.helpers').handleResponse;
  * Register Route
  */
 
-router.post('/register', authHelpers.loginRedirect, async (req, res, next) => {
+router.post('/register', authHelpers.loginRedirect, async (req, res) => {
   try {
     const newUser = await authHelpers.createUser(req, res);
     if (newUser) {
@@ -36,6 +36,21 @@ router.post('/register', authHelpers.loginRedirect, async (req, res, next) => {
  * Login Route
  */
 
+router.post('/login', authHelpers.loginRedirect, async (req, res) => {
+  try {
+    const user = await authHelpers.loginUser(req, res);
+    if (user) {
+      req.session.user = user.dataValues;
+      handleRes(res, 200, 'LOGIN_SUCCESS', user.dataValues.username);
+    }
+  } catch (err) {
+    handleRes(res, 500, 'LOGIN_SERVER_ERROR', err);
+  }
+});
+
+/**
+ * Logout Route
+ */
 router.get('logout', authHelpers.loginRequired, (req, res, next) => {
   req.logout();
   return res.status(200).json({status: 'success'});

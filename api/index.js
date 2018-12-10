@@ -37,16 +37,15 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(session({
-  key: 'user_sid',
   secret: 'keyboard cat', //process.env.SECRET_KEY,
   resave: false,
   saveUninitialized: false,
   cookie: {
-    expires: 600000,
+    maxAge: 600000,
   },
 }));
 
-// // Logs out user and clears cookie if cookie is still saved within the browser
+// Logs out user and clears cookie if cookie is still saved within the browser
 // app.use((req, res, next) => {
 //   if (req.cookies.user_sid && !req.session.user) {
 //     res.clearCookie('user_sid');

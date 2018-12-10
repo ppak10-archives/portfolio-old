@@ -17,6 +17,8 @@ const message = (status, value) => {
       return `Already logged in as ${value}`;
     case 'LOGIN_SERVER_ERROR':
       return `User login encountered internal server error: ${value}`;
+    case 'LOGIN_SUCCESS':
+      return `Successfully logged in as ${value}`;
     case 'LOGIN_USER_ERROR':
       return `No account with username ${value} exists`;
     case 'REGISTER_PASSWORD_LENGTH_ERROR':

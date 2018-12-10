@@ -12,8 +12,8 @@ function login(username, password) {
     dispatch(request({username}));
     try {
       const response = await userService.login(username, password);
-      dispatch(success(user));
-      dispatch(alertActions.success('logged in'));
+      dispatch(success(response));
+      dispatch(alertActions.success(response.message));
     } catch (err) {
       dispatch(failure(err.toString()));
       dispatch(alertActions.error(err.toString()));

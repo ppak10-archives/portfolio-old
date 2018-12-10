@@ -30,10 +30,6 @@ const authConstants = require('../constants/auth.constants');
 const USERNAME_MIN = authConstants.USERNAME_MIN;
 const PASSWORD_MIN = authConstants.PASSWORD_MIN;
 
-function comparePassword(password, hash) {
-  return bcrypt.compareSync(password, hash);
-}
-
 /**
  * Create New User
  * @param {*} req 
@@ -60,8 +56,29 @@ const createUser = async(req, res) => {
       return await User.create(data);
     }
   } catch (err) {
-    handleRes(res, 500, 'REGISTER_SERVER_ERROR', err)
+    handleRes(res, 500, 'REGISTER_SERVER_ERROR', err);
   }
+}
+
+const loginUser = async(req, res) => {
+  try {
+    const user = await User.findOne({where: {username: req.body.username}});
+    if (!user) {
+      handleRes(res, 404, 'LOGIN_USER_ERROR', req.body.username);
+    } else {
+      if (comparePassword(req.body.password, user.dataValues.password)) {
+        return user;
+      } else {
+        handleRes(res, 404, 'LOGIN_PASSWORD_ERROR');
+      }
+    }
+  } catch (err) {
+    handleRes(res, 500, 'LOGIN_SERVER_ERROR', err);
+  }
+}
+
+const comparePassword = (password, hash) => {
+  return bcrypt.compareSync(password, hash);
 }
 
 function loginRequired(req, res, next) {
@@ -96,17 +113,19 @@ async function adminRequired(req, res, next) {
  * @param {*} next 
  */
 const loginRedirect = (req, res, next) => {
-  if (req.user) {
-    return handleRes(res, 401, 'LOGIN_REDIRECT', req.user.dataValues.username);
+  if (req.session.user) {
+    console.log('loginredirect');
+    handleRes(res, 401, 'LOGIN_REDIRECT', req.session.user.username);
   } else {
     return next();
   }
 }
 
 module.exports = {
+  adminRequired,
   comparePassword,
   createUser,
-  loginRequired,
-  adminRequired,
   loginRedirect,
+  loginRequired,
+  loginUser,
 };
