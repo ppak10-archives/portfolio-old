@@ -35,6 +35,7 @@ class LoginUser extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
   }
 
   handleChange(event) {
@@ -54,6 +55,11 @@ class LoginUser extends Component {
     if (username && password) {
       login(username, password);
     }
+  }
+
+  handleLogout(event){
+    const {logout} = this.props;
+    logout();
   }
 
   render() {
@@ -87,6 +93,7 @@ class LoginUser extends Component {
             <Link to = "/register">Register</Link>
           </div>
         </form>
+        <button onClick = {this.handleLogout}>Logout</button>
       </div>
     );
   }
@@ -100,6 +107,7 @@ const mapDispatchToProps = (dispatch) => ({
   login: (username, password) => {
     dispatch(userActions.login(username, password));
   },
+  logout: () => dispatch(userActions.logout()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginUser);

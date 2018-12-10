@@ -60,6 +60,11 @@ const createUser = async(req, res) => {
   }
 }
 
+/**
+ * Login user
+ * @param {*} req 
+ * @param {*} res 
+ */
 const loginUser = async(req, res) => {
   try {
     const user = await User.findOne({where: {username: req.body.username}});
@@ -81,14 +86,6 @@ const comparePassword = (password, hash) => {
   return bcrypt.compareSync(password, hash);
 }
 
-function loginRequired(req, res, next) {
-  if (!req.user) {
-    return res.status(401).json({status: 'Please log in'});
-  } else {
-    return next();
-  }
-}
-
 async function adminRequired(req, res, next) {
   try {
     if (!req.user) {
@@ -107,6 +104,20 @@ async function adminRequired(req, res, next) {
 }
 
 /**
+ * Require user login to perform call
+ * @param {*} req 
+ * @param {*} res 
+ * @param {*} next 
+ */
+const loginRequired = (req, res, next) => {
+  if (!req.session.user) {
+    handleRes(res, 401, 'LOGIN_REQUIRED');
+  } else {
+    return next();
+  }
+}
+
+/**
  * Redirect user from page if already logged in
  * @param {*} req 
  * @param {*} res 
@@ -114,7 +125,6 @@ async function adminRequired(req, res, next) {
  */
 const loginRedirect = (req, res, next) => {
   if (req.session.user) {
-    console.log('loginredirect');
     handleRes(res, 401, 'LOGIN_REDIRECT', req.session.user.username);
   } else {
     return next();

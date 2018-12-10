@@ -51,9 +51,17 @@ router.post('/login', authHelpers.loginRedirect, async (req, res) => {
 /**
  * Logout Route
  */
-router.get('logout', authHelpers.loginRequired, (req, res, next) => {
-  req.logout();
-  return res.status(200).json({status: 'success'});
+router.get('/logout', authHelpers.loginRequired, (req, res) => {
+  try {
+    if (req.session.cookie) {
+      res.clearCookie('connect.sid');
+      handleRes(res, 200, 'LOGOUT_SUCCESS');
+    } else {
+      handleRes(res, 404, 'LOGOUT_COOKIE_ERROR');
+    }
+  } catch (err) {
+    handleRes(res, 500, 'LOGOUT_SERVER_ERROR', err);
+  }
 });
 
 module.exports = router;

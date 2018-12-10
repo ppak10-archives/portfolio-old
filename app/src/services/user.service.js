@@ -24,9 +24,16 @@ async function login(username, password) {
   return user;
 }
 
-function logout() {
+async function logout() {
   // remove user from local storage to log user out
   localStorage.removeItem('user');
+  const requestOptions = {
+    method: 'GET',
+    headers: authHeader()
+  };
+
+  const result = await fetch(`${API_URL}/logout`, requestOptions);
+  return handleResponse(result);
 }
 
 async function getAll() {

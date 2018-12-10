@@ -4,7 +4,42 @@ import {alertActions} from './';
 
 export const userActions = {
   login,
+  logout,
   register,
+}
+
+function logout() {
+  return async (dispatch) => {
+    dispatch(request());
+    try {
+      const response = await userService.logout();
+      dispatch(success(response));
+      dispatch(alertActions.success(response.message));
+    } catch (err) {
+      dispatch(failure(err.toString()));
+      dispatch(alertActions.error(err.toString()));
+    }
+  };
+
+  function request() {
+    return {
+      type: userActionsConstants.LOGOUT_REQUEST
+    }
+  }
+
+  function success(user) {
+    return {
+      type: userActionsConstants.LOGOUT_SUCCESS,
+      user
+    }
+  }
+
+  function failure(err) {
+    return {
+      type: userActionsConstants.LOGOUT_FAILURE,
+      err
+    }
+  }
 }
 
 function login(username, password) {

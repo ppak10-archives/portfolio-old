@@ -15,12 +15,20 @@ const message = (status, value) => {
       return `Invalid password`;
     case 'LOGIN_REDIRECT':
       return `Already logged in as ${value}`;
+    case 'LOGIN_REQUIRED':
+      return `User login is required to perform this call`;
     case 'LOGIN_SERVER_ERROR':
       return `User login encountered internal server error: ${value}`;
     case 'LOGIN_SUCCESS':
       return `Successfully logged in as ${value}`;
     case 'LOGIN_USER_ERROR':
       return `No account with username ${value} exists`;
+    case 'LOGOUT_COOKIE_ERROR':
+      return `User has already been logged out`;
+    case 'LOGOUT_SERVER_ERROR':
+      return `User logout encountered internal server error: ${value}`;
+    case 'LOGOUT_SUCCESS':
+      return `User has been successfully logged out`;
     case 'REGISTER_PASSWORD_LENGTH_ERROR':
       return `Password must be longer than ${value} characters`;
     case 'REGISTER_SERVER_ERROR':

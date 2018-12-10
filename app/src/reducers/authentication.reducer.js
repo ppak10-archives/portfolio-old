@@ -17,7 +17,17 @@ export const authentication = (state = initialState, action) => {
       };
     case userActionsConstants.LOGIN_FAILURE:
       return {};
-    case userActionsConstants.LOGOUT:
+    case userActionsConstants.LOGOUT_REQUEST:
+      return {
+        loggingOut: true,
+        user: action.user,
+      };
+    case userActionsConstants.LOGOUT_SUCCESS:
+      return {
+        loggedOut: true,
+        user: action.user,
+      };
+    case userActionsConstants.LOGOUT_FAILURE:
       return {};
     default:
       return state;
