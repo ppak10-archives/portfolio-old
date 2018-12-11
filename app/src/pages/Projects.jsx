@@ -5,7 +5,7 @@ const API_URL = '/api';
 /**
  * Components
  */
-import {AlertHeader, LoginFooter} from '../components';
+import {AlertHeader, Footer} from '../components';
 
 /**
  * Projects Page
@@ -63,7 +63,7 @@ export default class Projects extends Component {
             <p key = {element.id}>{element.text}</p>
           );
         })}
-        <LoginFooter />
+        <Footer />
       </div>
     );
   }

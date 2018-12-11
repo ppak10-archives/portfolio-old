@@ -15,14 +15,13 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
  * Page Componenets
  */
 
-import DbTest from '../pages/DbTest';
 import Education from '../pages/Education';
 import Home from '../pages/Home';
+import Login from '../pages/Login';
 import Projects from '../pages/Projects';
+import Register from '../pages/Register';
 import Research from '../pages/Research';
 import Work from '../pages/Work';
-import Register from '../pages/Register';
-import Login from '../pages/Login';
 
 /**
  * Components
@@ -65,13 +64,12 @@ class App extends Component {
             </div>}
           <Switch>
             <Route exact path = "/" component = {Home} />
+            <Route path = "/login" component = {Login} />
             <Route path = "/projects" component = {Projects}/>
             <Route path = "/work" component = {Work}/>
             <Route path = "/research" component = {Research}/>
             <Route path = "/education" component = {Education}/>
-            <Route path = "/dbtest" component = {DbTest}/>
             <Route path = "/register" component = {Register} />
-            <Route path = "/login" component = {Login} />
           </Switch>
         </div>
       </Router>

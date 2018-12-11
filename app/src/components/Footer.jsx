@@ -41,6 +41,7 @@ const ParallaxFooter = () => (
 
 /**
  * Hidden Login Footer Component
+ * No longer used and impractical since password managers reveal input fields
  */
 
 const LoginFooter = () => (
