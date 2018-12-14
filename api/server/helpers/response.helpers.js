@@ -16,11 +16,19 @@ const message = require('../constants/response.constants').message;
  * @param {String} status
  * @param {*} value
  */
-function handleResponse(res, code, status, value) {
-  res.status(code).json({
-    status: status,
-    message: message(status, value),
-  });
+const handleResponse = (res, code, status, value, token) => {
+  if (token) {
+    res.status(code).json({
+      status: status,
+      message: message(status, value),
+      token: token,
+    });
+  } else {
+    res.status(code).json({
+      status: status,
+      message: message(status, value),
+    });
+  }
 }
 
 module.exports = {

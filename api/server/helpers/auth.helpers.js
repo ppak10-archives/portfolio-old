@@ -8,6 +8,7 @@
  */
 
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 
 /**
  * Config
@@ -29,6 +30,22 @@ const handleRes = require('./response.helpers').handleResponse;
 const authConstants = require('../constants/auth.constants');
 const USERNAME_MIN = authConstants.USERNAME_MIN;
 const PASSWORD_MIN = authConstants.PASSWORD_MIN;
+
+/**
+ * Token Generator
+ */
+
+const generateToken = (user) => {
+  const payload = {
+    username: user.username,
+    admin: user.admin,
+    id: user.id,
+  }
+
+  return token = jwt.sign(payload, 'keyboard cat', {
+    expiresIn: 60 * 60 * 24
+  });
+}
 
 /**
  * Create New User
@@ -135,6 +152,7 @@ module.exports = {
   adminRequired,
   comparePassword,
   createUser,
+  generateToken,
   loginRedirect,
   loginRequired,
   loginUser,

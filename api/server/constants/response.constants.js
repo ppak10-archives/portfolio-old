@@ -39,6 +39,10 @@ const message = (status, value) => {
       return `Username must be longer than ${value} characters`;
     case 'REGISTER_USERNAME_TAKEN_ERROR':
       return `Username ${value} is already in use`;
+    case 'TOKEN_AUTHENTICATION_SUCCESS':
+      return `Valid token authenticated for user ${value}`;
+    case 'TOKEN_REQUIRED_ERROR':
+      return `Token is required to authenticate route`;
     default:
       return `Message Error`;
   }

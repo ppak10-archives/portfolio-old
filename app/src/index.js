@@ -1,6 +1,10 @@
 /**
- * App Entry
+ * index.js
  * Entry file to build front-end
+ */
+
+/**
+ * Node Modules
  */
 
 import React from 'react';
@@ -17,7 +21,7 @@ import './stylesheets/main.less';
  * App Container
  */
 
-import {App} from './containers/App';
+import App from './containers/App';
 
 /**
  * Redux Store

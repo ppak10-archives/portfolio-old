@@ -8,7 +8,7 @@
  */
 
 const express = require('express');
-const router = express.Router();
+const jwt = require('jsonwebtoken');
 
 /**
  * Helpers
@@ -18,14 +18,29 @@ const authHelpers = require('../helpers/auth.helpers');
 const handleRes = require('../helpers/response.helpers').handleResponse;
 
 /**
+ * Express Router
+ */
+
+const router = express.Router();
+
+/**
+ * Config
+ */
+
+const models = require('../models');
+const User = models.user;
+
+/**
  * Register Route
  */
 
 router.post('/register', authHelpers.loginRedirect, async (req, res) => {
   try {
-    const newUser = await authHelpers.createUser(req, res);
-    if (newUser) {
-      handleRes(res, 200, 'REGISTER_SUCCESS', newUser.dataValues.username);
+    const result = await authHelpers.createUser(req, res);
+    if (result) {
+      const newUser = result.dataValues;
+      const token = authHelpers.generateToken(newUser);
+      handleRes(res, 200, 'REGISTER_SUCCESS', newUser.username, token);
     }
   } catch (err) {
     handleRes(res, 500, 'REGISTER_SERVER_ERROR', err);
@@ -38,13 +53,37 @@ router.post('/register', authHelpers.loginRedirect, async (req, res) => {
 
 router.post('/login', authHelpers.loginRedirect, async (req, res) => {
   try {
-    const user = await authHelpers.loginUser(req, res);
-    if (user) {
-      req.session.user = user.dataValues;
-      handleRes(res, 200, 'LOGIN_SUCCESS', user.dataValues.username);
+    const result = await authHelpers.loginUser(req, res);
+    if (result) {
+      // req.session.user = result.dataValues;
+      const user = result.dataValues;
+      const token = authHelpers.generateToken(user);
+      handleRes(res, 200, 'LOGIN_SUCCESS', user.username, token);
     }
   } catch (err) {
     handleRes(res, 500, 'LOGIN_SERVER_ERROR', err);
+  }
+});
+
+/**
+ * Authenticate Token Route
+ */
+
+router.get('/authenticate', (req, res, next) => {
+  const token = req.body.token;
+  if (!token) {
+    handleRes(res, 401, 'TOKEN_REQUIRED_ERROR');
+  } else {
+    jwt.verify(token, 'keyboard cat', async (err, user) => {
+      if (err) {
+        throw err;
+      } else {
+        const result = await User.findOne({where: {id:user.id}});
+        if (result) {
+          handleRes(res, 200, 'TOKEN_AUTHENTICATION_SUCCESS', user.id, token);
+        }
+      }
+    });
   }
 });
 
@@ -65,33 +104,3 @@ router.get('/logout', authHelpers.loginRequired, (req, res) => {
 });
 
 module.exports = router;
-
-// const authController = require('../controllers/auth');
-
-// module.exports = (app, passport) => {
-//   app.get('/signup', authController.signup);
-//   app.get('/signin', authController.signin);
-//   app.post('/signup', passport.authenticate('local-signup', {
-//     successRedirect: '/dashboard',
-//     failureRedirect: '/signup',
-//   }));
-//   app.get('/dashboard', isLoggedIn, authController.dashboard);
-//   app.get('/logout', authController.logout);
-//   app.post('/signin', passport.authenticate('local-signin', {
-//     successRedirect: '/dashboard',
-//     failureRedirect: '/signin',
-//   }));
-
-//   /**
-//    * Checks that user is logged in, otherwise redirects
-//    * @param {*} req 
-//    * @param {*} res 
-//    * @param {*} next 
-//    */
-//   function isLoggedIn(req, res, next) {
-//     if (req.isAuthenticated()) {
-//       return next();
-//     }
-//     res.redirect('/signin');
-//   }
-// }

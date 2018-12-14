@@ -1,16 +1,8 @@
+
+
 const API_URL = 'api/auth';
 
-export const userService = {
-  login,
-  logout,
-  register,
-  getAll,
-  getById,
-  update,
-  delete: deleteUser
-};
-
-async function login(username, password) {
+const login = async (username, password) => {
   const requestOptions = {
     method: 'POST',
     headers: { 'Content-Type': 'application/json'},
@@ -18,6 +10,7 @@ async function login(username, password) {
   };
   const result = await fetch(`${API_URL}/login`, requestOptions);
   const user = await handleResponse(result);
+  console.log(user)
   if (user.token) {
     localStorage.setItem('user', JSON.stringify(user));
   }
@@ -115,3 +108,13 @@ function authHeader() {
       return {};
   }
 }
+
+export const authService = {
+  login,
+  logout,
+  register,
+  getAll,
+  getById,
+  update,
+  delete: deleteUser
+};

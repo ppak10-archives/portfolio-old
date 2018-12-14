@@ -37,9 +37,10 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(session({
+  name: 'user.sid',
   secret: 'keyboard cat', //process.env.SECRET_KEY,
   resave: false,
-  saveUninitialized: false,
+  saveUninitialized: true,
   cookie: {
     maxAge: 600000,
   },
