@@ -17,7 +17,7 @@ const API_URL = 'api/auth';
  * User Registration Route
  * @param {*} user 
  */
-const register = async (user) => {
+export const register = async (user) => {
   const request = handleReq('POST', JSON.stringify(user));
   const response = await fetch(`${API_URL}/register`, request);
   return handleTokenRes(response, 'userToken');
@@ -28,10 +28,21 @@ const register = async (user) => {
  * @param {*} username 
  * @param {*} password 
  */
-const login = async (username, password) => {
+export const login = async (username, password) => {
   const request = handleReq('POST', JSON.stringify({username, password}));
   const response = await fetch(`${API_URL}/login`, request);
   return handleTokenRes(response, 'userToken');
+}
+
+/**
+ * Token Authentication Route
+ * @param {*} token 
+ * @param {*} tokenName 
+ */
+export const authenticateToken = async (token, tokenName) => {
+  const request = handleReq('GET', null, tokenName)
+  const response = await fetch(`${API_URL}/authenticate`, request);
+  return handleTokenRes(response, tokenName);
 }
 
 
@@ -87,13 +98,3 @@ async function deleteUser(id) {
   const result = await fetch(`${API_URL}/users/${id}`, requestOptions);
   return handleResponse(result);
 }
-
-export const authService = {
-  login,
-  logout,
-  register,
-  getAll,
-  getById,
-  update,
-  delete: deleteUser
-};

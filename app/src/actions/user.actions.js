@@ -1,5 +1,13 @@
+/**
+ * user.actions.js
+ */
+
 import {userActionsConstants} from '../constants';
-import {authService} from '../services';
+import {
+  logout as userLogout, 
+  login as userLogin,
+  register as userRegister
+} from '../services';
 import {alertActions} from './';
 
 export const userActions = {
@@ -12,7 +20,7 @@ function logout() {
   return async (dispatch) => {
     dispatch(request());
     try {
-      const response = await authService.logout();
+      const response = await userlogout();
       dispatch(success(response));
       dispatch(alertActions.success(response.message));
     } catch (err) {
@@ -46,7 +54,7 @@ function login(username, password) {
   return async (dispatch) => {
     dispatch(request({username}));
     try {
-      const response = await authService.login(username, password);
+      const response = await userLogin(username, password);
       dispatch(success(response));
       dispatch(alertActions.success(response.message));
     } catch (err) {
@@ -82,7 +90,7 @@ function register(user) {
   return async (dispatch) => {
     dispatch(request(user));
     try {
-      const response = await authService.register(user);
+      const response = await userRegister(user);
       dispatch(success());
       dispatch(alertActions.success(response.message));
     } catch (err) {

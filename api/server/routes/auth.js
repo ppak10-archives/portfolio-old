@@ -70,7 +70,12 @@ router.post('/login', authHelpers.loginRedirect, async (req, res) => {
  */
 
 router.get('/authenticate', (req, res, next) => {
-  const token = req.body.token;
+  const header = req.headers['authorization'];
+  let token = null;
+  if (typeof header !== 'undefined') {
+    const bearer = header.split(' ');
+    token = bearer[1];
+  }
   if (!token) {
     handleRes(res, 401, 'TOKEN_REQUIRED_ERROR');
   } else {

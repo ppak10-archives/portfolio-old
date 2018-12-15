@@ -5,7 +5,7 @@
 
 // Node Modules
 import React, {Component} from 'react';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {BrowserRouter as Router} from 'react-router-dom';
 import {Provider} from 'react-redux';
 
 // Components
@@ -13,7 +13,10 @@ import AppComponent from '../components/App.component';
 
 // Redux Store
 import configureStore from '../store';
-const store = configureStore();
+export const store = configureStore();
+
+// Helpers
+import {tokenAuthentication} from '../helpers';
 
 /**
  * App class to load React component
@@ -26,6 +29,10 @@ export class App extends Component {
    */
   constructor(props) {
     super(props);
+  }
+
+  componentWillMount() {
+    tokenAuthentication('userToken');
   }
 
   /**

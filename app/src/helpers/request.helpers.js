@@ -21,7 +21,9 @@ export const handleRequest = (method, body, tokenName) => {
   const requestOptions = {
     method: method,
     headers: header,
-    body: body,
   };
+  if (body) {
+    requestOptions.body = body;
+  }
   return requestOptions;
 };
