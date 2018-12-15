@@ -95,14 +95,9 @@ router.get('/authenticate', (req, res, next) => {
 /**
  * Logout Route
  */
-router.get('/logout', authHelpers.loginRequired, (req, res) => {
+router.get('/logout', (req, res) => {
   try {
-    if (req.session.cookie) {
-      res.clearCookie('connect.sid');
-      handleRes(res, 200, 'LOGOUT_SUCCESS');
-    } else {
-      handleRes(res, 404, 'LOGOUT_COOKIE_ERROR');
-    }
+    handleRes(res, 200, 'LOGOUT_SUCCESS');
   } catch (err) {
     handleRes(res, 500, 'LOGOUT_SERVER_ERROR', err);
   }

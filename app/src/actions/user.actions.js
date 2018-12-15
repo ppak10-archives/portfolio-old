@@ -20,7 +20,7 @@ function logout() {
   return async (dispatch) => {
     dispatch(request());
     try {
-      const response = await userlogout();
+      const response = await userLogout();
       dispatch(success(response));
       dispatch(alertActions.success(response.message));
     } catch (err) {

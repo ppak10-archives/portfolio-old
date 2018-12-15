@@ -7,11 +7,21 @@
 import {
   handleRequest as handleReq,
   handleResponse as handleRes,
-  handleTokenResponse as handleTokenRes,
 } from '../helpers';
 
 // API url
 const API_URL = 'api/auth';
+
+/**
+ * Token Authentication Route
+ * @param {*} token 
+ * @param {*} tokenName 
+ */
+export const authenticateToken = async (token, tokenName) => {
+  const request = handleReq('GET', null, tokenName)
+  const response = await fetch(`${API_URL}/authenticate`, request);
+  return handleRes(response, tokenName);
+}
 
 /**
  * User Registration Route
@@ -20,7 +30,7 @@ const API_URL = 'api/auth';
 export const register = async (user) => {
   const request = handleReq('POST', JSON.stringify(user));
   const response = await fetch(`${API_URL}/register`, request);
-  return handleTokenRes(response, 'userToken');
+  return handleRes(response, 'userToken');
 }
 
 /**
@@ -31,31 +41,17 @@ export const register = async (user) => {
 export const login = async (username, password) => {
   const request = handleReq('POST', JSON.stringify({username, password}));
   const response = await fetch(`${API_URL}/login`, request);
-  return handleTokenRes(response, 'userToken');
+  return handleRes(response, 'userToken');
 }
 
 /**
- * Token Authentication Route
- * @param {*} token 
- * @param {*} tokenName 
+ * User Logout Route
  */
-export const authenticateToken = async (token, tokenName) => {
-  const request = handleReq('GET', null, tokenName)
-  const response = await fetch(`${API_URL}/authenticate`, request);
-  return handleTokenRes(response, tokenName);
-}
-
-
-async function logout() {
-  // remove user from local storage to log user out
-  localStorage.removeItem('user');
-  const requestOptions = {
-    method: 'GET',
-    headers: authHeader()
-  };
-
-  const result = await fetch(`${API_URL}/logout`, requestOptions);
-  return handleResponse(result);
+export const logout = async () => {
+  localStorage.removeItem('userToken');
+  const request = handleReq('GET', null, 'userToken');
+  const response = await fetch(`${API_URL}/logout`, request);
+  return handleRes(response);
 }
 
 async function getAll() {

@@ -6,8 +6,9 @@
 /**
  * Parse data from response
  * @param {*} response 
+ * @param {String} tokenName
  */
-export const handleResponse = async (response) => {
+export const handleResponse = async (response, tokenName) => {
   console.log(response)
   const text = await response.text();
   const data = text && JSON.parse(text);
@@ -19,19 +20,12 @@ export const handleResponse = async (response) => {
 
     const error = (data && data.message) || response.statusText;
     return Promise.reject(error);
+  } else {
+    if (tokenName) {
+      if (data.token) {
+        localStorage.setItem(tokenName, JSON.stringify(data.token));
+      }
+    }
+    return data;
   }
-  return data;
-}
-
-/**
- * Wrapper function to handle token in response
- * @param {*} response 
- * @param {*} tokenName 
- */
-export const handleTokenResponse = (response, tokenName) => {
-  const parsedRes = handleResponse(response);
-  if (parsedRes.token) {
-    localStorage.setItem(tokenName, JSON.stringify(parsedRes.token));
-  }
-  return parsedRes;
 }

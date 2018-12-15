@@ -3,30 +3,18 @@
  * Authentication helper functions currently used with passport-local
  */
 
-/**
- * Node Modules
- */
-
+// Node Modules
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-/**
- * Config
- */
-
+// Database Models
 const models = require('../models');
 const User = models.user;
 
-/**
- * Helpers
- */
-
+// Helpers
 const handleRes = require('./response.helpers').handleResponse;
 
-/**
- * Constants
- */
-
+// Constants
 const authConstants = require('../constants/auth.constants');
 const USERNAME_MIN = authConstants.USERNAME_MIN;
 const PASSWORD_MIN = authConstants.PASSWORD_MIN;

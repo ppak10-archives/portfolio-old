@@ -10,8 +10,8 @@ import {render} from 'react-dom';
 // CSS Styles
 import './stylesheets/main.less';
 
-// App Container
-import {App} from './containers';
+// Root Component
+import {Root} from './Root';
 
 // Font Awesome Icons
 import {library} from '@fortawesome/fontawesome-svg-core';
@@ -49,4 +49,4 @@ library.add(
     faSitemap);
 
 // Document Element
-render(<App />, document.getElementById('root'));
+render(<Root />, document.getElementById('root'));

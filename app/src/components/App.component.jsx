@@ -7,7 +7,7 @@
  * Node Modules
  */
 
-import React from 'react';
+import React, {Component} from 'react';
 import {Switch, Route} from 'react-router-dom';
 
 /**
@@ -30,20 +30,44 @@ import DbTest from '../pages/DbTest';
 import Navbar from './Navbar';
 import {PrivateRoute} from './PrivateRoute';
 
-const App = () => (
-  <div>
-    <Navbar />
-    <Switch>
-      <Route exact path = "/" component = {Home} />
-      <Route path = "/login" component = {Login} />
-      <Route path = "/projects" component = {Projects}/>
-      <Route path = "/work" component = {Work}/>
-      <Route path = "/research" component = {Research}/>
-      <Route path = "/education" component = {Education}/>
-      <Route path = "/register" component = {Register} />
-      <PrivateRoute path = "/private" component = {DbTest} />
-    </Switch>
-  </div>
-);
-
-export default App;
+/**
+ * App component class
+ * Change to functional component once React hooks are released
+ */
+export default class App extends Component {
+  /**
+   * Constructor
+   * @param {*} props
+   */
+  constructor(props) {
+    super(props);
+  }
+  /**
+   * ComponentDidMount
+   */
+  componentDidMount() {
+    const {userAuthentication} = this.props;
+    userAuthentication('userToken');
+  }
+  /**
+   * Render Method
+   * @return {Component} App
+   */
+  render() {
+    return (
+      <div>
+        <Navbar />
+        <Switch>
+          <Route exact path = "/" component = {Home} />
+          <Route path = "/login" component = {Login} />
+          <Route path = "/projects" component = {Projects}/>
+          <Route path = "/work" component = {Work}/>
+          <Route path = "/research" component = {Research}/>
+          <Route path = "/education" component = {Education}/>
+          <Route path = "/register" component = {Register} />
+          <PrivateRoute path = "/private" component = {DbTest} />
+        </Switch>
+      </div>
+    );
+  }
+}
