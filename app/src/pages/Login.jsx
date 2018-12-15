@@ -3,24 +3,15 @@
  * Page to login user
  */
 
-/**
- * Node Modules
- */
-
+// Node Modules
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 
-/**
- * Actions
- */
-
+// Actions
 import {userActions} from '../actions';
 
-/**
- * Components
- */
-
+// Components
 import {AlertHeader} from '../components';
 
 class LoginUser extends Component {

@@ -15,9 +15,10 @@ export const tokenAuthentication = async (tokenName) => {
   const token = localStorage.getItem(tokenName);
   if (!token || token === '') {
     console.log('no token')
-    return;
+    return false;
   } else {
-    const response = await authToken(token, tokenName);
+    const response = await authToken(tokenName);
     console.log(response);
+    return true;
   }
 }

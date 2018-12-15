@@ -4,15 +4,7 @@
  * Component files with '.component.jsx' are imported through a container
  */
 
-/**
- * Route Components
- */
-
-export * from './PrivateRoute';
-
-/**
- * Page Components
- */
-
+export * from './AuthenticatedRoutes';
+export * from './Navbar';
 export * from './Header';
 export * from './Footer';

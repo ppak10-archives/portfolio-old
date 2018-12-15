@@ -3,17 +3,14 @@
  * Component for React App
  */
 
-/**
- * Node Modules
- */
-
+// Node Modules
 import React, {Component} from 'react';
 import {Switch, Route} from 'react-router-dom';
 
-/**
- * Page Components
- */
+// Components
+import {Navbar, PrivateRoute} from './';
 
+// Page Components
 import Education from '../pages/Education';
 import Home from '../pages/Home';
 import Login from '../pages/Login';
@@ -22,13 +19,6 @@ import Register from '../pages/Register';
 import Research from '../pages/Research';
 import Work from '../pages/Work';
 import DbTest from '../pages/DbTest';
-
-/**
- * Components
- */
-
-import Navbar from './Navbar';
-import {PrivateRoute} from './PrivateRoute';
 
 /**
  * App component class
@@ -45,9 +35,9 @@ export default class App extends Component {
   /**
    * ComponentDidMount
    */
-  componentDidMount() {
+  async componentDidMount() {
     const {userAuthentication} = this.props;
-    userAuthentication('userToken');
+    await userAuthentication('userToken');
   }
   /**
    * Render Method
@@ -65,7 +55,9 @@ export default class App extends Component {
           <Route path = "/research" component = {Research}/>
           <Route path = "/education" component = {Education}/>
           <Route path = "/register" component = {Register} />
-          <PrivateRoute path = "/private" component = {DbTest} />
+          <PrivateRoute path = "/private"
+            tokenName = "userToken"
+            component = {DbTest} />
         </Switch>
       </div>
     );

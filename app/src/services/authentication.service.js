@@ -17,7 +17,7 @@ const API_URL = 'api/auth';
  * @param {*} token 
  * @param {*} tokenName 
  */
-export const authenticateToken = async (token, tokenName) => {
+export const authenticateToken = async (tokenName) => {
   const request = handleReq('GET', null, tokenName)
   const response = await fetch(`${API_URL}/authenticate`, request);
   return handleRes(response, tokenName);

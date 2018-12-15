@@ -3,9 +3,7 @@
  * Navigation bar component to route and display pages
  */
 
-/**
- * Node Modules
- */
+// Node Modules
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
@@ -14,7 +12,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
  * Navbar Component
  */
 
-const Navbar = () => (
+export const Navbar = () => (
   <div className = "navbar">
     <NavLink className = "navbar-brand" to = "/">
       <img className = "navbar-brand-icon" src = "public/images/morty.jpeg"/>
@@ -74,5 +72,3 @@ const Navbar = () => (
     </ul>
   </div>
 );
-
-export default Navbar;
