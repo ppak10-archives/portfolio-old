@@ -1,21 +1,39 @@
+/**
+ * authentication.service.js
+ * API route calls to server for user authentication
+ */
 
+// Helpers
+import {
+  handleRequest as handleReq,
+  handleResponse as handleRes,
+  handleTokenResponse as handleTokenRes,
+} from '../helpers';
 
+// API url
 const API_URL = 'api/auth';
 
-const login = async (username, password) => {
-  const requestOptions = {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json'},
-    body: JSON.stringify({username, password})
-  };
-  const result = await fetch(`${API_URL}/login`, requestOptions);
-  const user = await handleResponse(result);
-  console.log(user)
-  if (user.token) {
-    localStorage.setItem('user', JSON.stringify(user));
-  }
-  return user;
+/**
+ * User Registration Route
+ * @param {*} user 
+ */
+const register = async (user) => {
+  const request = handleReq('POST', JSON.stringify(user));
+  const response = await fetch(`${API_URL}/register`, request);
+  return handleTokenRes(response, 'userToken');
 }
+
+/**
+ * User Login Route
+ * @param {*} username 
+ * @param {*} password 
+ */
+const login = async (username, password) => {
+  const request = handleReq('POST', JSON.stringify({username, password}));
+  const response = await fetch(`${API_URL}/login`, request);
+  return handleTokenRes(response, 'userToken');
+}
+
 
 async function logout() {
   // remove user from local storage to log user out
@@ -49,18 +67,6 @@ async function getById(id) {
   return handleResponse(result);
 }
 
-async function register(user) {
-  const requestOptions = {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify(user)
-  };
-
-  const result = await fetch(`${API_URL}/register`, requestOptions);
-  console.log(result);
-  return handleResponse(result);
-}
-
 async function update(user) {
   const requestOptions = {
     method: 'PUT',
@@ -80,33 +86,6 @@ async function deleteUser(id) {
 
   const result = await fetch(`${API_URL}/users/${id}`, requestOptions);
   return handleResponse(result);
-}
-
-async function handleResponse(response) {
-  const text = await response.text();
-  const data = text && JSON.parse(text);
-  if (!response.ok) {
-    if (response.status === 401) {
-      // auto logout if 401 response returned from api
-      logout();
-      location.reload(true);
-    }
-
-    const error = (data && data.message) || response.statusText;
-    return Promise.reject(error);
-  }
-  return data;
-}
-
-function authHeader() {
-  // return authorization header with jwt token
-  let user = JSON.parse(localStorage.getItem('user'));
-
-  if (user && user.token) {
-      return { 'Authorization': 'Bearer ' + user.token };
-  } else {
-      return {};
-  }
 }
 
 export const authService = {
