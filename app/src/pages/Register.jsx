@@ -15,7 +15,7 @@ import {connect} from 'react-redux';
  * Actions
  */
 
-import {userActions} from '../actions';
+import {userRegister} from '../actions';
 
 /**
  * Components
@@ -121,7 +121,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  register: (user) => dispatch(userActions.register(user))
+  register: (user) => dispatch(userRegister(user))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(RegisterUser);

@@ -11,48 +11,41 @@ import {authenticationActionsConstants as authConstants} from '../constants';
 
 // Initial State
 const initialState = {
-  loggedIn: false,
-  loggingIn: false,
-  loggedOut: true,
-  loggingOut: false,
+  loginStatus: {
+    loggedIn: false,
+    loggingIn: false,
+  },
+  logoutStatus: {
+    loggedOut: true,
+    loggingOut: false,
+  },
 };
 
 export const authentication = (state = initialState, action) => {
+  const nextState = {...state};
   switch (action.type) {
-    case authConstants.LOGIN_USER_REQUEST:
-      return {
-        ...state,
-        loggingIn: true,
-      };
-    case authConstants.LOGIN_USER_SUCCESS:
-      return {
-        ...state,
-        loggedIn: true,
-        loggingIn: false,
-        loggedOut: false,
-      };
-    case authConstants.LOGIN_USER_FAILURE:
-      return {
-        ...state,
-        loggingIn: false,
-      };
-    case authConstants.LOGOUT_USER_REQUEST:
-      return {
-        ...state,
-        loggingOut: true,
-      };
-    case authConstants.LOGOUT_USER_SUCCESS:
-      return {
-        ...state,
-        loggedIn: false,
-        loggedOut: true,
-        loggingOut: false,
-      };
-    case authConstants.LOGOUT_USER_FAILURE:
-      return {
-        ...state,
-        loggingOut: false,
-      };
+    case authConstants.LOGIN_REQUEST:
+      nextState.loginStatus.loggingIn = true;
+      return nextState;
+    case authConstants.LOGIN_SUCCESS:
+      nextState.loginStatus.loggedIn = true;
+      nextState.loginStatus.loggingIn = false;
+      nextState.logoutStatus.loggedOut = false;
+      return nextState;
+    case authConstants.LOGIN_FAILURE:
+      nextState.loginStatus.loggingIn = false;
+      return nextState;
+    case authConstants.LOGOUT_REQUEST:
+      nextState.logoutStatus.loggingOut = true;
+      return nextState;
+    case authConstants.LOGOUT_SUCCESS:
+      nextState.loginStatus.loggedIn = false;
+      nextState.logoutStatus.loggedOut = true;
+      nextState.logoutStatus.loggingOut = false;
+      return nextState;
+    case authConstants.LOGOUT_FAILURE:
+      nextState.logoutStatus.loggingOut = false;
+      return nextState;
     default:
       return state;
   }

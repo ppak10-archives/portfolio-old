@@ -47,7 +47,9 @@ app.get('/', (req, res) => res.send('hello world'));
 app.get('/api/todos', todosController.list);
 app.get('/api/projects', projectsController.list);
 
+// Routes
 app.use('/auth', authRoutes);
+app.use('/user', userRoutes);
 
 app.listen(PORT, HOST);
 console.info('Express Server is up');

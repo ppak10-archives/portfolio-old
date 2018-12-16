@@ -9,7 +9,7 @@ import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 
 // Actions
-import {login, logout} from '../actions';
+import {userLogin, userLogout} from '../actions';
 
 // Components
 import {AlertHeader} from '../components';
@@ -95,8 +95,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  login: (username, password) => dispatch(login(username, password)),
-  logout: () => dispatch(logout()),
+  login: (username, password) => dispatch(userLogin(username, password)),
+  logout: () => dispatch(userLogout()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginUser);

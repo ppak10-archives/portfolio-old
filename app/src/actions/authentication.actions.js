@@ -4,46 +4,39 @@
  */
 
 // Services
-import {
-  logout as userLogout,
-  login as userLogin,
-  register as userRegister,
-} from '../services';
-
-// Helpers
-// import { requestAction } from '../helpers';
+import {authenticationService as authService} from '../services';
 
 // Constants
 import {authenticationActionsConstants as authConstants} from '../constants';
 
 /**
- * Login Action Dispatch
+ * Login User Action Dispatch
  * @param {String} username 
  * @param {String} password 
  */
-export const login = (username, password) => {
+export const userLogin = (username, password) => {
   return async (dispatch) => {
-    dispatch({type: authConstants.LOGIN_USER_REQUEST});
+    dispatch({type: authConstants.LOGIN_REQUEST});
     try {
-      const response = await userLogin(username, password);
-      dispatch({type: authConstants.LOGIN_USER_SUCCESS});
+      const response = await authService.login(username, password);
+      dispatch({type: authConstants.LOGIN_SUCCESS});
     } catch (err) {
-      dispatch({type: authConstants.LOGIN_USER_FAILURE});
+      dispatch({type: authConstants.LOGIN_FAILURE});
     }
   }
 }
 
 /**
- * Logout Action Dispatch
+ * Logout User Action Dispatch
  */
-export const logout = () => {
+export const userLogout = () => {
   return async (dispatch) => {
-    dispatch({type: authConstants.LOGOUT_USER_REQUEST});
+    dispatch({type: authConstants.LOGOUT_REQUEST});
     try {
-      const response = await userLogout();
-      dispatch({type: authConstants.LOGOUT_USER_SUCCESS});
+      const response = await authService.logout();
+      dispatch({type: authConstants.LOGOUT_SUCCESS});
     } catch (err) {
-      dispatch({type: authConstants.LOGOUT_USER_FAILURE})
+      dispatch({type: authConstants.LOGOUT_FAILURE})
     }
   }
 }

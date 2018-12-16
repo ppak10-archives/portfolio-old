@@ -1,6 +1,6 @@
 /**
- * auth.js
- * Routes for user authentication
+ * authentication.routes.js
+ * API routes for user authentication
  */
 
 // Node Modules
@@ -42,23 +42,6 @@ router.get('/authenticate', (req, res, next) => {
         }
       }
     });
-  }
-});
-
-/**
- * Register Route
- */
-
-router.post('/register', authHelpers.loginRedirect, async (req, res) => {
-  try {
-    const result = await authHelpers.createUser(req, res);
-    if (result) {
-      const newUser = result.dataValues;
-      const token = authHelpers.generateToken(newUser);
-      handleRes(res, 200, 'REGISTER_SUCCESS', newUser.username, token);
-    }
-  } catch (err) {
-    handleRes(res, 500, 'REGISTER_SERVER_ERROR', err);
   }
 });
 

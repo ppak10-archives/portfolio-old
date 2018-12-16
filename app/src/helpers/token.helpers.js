@@ -4,21 +4,19 @@
  */
 
 // Actions
-import {
-  authenticateToken as authToken,
-} from '../services';
+import {authenticationService as authService} from '../services';
 
 // Redux Store
-import {store} from '../containers/App.container';
+import {store} from '../Root';
 
 export const tokenAuthentication = async (tokenName) => {
   const token = localStorage.getItem(tokenName);
   if (!token || token === '') {
-    console.log('no token')
-    return false;
+    return;
   } else {
-    const response = await authToken(tokenName);
-    console.log(response);
-    return true;
+    const response = await authService.authenticateToken(tokenName);
+    if (response.status === 'TOKEN_AUTHENTICATION_SUCCESS') {
+      console.log('token auth')
+    }
   }
 }

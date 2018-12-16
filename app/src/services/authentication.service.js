@@ -9,50 +9,56 @@ import {
   handleResponse as handleRes,
 } from '../helpers';
 
-// API url
-const API_URL = 'api/auth';
+// Constants
+import {API_URL} from '../constants';
 
 /**
  * Token Authentication Route
  * @param {*} token 
  * @param {*} tokenName 
  */
-export const authenticateToken = async (tokenName) => {
+const authenticateToken = async (tokenName) => {
   const request = handleReq('GET', null, tokenName)
-  const response = await fetch(`${API_URL}/authenticate`, request);
+  const response = await fetch(`${API_URL}/auth/authenticate`, request);
   return handleRes(response, tokenName);
 }
 
-/**
- * User Registration Route
- * @param {*} user 
- */
-export const register = async (user) => {
-  const request = handleReq('POST', JSON.stringify(user));
-  const response = await fetch(`${API_URL}/register`, request);
-  return handleRes(response, 'userToken');
-}
+// /**
+//  * User Registration Route
+//  * @param {*} user 
+//  */
+// export const register = async (user) => {
+//   const request = handleReq('POST', JSON.stringify(user));
+//   const response = await fetch(`${API_URL}/auth/register`, request);
+//   return handleRes(response, 'userToken');
+// }
 
 /**
  * User Login Route
  * @param {*} username 
  * @param {*} password 
  */
-export const login = async (username, password) => {
+const login = async (username, password) => {
   const request = handleReq('POST', JSON.stringify({username, password}));
-  const response = await fetch(`${API_URL}/login`, request);
+  const response = await fetch(`${API_URL}/auth/login`, request);
   return handleRes(response, 'userToken');
 }
 
 /**
  * User Logout Route
  */
-export const logout = async () => {
+const logout = async () => {
   localStorage.removeItem('userToken');
   const request = handleReq('GET', null, 'userToken');
-  const response = await fetch(`${API_URL}/logout`, request);
+  const response = await fetch(`${API_URL}/auth/logout`, request);
   return handleRes(response);
 }
+
+export const authenticationService = {
+  authenticateToken,
+  login,
+  logout,
+};
 
 async function getAll() {
   const requestOptions = {
