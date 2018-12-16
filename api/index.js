@@ -1,38 +1,26 @@
 /**
- * Node Modules
+ * index.js
  */
 
+// Node Modules
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const express = require('express');
 const session  = require('express-session');
 
-/**
- * Database Models
- */
-
+// Controllers
 const todosController = require('./server/controllers/todos');
 const projectsController = require('./server/controllers/projects');
 
-/**
- * Server Config
- */
-
+// Server Config
 const app = express();
 const PORT = 8080;
 const HOST = '0.0.0.0';
 
+// Routes
+const {authRoutes, userRoutes} = require('./server/routes');
 
-/**
- * Routes
- */
-
-const authRoutes = require('./server/routes/auth');
-
-/**
- * Middleware
- */
-
+// Middleware
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));

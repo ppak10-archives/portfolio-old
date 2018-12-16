@@ -1,7 +1,9 @@
 /**
  * user.actions.js
+ * Actions to update user store
  */
 
+// Constants
 import {userActionsConstants} from '../constants';
 import {
   logout as userLogout, 

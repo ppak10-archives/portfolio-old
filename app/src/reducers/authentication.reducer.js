@@ -1,34 +1,58 @@
-import {userActionsConstants} from '../constants';
+/**
+ * authentication.reducer.js
+ * Reducers to hold values for user authentication
+ */
 
-const user = JSON.parse(localStorage.getItem('user'));
-const initialState = user ? {loggedIn: true, user} : {};
+// Constants
+import {authenticationActionsConstants as authConstants} from '../constants';
+
+// const user = JSON.parse(localStorage.getItem('user'));
+// const initialState = user ? {loggedIn: true, user} : {};
+
+// Initial State
+const initialState = {
+  loggedIn: false,
+  loggingIn: false,
+  loggedOut: true,
+  loggingOut: false,
+};
 
 export const authentication = (state = initialState, action) => {
   switch (action.type) {
-    case userActionsConstants.LOGIN_REQUEST:
+    case authConstants.LOGIN_USER_REQUEST:
       return {
+        ...state,
         loggingIn: true,
-        user: action.user,
       };
-    case userActionsConstants.LOGIN_SUCCESS:
+    case authConstants.LOGIN_USER_SUCCESS:
       return {
+        ...state,
         loggedIn: true,
-        user: action.user,
+        loggingIn: false,
+        loggedOut: false,
       };
-    case userActionsConstants.LOGIN_FAILURE:
-      return {};
-    case userActionsConstants.LOGOUT_REQUEST:
+    case authConstants.LOGIN_USER_FAILURE:
       return {
+        ...state,
+        loggingIn: false,
+      };
+    case authConstants.LOGOUT_USER_REQUEST:
+      return {
+        ...state,
         loggingOut: true,
-        user: action.user,
       };
-    case userActionsConstants.LOGOUT_SUCCESS:
+    case authConstants.LOGOUT_USER_SUCCESS:
       return {
+        ...state,
+        loggedIn: false,
         loggedOut: true,
-        user: action.user,
+        loggingOut: false,
       };
-    case userActionsConstants.LOGOUT_FAILURE:
-      return {};
+    case authConstants.LOGOUT_USER_FAILURE:
+      return {
+        ...state,
+        loggingOut: false,
+      };
     default:
       return state;
   }

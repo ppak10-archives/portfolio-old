@@ -1,15 +1,6 @@
 /**
- * Constants Folder
+ * index.js
+ * Export constant values used within front-end app
  */
 
-/**
- * Authentication Constants
- */
-
-// export * from './auth.constants';
-
-/**
- * Action Constants
- */
-export * from './alert.actions.constants';
-export * from './user.actions.constants';
+export * from './action.constants';
