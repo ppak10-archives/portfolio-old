@@ -1,6 +1,8 @@
 /**
  * action.constants.js
  * Constant values for Redux action calls
+ * Semantics for the key value pair follows as such where the key holds the
+ * minimum description, while the value is more descriptive of the action.
  */
 
 export const alertActionsConstants = {
@@ -10,12 +12,15 @@ export const alertActionsConstants = {
 };
 
 export const authenticationActionsConstants = {
+  LOGIN_FAILURE: 'LOGIN_USER_FAILURE',
   LOGIN_REQUEST: 'LOGIN_USER_REQUEST',
   LOGIN_SUCCESS: 'LOGIN_USER_SUCCESS',
-  LOGIN_FAILURE: 'LOGIN_USER_FAILURE',
+  LOGOUT_FAILURE: 'LOGOUT_USER_FAILURE',
   LOGOUT_REQUEST: 'LOGOUT_USER_REQUEST',
   LOGOUT_SUCCESS: 'LOGOUT_USER_SUCCESS',
-  LOGOUT_FAILURE: 'LOGOUT_USER_FAILURE',
+  USER_TOKEN_FAILURE: 'AUTHENTICATE_USER_TOKEN_FAILURE',
+  USER_TOKEN_REQUEST: 'AUTHENTICATE_USER_TOKEN_REQUEST',
+  USER_TOKEN_SUCCESS: 'AUTHENTICATE_USER_TOKEN_SUCCESS',
 };
 
 export const userActionsConstants = {

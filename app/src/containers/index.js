@@ -5,3 +5,4 @@
 
 export * from './Alert.container';
 export * from './App.container';
+export * from './Navbar.container';

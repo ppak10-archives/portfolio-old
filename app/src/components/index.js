@@ -5,6 +5,5 @@
  */
 
 export * from './AuthenticatedRoutes';
-export * from './Navbar';
 export * from './Header';
 export * from './Footer';

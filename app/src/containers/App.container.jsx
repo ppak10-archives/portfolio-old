@@ -7,15 +7,15 @@
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 
-// Components
+// Component
 import AppComponent from '../components/App.component';
 
-// Helpers
-import {tokenAuthentication} from '../helpers';
+// Actions
+import {userTokenAuthentication as userAuth} from '../actions';
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    userAuthentication: (tokenName) => tokenAuthentication(tokenName),
+    userAuthentication: (tokenName) => dispatch(userAuth(tokenName)),
   };
 };
 

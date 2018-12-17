@@ -1,6 +1,6 @@
 /**
  * authentication.actions.js
- * Actions specific for authentication
+ * Dispatches actions specific for authentication methods
  */
 
 // Services
@@ -8,6 +8,23 @@ import {authenticationService as authService} from '../services';
 
 // Constants
 import {authenticationActionsConstants as authConstants} from '../constants';
+
+export const userTokenAuthentication = (tokenName) => {
+  return async (dispatch) => {
+    const token = localStorage.getItem(tokenName);
+    console.log('called');
+    if (token) {
+      console.log('token')
+      dispatch({type: authConstants.USER_TOKEN_REQUEST});
+      try {
+        const response = await authService.userToken(tokenName);
+        dispatch({type: authConstants.USER_TOKEN_SUCCESS});
+      } catch (err) {
+        dispatch({type: authConstants.USER_TOKEN_FAILURE});
+      }
+    }
+  }
+}
 
 /**
  * Login User Action Dispatch

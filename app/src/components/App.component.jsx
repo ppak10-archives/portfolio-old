@@ -7,8 +7,11 @@
 import React, {Component} from 'react';
 import {Switch, Route} from 'react-router-dom';
 
+// Container Components
+import {Navbar} from '../containers';
+
 // Components
-import {Navbar, PrivateRoute} from './';
+import {PrivateRoute} from './';
 
 // Page Components
 import Education from '../pages/Education';
@@ -19,6 +22,7 @@ import Register from '../pages/Register';
 import Research from '../pages/Research';
 import Work from '../pages/Work';
 import DbTest from '../pages/DbTest';
+import {Profile} from '../pages/Profile';
 
 /**
  * App component class
@@ -58,6 +62,9 @@ export default class App extends Component {
           <PrivateRoute path = "/private"
             tokenName = "userToken"
             component = {DbTest} />
+          <PrivateRoute path = "/profile"
+            tokenName = "userToken"
+            component = {Profile} />
         </Switch>
       </div>
     );

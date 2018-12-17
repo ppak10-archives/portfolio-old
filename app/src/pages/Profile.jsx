@@ -1,23 +1,13 @@
 /**
  * Profile.jsx
- * Profile page for user who is logged in
+ * Profile page layout that is visible to users who are logged in
  */
 
 // Node Modules
-import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
-import {connect} from 'react-redux';
+import React from 'react';
 
-class Profile extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return(
-      <div className = "page-wrapper">
-        <h1>Profile Page</h1>
-      </div>
-    );
-  }
-}
+export const Profile = () => (
+  <div className = "page-wrapper">
+    <h1>Profile</h1>
+  </div>
+)

@@ -19,10 +19,10 @@ const models = require('../models');
 const User = models.user;
 
 /**
- * Authenticate Token Route
+ * Authenticate User Token Route
  */
 
-router.get('/authenticate', (req, res, next) => {
+router.get('/token/user', (req, res, next) => {
   const header = req.headers['authorization'];
   let token = null;
   if (typeof header !== 'undefined') {

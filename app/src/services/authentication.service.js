@@ -13,25 +13,15 @@ import {
 import {API_URL} from '../constants';
 
 /**
- * Token Authentication Route
+ * User Token Authentication Route
  * @param {*} token 
  * @param {*} tokenName 
  */
-const authenticateToken = async (tokenName) => {
+const userToken = async (tokenName) => {
   const request = handleReq('GET', null, tokenName)
-  const response = await fetch(`${API_URL}/auth/authenticate`, request);
+  const response = await fetch(`${API_URL}/auth/token/user`, request);
   return handleRes(response, tokenName);
 }
-
-// /**
-//  * User Registration Route
-//  * @param {*} user 
-//  */
-// export const register = async (user) => {
-//   const request = handleReq('POST', JSON.stringify(user));
-//   const response = await fetch(`${API_URL}/auth/register`, request);
-//   return handleRes(response, 'userToken');
-// }
 
 /**
  * User Login Route
@@ -55,9 +45,9 @@ const logout = async () => {
 }
 
 export const authenticationService = {
-  authenticateToken,
   login,
   logout,
+  userToken,
 };
 
 async function getAll() {

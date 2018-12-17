@@ -1,9 +1,16 @@
+/**
+ * index.js
+ * Exports reducers used with Redux through combine reducer
+ */
+
+// Node Modules
 import {combineReducers} from 'redux';
 
-import { authentication } from './authentication.reducer';
-import { registration } from './registration.reducer';
-import { user } from './user.reducer';
-import { alert } from './alert.reducer';
+// Reducers
+import {authentication} from './authentication.reducer';
+import {registration} from './registration.reducer';
+import {user} from './user.reducer';
+import {alert} from './alert.reducer';
 import test from './test';
 
 const rootReducer = combineReducers({
