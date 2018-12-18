@@ -7,11 +7,11 @@
 import React, {Component} from 'react';
 import {Switch, Route} from 'react-router-dom';
 
+// Components
+import {PrivateRoute, HideRoute} from '../components';
+
 // Container Components
 import {Navbar} from '../containers';
-
-// Components
-import {PrivateRoute} from './';
 
 // Page Components
 import Education from '../pages/Education';
@@ -53,7 +53,9 @@ export default class App extends Component {
         <Navbar />
         <Switch>
           <Route exact path = "/" component = {Home} />
-          <Route path = "/login" component = {Login} />
+          <HideRoute path = "/login"
+            tokenName = "userToken"
+            component = {Login} />
           <Route path = "/projects" component = {Projects}/>
           <Route path = "/work" component = {Work}/>
           <Route path = "/research" component = {Research}/>

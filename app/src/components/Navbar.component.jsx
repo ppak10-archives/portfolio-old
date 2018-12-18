@@ -56,6 +56,14 @@ const AuthenticatedNavbar = (logout) => (
             <span className = "button-text">Education</span>
           </NavLink>
         </li>
+        <li className = "navbar-button">
+          <NavLink className = "navbar-link" to = "/profile">
+            <FontAwesomeIcon
+              className = "button-icon"
+              icon = "user" />
+            <span className = "button-text">Profile</span>
+          </NavLink>
+        </li>
       </ul>
     </li>
     <li className = "navbar-button">

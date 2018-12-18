@@ -19,8 +19,10 @@ export const userTokenAuthentication = (tokenName) => {
       try {
         const response = await authService.userToken(tokenName);
         dispatch({type: authConstants.USER_TOKEN_SUCCESS});
+        dispatch({type: authConstants.LOGIN_SUCCESS});
       } catch (err) {
         dispatch({type: authConstants.USER_TOKEN_FAILURE});
+        dispatch({type: authConstants.LOGIN_FAILURE});
       }
     }
   }

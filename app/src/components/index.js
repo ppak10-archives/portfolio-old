@@ -4,6 +4,6 @@
  * Component files with '.component.jsx' are imported through a container
  */
 
-export * from './AuthenticatedRoutes';
 export * from './Header';
 export * from './Footer';
+export * from './Routes';

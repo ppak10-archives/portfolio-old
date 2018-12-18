@@ -24,6 +24,7 @@ import {
   faAddressCard,
   faSitemap,
   faSignOutAlt,
+  faUser,
 } from '@fortawesome/free-solid-svg-icons';
 
 export const fontAwesomeLibrary = library.add(
@@ -41,5 +42,6 @@ export const fontAwesomeLibrary = library.add(
     faUserCircle,
     faAddressCard,
     faSitemap,
-    faSignOutAlt
+    faSignOutAlt,
+    faUser
 );
