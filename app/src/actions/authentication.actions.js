@@ -3,6 +3,9 @@
  * Dispatches actions specific for authentication methods
  */
 
+// Actions
+import {successAlert, errorAlert} from './';
+
 // Services
 import {authenticationService as authService} from '../services';
 
@@ -39,8 +42,10 @@ export const userLogin = (username, password) => {
     try {
       const response = await authService.login(username, password);
       dispatch({type: authConstants.LOGIN_SUCCESS});
+      dispatch(successAlert(response.message));
     } catch (err) {
       dispatch({type: authConstants.LOGIN_FAILURE});
+      dispatch(errorAlert(response.message));
     }
   }
 }
@@ -54,8 +59,10 @@ export const userLogout = () => {
     try {
       const response = await authService.logout();
       dispatch({type: authConstants.LOGOUT_SUCCESS});
+      dispatch(successAlert(response.message));
     } catch (err) {
-      dispatch({type: authConstants.LOGOUT_FAILURE})
+      dispatch({type: authConstants.LOGOUT_FAILURE});
+      dispatch(errorAlert(response.message));
     }
   }
 }

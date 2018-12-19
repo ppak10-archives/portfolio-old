@@ -1,27 +1,17 @@
+/**
+ * alert.actions.js
+ * Actions to dispatch alerts
+ */
+
+// Constants
 import {alertActionsConstants} from '../constants';
 
-export const alertActions = {
-  success,
-  error,
-  clear
-};
+export const successAlert = (message) => ({
+  type: alertActionsConstants.SUCCESS,
+  message,
+});
 
-function success(message) {
-  return {
-    type: alertActionsConstants.SUCCESS,
-    message
-  };
-}
-
-function error(message) {
-  return {
-    type: alertActionsConstants.ERROR,
-    message
-  };
-}
-
-function clear() {
-  return {
-    type: alertActionsConstants.CLEAR
-  }
-}
+export const errorAlert = (message) => ({
+  type: alertActionsConstants.ERROR,
+  message,
+});

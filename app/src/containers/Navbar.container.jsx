@@ -13,7 +13,6 @@ import {userLogout} from '../actions';
 import NavbarComponent from '../components/Navbar.component';
 
 const mapStateToProps = (state) => ({
-  alert: state.alert,
   authentication: state.authentication,
 });
 

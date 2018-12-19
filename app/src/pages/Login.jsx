@@ -9,7 +9,7 @@ import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 
 // Actions
-import {userLogin, userLogout} from '../actions';
+import {userLogin} from '../actions';
 
 // Components
 import {AlertHeader} from '../components';
@@ -26,7 +26,6 @@ class LoginUser extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleLogout = this.handleLogout.bind(this);
   }
 
   handleChange(event) {
@@ -46,11 +45,6 @@ class LoginUser extends Component {
     if (username && password) {
       login(username, password);
     }
-  }
-
-  handleLogout(event){
-    const {logout} = this.props;
-    logout();
   }
 
   render() {
@@ -84,7 +78,6 @@ class LoginUser extends Component {
             <Link to = "/register">Register</Link>
           </div>
         </form>
-        <button onClick = {this.handleLogout}>Logout</button>
       </div>
     );
   }
@@ -96,7 +89,6 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   login: (username, password) => dispatch(userLogin(username, password)),
-  logout: () => dispatch(userLogout()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginUser);

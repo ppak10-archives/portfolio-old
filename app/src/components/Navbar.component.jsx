@@ -8,7 +8,7 @@ import React from 'react';
 import {NavLink} from 'react-router-dom';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
-const Navbar = ({alerts, authentication, logout}) => {
+const Navbar = ({authentication, logout}) => {
   const loggedIn = authentication.loginStatus.loggedIn;
   const navbarList = loggedIn ? AuthenticatedNavbar(logout) : DefaultNavbar;
   return (
